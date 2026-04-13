@@ -1,0 +1,100 @@
+---
+import ProductCards from './ProductCards.astro';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+---
+<div class:list={["pl-[var(--c-p)] pr-[var(--c-p)] pb-[24px] flex items-center justify-center h-auto relative z-30 overflow-visible max-[1024px]:h-min max-[1024px]:pb-[22px] max-[540px]:pb-[20px]", className]}>
+  <div class="rounded-[20px] bg-[var(--ploy-brand-pink)] p-[76px_40px_0] relative overflow-visible h-full w-full max-[1024px]:p-[48px] max-[540px]:p-[32px]">
+    <div class="relative max-w-[var(--c-mw)] w-full ml-auto mr-auto">
+      <h2 class="font-[family-name:var(--font-heading)] text-[length:var(--font-size-7xl)] font-[number:var(--font-heading-weight)] leading-[86%] uppercase text-[color:var(--ploy-text-primary)] mb-[24px] max-[540px]:text-[length:var(--font-size-4xl)] max-[1024px]:text-[length:var(--font-size_7xl)] max-[1024px]:mb-[22px] max-[540px]:mb-[20px]" data-el="ploy-heading">
+        <span class="block">
+          You slept 8 hours.
+        </span>
+        <span class="block">
+          <span class="h-[0.86em] w-[0px] inline-block relative overflow-hidden align-[middle]" data-el="pink-balloon-container">
+            <span class="block absolute top-[50%] left-[50%] [transform:translate(-50%,_-50%)_scale(0)] w-[120px] h-[120px]" data-el="pink-balloon-sizer">
+              <div class="oem w-full h-full">
+                <Fragment set:html={`<video autoplay loop muted playsinline style='width:100%;height:100%;object-fit:contain;transform:rotate(90deg);'><source src='https://ploy.sfo3.cdn.digitaloceanspaces.com/ploy-final/pink-balloon-safari.mov' type='video/mp4; codecs=hvc1'><source src='https://ploy.sfo3.cdn.digitaloceanspaces.com/ploy-final/pink-balloon.webm' type='video/webm'></video>`} />
+              </div>
+            </span>
+          </span>
+          Ploy didn't.
+        </span>
+      </h2>
+      <div class="w-full flex justify-end items-start max-w-[var(--c-mw)] mb-[56px] max-[1024px]:mb-[44px] max-[540px]:mb-[34px]">
+        <p class="max-w-[588px] w-full text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+          Ploy Web builds and optimizes. Ploy Grow identifies and reaches. Ploy Ads creates and attributes. All three act on what the others find.
+        </p>
+      </div>
+      <ProductCards pagesBuiltStart={3} pagesBuiltEnd={16} visitorsStart={333} visitorsEnd={973} pipelineStart={2} />
+    </div>
+    <img class="w-full absolute bottom-0 left-0 right-0 pointer-events-none z-0 rounded-bl-[20px] rounded-br-[20px]" src="/images/pasted-image-1775832091224.webp" alt="SEO Audit Blueprint results panel — overview of parallel agent findings" />
+  </div>
+</div>
+
+<script is:inline>
+(function(){
+var el = document.currentScript.previousElementSibling;
+function __init__() {
+(function _w(n){var c=n.firstChild,x;while(c){x=c.nextSibling;if(c.nodeType===3){if(!c.textContent.trim())n.removeChild(c)}else if(c.nodeType===1)_w(c);c=x}})(el);
+// Pink balloon inflate animation on scroll
+var heading = el.querySelector('[data-el="ploy-heading"]');
+if (!heading) return;
+
+var container = heading.querySelector('[data-el="pink-balloon-container"]');
+var sizer = heading.querySelector('[data-el="pink-balloon-sizer"]');
+if (!container || !sizer) return;
+
+var targetWidth = 120;
+
+function inflate() {
+  container.style.overflow = 'visible';
+  heading.style.overflow = 'visible';
+
+  if (typeof gsap !== 'undefined') {
+    var tl = gsap.timeline();
+    tl.to(container, {
+      width: targetWidth,
+      duration: 0.8,
+      ease: 'power2.out'
+    }, 0);
+    tl.fromTo(sizer,
+      { scale: 0, opacity: 0 },
+      { scale: 1, opacity: 1, duration: 0.8, ease: 'back.out(1.7)' },
+      0.1
+    );
+  } else {
+    container.style.width = targetWidth + 'px';
+    sizer.style.transform = 'translate(-50%, -50%) scale(1)';
+    sizer.style.opacity = '1';
+  }
+}
+
+if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.create({
+    trigger: heading,
+    start: 'top 80%',
+    once: true,
+    onEnter: inflate
+  });
+} else {
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        inflate();
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  obs.observe(heading);
+}
+
+}
+if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', __init__); } else { __init__(); }
+})();
+</script>

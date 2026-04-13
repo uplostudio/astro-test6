@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AccordionsSection from '../components/AccordionsSection.astro';
+import Component2 from '../components/Component2.astro';
+import Component3 from '../components/Component3.astro';
+import Component4 from '../components/Component4.astro';
+import FormSection from '../components/FormSection.astro';
+import Navigation from '../components/Navigation.astro';
+import SectionWithSlider from '../components/SectionWithSlider.astro';
+import ThreeEnginesSection from '../components/ThreeEnginesSection.astro';
+import YellowSection from '../components/YellowSection.astro';
+import features from '../components/features.astro';
+import splashvid from '../components/splashvid.astro';
+---
+<BaseLayout
+  title="Ploy"
+  meta={`<title>Ploy</title>
+  <meta name="description" content="Your website should be working harder than you are" />
+  <meta property="og:title" content="Ploy" />
+  <meta property="og:description" content="Your website should be working harder than you are" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/index-ployful" />
+  <link rel="canonical" href="/index-ployful" />`}
+  scripts={[]}
+  locale="en"
+  theme="light"
+  fontPreloads={`<link rel="preload" href="/fonts/FKScreamer-Variable.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/geist-variable-latin-ext-1.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/geist-variable-latin-1.woff2" as="font" type="font/woff2" crossorigin>`}
+  libraryTags={{ headCSS: `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <style>body {
+  font-family: Geist, sans-serif;
+}
+
+/* Scroll-fill text animation */
+[data-scrollfill] .word {
+  --progress: 0%;
+  padding-top: 0.6em;
+  margin-top: -0.6em;
+  padding-bottom: 0.6em;
+  margin-bottom: -0.6em;
+  color: transparent;
+  background-color: var(--ploy-text-faded);
+  background-image: linear-gradient(90deg, var(--ploy-text-primary), var(--ploy-text-primary) var(--progress), transparent var(--progress));
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+/* Balloon */
+[data-el="balloon-main"]:active {
+  cursor: grabbing;
+}
+
+[data-textreveal] .line {
+  --progress: 0%;
+  color: transparent;
+  background-color: var(--ploy-text-faded);
+  background-image: linear-gradient(90deg, var(--ploy-text-primary), var(--ploy-text-primary) var(--progress), transparent var(--progress));
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+</style>`, headJS: ``, bodyEndJS: `<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/SplitText.min.js" defer></script>` }}
+>
+  <div id="root">
+  <div class="bg-[color:var(--ploy-background-primary)] text-[color:var(--ploy-text-primary)] [overflow:clip]">
+    <Navigation />
+    <splashvid />
+    <Component3 />
+    <features />
+    <Component4 />
+    <YellowSection />
+    <SectionWithSlider />
+    <ThreeEnginesSection />
+    <AccordionsSection />
+    <FormSection />
+    <Component2 />
+  </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,8 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+---
+<div class:list={["w-[1px] bg-[color:var(--ploy-border-primary)] shrink self-stretch max-[540px]:w-full max-[540px]:h-[1px]", className]} />

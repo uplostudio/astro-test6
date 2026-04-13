@@ -1,0 +1,816 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+---
+<form class:list={["flex flex-col items-start gap-[8px] w-full", className]} data-el="waitlist-form">
+  <div class="flex flex-col items-start gap-[24px] w-full max-[1024px]:gap-[21px] max-[540px]:gap-[19px]">
+    <div class="flex flex-col items-start p-[0_0_16px_0] [border-bottom-width:1px] [border-bottom-style:solid] w-full relative min-h-[48px] justify-end border-[color:var(--ploy-border-primary)]" data-el="input-group">
+      <label class="c_waitlistform_ls17m text-[length:var(--font-size-2xl)] font-[number:var(--font-body-bold-weight)] leading-[133.33%] tracking-[-0.04em] text-[color:var(--ploy-text-primary)] absolute top-[12px] left-0 pointer-events-none [transition:all_0.2s_ease] max-[1024px]:text-[length:var(--font-size_2xl)] max-[540px]:text-[length:var(--font-size_2xl)]" data-el="label">
+        Your email address
+      </label>
+      <input class="w-full text-[length:var(--font-size-2xl)] font-[number:var(--font-body-bold-weight)] leading-[133.33%] tracking-[-0.04em] text-[color:var(--ploy-text-primary)] [border:none] [outline:none] [background:transparent] p-[16px_0_0_0] max-[1024px]:text-[length:var(--font-size_2xl)] max-[540px]:text-[length:var(--font-size_2xl)]" type="email" name="email" data-el="input" />
+    </div>
+    <div class="flex flex-col items-start p-[0_0_16px_0] [border-bottom-width:1px] [border-bottom-style:solid] w-full relative min-h-[48px] justify-end border-[color:var(--ploy-border-primary)]" data-el="input-group">
+      <label class="c_waitlistform_ls155 text-[length:var(--font-size-2xl)] font-[number:var(--font-body-bold-weight)] leading-[133.33%] tracking-[-0.04em] text-[color:var(--ploy-text-primary)] absolute top-[12px] left-0 pointer-events-none [transition:all_0.2s_ease] max-[1024px]:text-[length:var(--font-size_2xl)] max-[540px]:text-[length:var(--font-size_2xl)]" data-el="label">
+        Your company
+      </label>
+      <input class="w-full text-[length:var(--font-size-2xl)] font-[number:var(--font-body-bold-weight)] leading-[133.33%] tracking-[-0.04em] text-[color:var(--ploy-text-primary)] [border:none] [outline:none] [background:transparent] p-[16px_0_0_0] max-[1024px]:text-[length:var(--font-size_2xl)] max-[540px]:text-[length:var(--font-size_2xl)]" type="text" name="company" data-el="input" />
+    </div>
+    <div class="flex flex-col items-start p-[0_0_16px_0] [border-bottom-width:1px] [border-bottom-style:solid] w-full relative min-h-[48px] justify-end cursor-pointer border-[color:var(--ploy-border-primary)]" data-el="dropdown-group">
+      <label class="c_waitlistform_ls15x text-[length:var(--font-size-2xl)] font-[number:var(--font-body-bold-weight)] leading-[133.33%] tracking-[-0.04em] text-[color:var(--ploy-text-primary)] absolute left-0 pointer-events-none [transition:all_0.2s_ease] max-[1024px]:text-[length:var(--font-size_2xl)] max-[540px]:text-[length:var(--font-size_2xl)]" data-el="label">
+        Company size
+      </label>
+      <div class="flex justify-between items-center w-full p-[16px_0_0_0] min-h-[32px]" data-el="dropdown-trigger">
+        <span class="text-[length:var(--font-size-2xl)] font-[number:var(--font-body-bold-weight)] leading-[133.33%] tracking-[-0.04em] text-[color:var(--ploy-text-primary)] max-[1024px]:text-[length:var(--font-size_2xl)] max-[540px]:text-[length:var(--font-size_2xl)]" data-el="dropdown-value" />
+        <div class="w-[20px] h-[20px] flex items-center justify-center [transition:transform_0.2s_ease] shrink-0" data-el="chevron">
+          <div class="oem w-[20px] h-[20px]">
+            <Fragment set:html={`<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 7.5L10 12.5L5 7.5" stroke="#1C1C1A" stroke-width="2" stroke-linejoin="round"/></svg>`} />
+          </div>
+        </div>
+      </div>
+      <div class="c_waitlistform_ls15x hidden flex-col absolute top-[100%] left-0 w-full bg-[var(--ploy-background-secondary)] rounded-[16px] shadow-[0_4px_12px_rgba(0,_0,_0,_0.1)] z-[9] p-[8px] mt-[8px]" data-el="dropdown-menu">
+        <div class="c_waitlistform_7cdkj p-[12px_16px] text-[length:var(--font-size-base)] font-[number:500] text-[color:var(--ploy-text-primary)] cursor-pointer rounded-[8px] leading-[24px] tracking-[var(--font-body-letter-spacing)]" data-el="dropdown-option" data-value="&lt;10">
+          &lt;10
+        </div>
+        <div class="c_waitlistform_7cdkj p-[12px_16px] text-[length:var(--font-size-base)] font-[number:500] text-[color:var(--ploy-text-primary)] cursor-pointer rounded-[8px] tracking-[var(--font-body-letter-spacing)]" data-el="dropdown-option" data-value="11-50">
+          11-50
+        </div>
+        <div class="c_waitlistform_7cdkj p-[12px_16px] text-[length:var(--font-size-base)] font-[number:500] text-[color:var(--ploy-text-primary)] cursor-pointer rounded-[8px] tracking-[var(--font-body-letter-spacing)]" data-el="dropdown-option" data-value="51-200">
+          51-200
+        </div>
+        <div class="c_waitlistform_7cdkj p-[12px_16px] text-[length:var(--font-size-base)] font-[number:500] text-[color:var(--ploy-text-primary)] cursor-pointer rounded-[8px] tracking-[var(--font-body-letter-spacing)]" data-el="dropdown-option" data-value="200+">
+          200+
+        </div>
+      </div>
+      <input type="hidden" name="companysize" data-el="dropdown-hidden-input" />
+    </div>
+    <div class="flex flex-col items-start p-[0_0_16px_0] [border-bottom-width:1px] [border-bottom-style:solid] w-full relative min-h-[48px] justify-end cursor-pointer border-[color:var(--ploy-border-primary)]" data-el="multiselect-group">
+      <label class="c_waitlistform_ls13g text-[length:var(--font-size-2xl)] font-[number:var(--font-body-bold-weight)] leading-[133.33%] tracking-[-0.04em] text-[color:var(--ploy-text-primary)] absolute left-0 pointer-events-none [transition:all_0.2s_ease] max-[1024px]:text-[length:var(--font-size_2xl)] max-[540px]:text-[length:var(--font-size_2xl)]" data-el="label">
+        What you're interested in?
+      </label>
+      <div class="flex justify-between items-center w-full p-[16px_0_0_0] min-h-[32px]" data-el="multiselect-trigger">
+        <span class="text-[length:var(--font-size-2xl)] font-[number:var(--font-body-bold-weight)] leading-[133.33%] tracking-[-0.04em] text-[color:var(--ploy-text-primary)] max-[1024px]:text-[length:var(--font-size_2xl)] max-[540px]:text-[length:var(--font-size_2xl)]" data-el="multiselect-value" />
+        <div class="w-[20px] h-[20px] flex items-center justify-center [transition:transform_0.2s_ease] shrink-0" data-el="chevron">
+          <div class="oem w-[20px] h-[20px]">
+            <Fragment set:html={`<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 7.5L10 12.5L5 7.5" stroke="#1C1C1A" stroke-width="2" stroke-linejoin="round"/></svg>`} />
+          </div>
+        </div>
+      </div>
+      <div class="c_waitlistform_ls13g hidden flex-col absolute top-[100%] left-0 w-full bg-[var(--ploy-background-secondary)] rounded-[16px] shadow-[0_4px_12px_rgba(0,_0,_0,_0.1)] z-[9] p-[8px] mt-[8px]" data-el="multiselect-menu">
+        <div class="c_waitlistform_7egbw p-[10px_16px] flex items-center gap-[12px] text-[length:var(--font-size-base)] font-[number:500] text-[color:var(--ploy-text-primary)] cursor-pointer rounded-[8px] leading-[24px] tracking-[var(--font-body-letter-spacing)]" data-el="multiselect-option" data-value="SEO">
+          <div class="c_waitlistform_xq9hr w-[20px] h-[20px] rounded-[6px] [border:2px_solid_var(--ploy-border-primary)] flex items-center justify-center shrink-0 [transition:all_0.15s_ease]" data-el="checkbox">
+            <div class="oem c_waitlistform_8hxzc w-[12px] h-[12px] opacity-0 [transition:opacity_0.15s_ease]">
+              <Fragment set:html={`<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 6L5 8.5L9.5 3.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`} />
+            </div>
+          </div>
+          <span>
+            SEO
+          </span>
+        </div>
+        <div class="c_waitlistform_7egbw p-[10px_16px] flex items-center gap-[12px] text-[length:var(--font-size-base)] font-[number:500] text-[color:var(--ploy-text-primary)] cursor-pointer rounded-[8px] tracking-[var(--font-body-letter-spacing)]" data-el="multiselect-option" data-value="Content Marketing">
+          <div class="c_waitlistform_xq9fa w-[20px] h-[20px] rounded-[6px] [border:2px_solid_var(--ploy-border-primary)] flex items-center justify-center shrink-0 [transition:all_0.15s_ease]" data-el="checkbox">
+            <div class="oem c_waitlistform_8fv7z w-[12px] h-[12px] opacity-0 [transition:opacity_0.15s_ease]">
+              <Fragment set:html={`<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 6L5 8.5L9.5 3.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`} />
+            </div>
+          </div>
+          <span>
+            Content Marketing
+          </span>
+        </div>
+        <div class="c_waitlistform_7egbw p-[10px_16px] flex items-center gap-[12px] text-[length:var(--font-size-base)] font-[number:500] text-[color:var(--ploy-text-primary)] cursor-pointer rounded-[8px] tracking-[var(--font-body-letter-spacing)]" data-el="multiselect-option" data-value="Web Development">
+          <div class="c_waitlistform_xq9jf w-[20px] h-[20px] rounded-[6px] [border:2px_solid_var(--ploy-border-primary)] flex items-center justify-center shrink-0 [transition:all_0.15s_ease]" data-el="checkbox">
+            <div class="oem c_waitlistform_8jctg w-[12px] h-[12px] opacity-0 [transition:opacity_0.15s_ease]">
+              <Fragment set:html={`<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 6L5 8.5L9.5 3.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`} />
+            </div>
+          </div>
+          <span>
+            Web Development
+          </span>
+        </div>
+        <div class="c_waitlistform_7egbw p-[10px_16px] flex items-center gap-[12px] text-[length:var(--font-size-base)] font-[number:500] text-[color:var(--ploy-text-primary)] cursor-pointer rounded-[8px] tracking-[var(--font-body-letter-spacing)]" data-el="multiselect-option" data-value="Design">
+          <div class="c_waitlistform_xq9gz w-[20px] h-[20px] rounded-[6px] [border:2px_solid_var(--ploy-border-primary)] flex items-center justify-center shrink-0 [transition:all_0.15s_ease]" data-el="checkbox">
+            <div class="oem c_waitlistform_8ha24 w-[12px] h-[12px] opacity-0 [transition:opacity_0.15s_ease]">
+              <Fragment set:html={`<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 6L5 8.5L9.5 3.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`} />
+            </div>
+          </div>
+          <span>
+            Design
+          </span>
+        </div>
+        <div class="c_waitlistform_7egbw p-[10px_16px] flex items-center gap-[12px] text-[length:var(--font-size-base)] font-[number:500] text-[color:var(--ploy-text-primary)] cursor-pointer rounded-[8px] tracking-[var(--font-body-letter-spacing)]" data-el="multiselect-option" data-value="Other">
+          <div class="c_waitlistform_xq9kx w-[20px] h-[20px] rounded-[6px] [border:2px_solid_var(--ploy-border-primary)] flex items-center justify-center shrink-0 [transition:all_0.15s_ease]" data-el="checkbox">
+            <div class="oem c_waitlistform_8klhy w-[12px] h-[12px] opacity-0 [transition:opacity_0.15s_ease]">
+              <Fragment set:html={`<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 6L5 8.5L9.5 3.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`} />
+            </div>
+          </div>
+          <span>
+            Other
+          </span>
+        </div>
+      </div>
+      <input type="hidden" name="interested" data-el="multiselect-hidden-input" />
+    </div>
+  </div>
+  <button class="flex justify-center items-center gap-[6px] p-[12px_24px] bg-[var(--ploy-button-primary-background)] rounded-[var(--radius-button)] absolute left-[50%] [transform:translateX(-50%)] w-[238px] bottom-[-17px] h-[44px] text-[length:var(--font-size-sm)] font-[number:var(--font-body-bold-weight)] leading-[142.86%] tracking-[-0.01em] text-[color:var(--ploy-background-secondary)] [border:none] cursor-pointer [transition:transform_0.3s_cubic-bezier(0.25,_0.46,_0.45,_0.94),_opacity_0.2s_ease] [will-change:transform] max-[1024px]:p-[12px_22px] max-[540px]:p-[12px_20px]" type="submit" data-el="submit-btn">
+    Join the waitlist
+  </button>
+  <div class="hidden flex-col items-center justify-center text-center gap-[8px] w-full p-[48px_24px] max-[1024px]:p-[40px_22px] max-[540px]:p-[32px_20px]" data-el="success-message">
+    <p class="text-[length:var(--font-size-2xl)] font-[number:var(--font-body-bold-weight)] leading-[133.33%] tracking-[-0.04em] text-[color:var(--ploy-text-primary)] max-[1024px]:text-[length:var(--font-size_2xl)] max-[540px]:text-[length:var(--font-size_2xl)]">
+      Thanks for joining!
+    </p>
+    <p class="text-[length:var(--font-size-base)] font-[number:400] leading-[var(--font-body-line-height)] text-[color:var(--ploy-text-tertiary)] tracking-[var(--font-body-letter-spacing)]">
+      We'll be in touch soon.
+    </p>
+  </div>
+</form>
+
+<style is:global>
+[data-el='input-group'].is-focused .c_waitlistform_ls17m { font-size: var(--font-size-sm); font-weight: var(--font-body-weight); top: -0.25rem; color: var(--ploy-text-placeholder); }
+[data-el='input-group'].has-value .c_waitlistform_ls17m { font-size: var(--font-size-sm); font-weight: var(--font-body-weight); top: -0.25rem; color: var(--ploy-text-placeholder); }
+
+[data-el='input-group'].is-focused .c_waitlistform_ls155 { font-size: var(--font-size-sm); font-weight: var(--font-body-weight); top: -0.25rem; color: var(--ploy-text-placeholder); }
+[data-el='input-group'].has-value .c_waitlistform_ls155 { font-size: var(--font-size-sm); font-weight: var(--font-body-weight); top: -0.25rem; color: var(--ploy-text-placeholder); }
+
+[data-el='dropdown-group'].is-open .c_waitlistform_ls15x { display: flex; }
+
+.c_waitlistform_7cdkj:hover { background: var(--ploy-background-hover); }
+
+[data-el='multiselect-group'].is-open .c_waitlistform_ls13g { display: flex; }
+
+.c_waitlistform_7egbw:hover { background: var(--ploy-background-hover); }
+
+[data-el='multiselect-option'].is-checked .c_waitlistform_xq9hr { background-color: var(--ploy-button-primary-background); border-color: var(--ploy-button-primary-background); }
+
+[data-el='multiselect-option'].is-checked .c_waitlistform_8hxzc { opacity: 1; }
+
+[data-el='multiselect-option'].is-checked .c_waitlistform_xq9fa { background-color: var(--ploy-button-primary-background); border-color: var(--ploy-button-primary-background); }
+
+[data-el='multiselect-option'].is-checked .c_waitlistform_8fv7z { opacity: 1; }
+
+[data-el='multiselect-option'].is-checked .c_waitlistform_xq9jf { background-color: var(--ploy-button-primary-background); border-color: var(--ploy-button-primary-background); }
+
+[data-el='multiselect-option'].is-checked .c_waitlistform_8jctg { opacity: 1; }
+
+[data-el='multiselect-option'].is-checked .c_waitlistform_xq9gz { background-color: var(--ploy-button-primary-background); border-color: var(--ploy-button-primary-background); }
+
+[data-el='multiselect-option'].is-checked .c_waitlistform_8ha24 { opacity: 1; }
+
+[data-el='multiselect-option'].is-checked .c_waitlistform_xq9kx { background-color: var(--ploy-button-primary-background); border-color: var(--ploy-button-primary-background); }
+
+[data-el='multiselect-option'].is-checked .c_waitlistform_8klhy { opacity: 1; }
+</style>
+
+<script is:inline>
+(function(){
+var el = document.currentScript.previousElementSibling;
+function __init__() {
+(function _w(n){var c=n.firstChild,x;while(c){x=c.nextSibling;if(c.nodeType===3){if(!c.textContent.trim())n.removeChild(c)}else if(c.nodeType===1)_w(c);c=x}})(el);
+// Keyboard highlight style for dropdown options
+const highlightStyle = document.createElement('style');
+highlightStyle.textContent = '[data-el="dropdown-option"].is-highlighted { background: rgba(33, 33, 33, 0.04); } [data-el="multiselect-option"].is-highlighted { background: rgba(33, 33, 33, 0.04); }';
+el.appendChild(highlightStyle);
+
+// Floating label behavior for text inputs
+const inputGroups = el.querySelectorAll('[data-el="input-group"]');
+
+inputGroups.forEach(group => {
+  const input = group.querySelector('[data-el="input"]');
+  const label = group.querySelector('[data-el="label"]');
+  if (!input || !label) return;
+
+  function labelUp() {
+    label.style.fontSize = '14px';
+    label.style.fontWeight = '400';
+    label.style.top = '-4px';
+    label.style.color = 'rgba(33, 33, 33, 0.5)';
+  }
+
+  function labelDown() {
+    label.style.fontSize = '';
+    label.style.fontWeight = '';
+    label.style.top = '';
+    label.style.color = '';
+  }
+
+  function clearError() {
+    group.style.borderBottomColor = '';
+    label.style.color = '';
+    if (input.value.trim()) {
+      label.style.color = 'rgba(33, 33, 33, 0.5)';
+    }
+  }
+
+  input.addEventListener('focus', () => {
+    clearError();
+    labelUp();
+  });
+
+  input.addEventListener('blur', () => {
+    if (!input.value.trim()) {
+      labelDown();
+    }
+  });
+
+  // Numbers-only filter for company size
+  if (input.name === 'companySize') {
+    input.addEventListener('input', () => {
+      input.value = input.value.replace(/[^0-9]/g, '');
+      clearError();
+      if (input.value.trim()) {
+        labelUp();
+      }
+    });
+  } else {
+    input.addEventListener('input', () => {
+      clearError();
+      if (input.value.trim()) {
+        labelUp();
+      }
+    });
+  }
+});
+
+// Dropdown behavior (single-select)
+const dropdownGroups = el.querySelectorAll('[data-el="dropdown-group"]');
+
+dropdownGroups.forEach(group => {
+  const trigger = group.querySelector('[data-el="dropdown-trigger"]');
+  const valueEl = group.querySelector('[data-el="dropdown-value"]');
+  const menu = group.querySelector('[data-el="dropdown-menu"]');
+  const options = group.querySelectorAll('[data-el="dropdown-option"]');
+  const hiddenInput = group.querySelector('[data-el="dropdown-hidden-input"]');
+  const label = group.querySelector('[data-el="label"]');
+  const chevron = group.querySelector('[data-el="chevron"]');
+
+  if (!trigger || !menu) return;
+
+  trigger.setAttribute('tabindex', '0');
+  trigger.setAttribute('role', 'combobox');
+  trigger.setAttribute('aria-expanded', 'false');
+  trigger.setAttribute('aria-haspopup', 'listbox');
+  if (label) trigger.setAttribute('aria-label', label.textContent);
+  menu.setAttribute('role', 'listbox');
+  options.forEach((option, i) => {
+    option.setAttribute('role', 'option');
+    option.setAttribute('tabindex', '-1');
+    option.id = group.getAttribute('data-el') + '-option-' + hiddenInput.name + '-' + i;
+  });
+
+  let activeIndex = -1;
+
+  function setLabelUp() {
+    if (!label) return;
+    label.style.fontSize = '14px';
+    label.style.fontWeight = '400';
+    label.style.top = '-4px';
+    label.style.color = 'rgba(33, 33, 33, 0.5)';
+  }
+
+  function setLabelDown() {
+    if (!label) return;
+    label.style.fontSize = '';
+    label.style.fontWeight = '';
+    label.style.top = '';
+    label.style.color = '';
+  }
+
+  function closeOtherDropdowns() {
+    dropdownGroups.forEach(other => {
+      if (other !== group) {
+        other.classList.remove('is-open');
+        const otherTrigger = other.querySelector('[data-el="dropdown-trigger"]');
+        const otherChevron = other.querySelector('[data-el="chevron"]');
+        if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+        if (otherChevron) otherChevron.style.transform = '';
+      }
+    });
+  }
+
+  function closeAllMultiselects() {
+    el.querySelectorAll('[data-el="multiselect-group"]').forEach(ms => {
+      ms.classList.remove('is-open');
+      const msTrigger = ms.querySelector('[data-el="multiselect-trigger"]');
+      const msChevron = ms.querySelector('[data-el="chevron"]');
+      if (msTrigger) msTrigger.setAttribute('aria-expanded', 'false');
+      if (msChevron) msChevron.style.transform = '';
+    });
+  }
+
+  function openDropdown() {
+    closeOtherDropdowns();
+    closeAllMultiselects();
+    group.classList.add('is-open');
+    trigger.setAttribute('aria-expanded', 'true');
+    if (chevron) chevron.style.transform = 'rotate(180deg)';
+    setLabelUp();
+    activeIndex = -1;
+  }
+
+  function closeDropdown(restoreLabel) {
+    group.classList.remove('is-open');
+    trigger.setAttribute('aria-expanded', 'false');
+    if (chevron) chevron.style.transform = '';
+    activeIndex = -1;
+    options.forEach(o => o.classList.remove('is-highlighted'));
+    if (restoreLabel && (!hiddenInput || !hiddenInput.value)) {
+      setLabelDown();
+    }
+  }
+
+  let justSelected = false;
+
+  function selectOption(option) {
+    const value = option.getAttribute('data-value');
+    if (valueEl) valueEl.textContent = option.textContent;
+    if (hiddenInput) hiddenInput.value = value;
+    group.classList.add('has-value');
+    group.style.borderBottomColor = '';
+    setLabelUp();
+    closeDropdown(false);
+    justSelected = true;
+    trigger.focus();
+  }
+
+  function highlightOption(index) {
+    options.forEach(o => o.classList.remove('is-highlighted'));
+    if (index >= 0 && index < options.length) {
+      activeIndex = index;
+      options[index].classList.add('is-highlighted');
+      options[index].scrollIntoView({ block: 'nearest' });
+      trigger.setAttribute('aria-activedescendant', options[index].id);
+    }
+  }
+
+  let mouseDown = false;
+  trigger.addEventListener('mousedown', () => { mouseDown = true; });
+
+  trigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    mouseDown = false;
+    if (group.classList.contains('is-open')) {
+      closeDropdown(true);
+    } else {
+      openDropdown();
+    }
+  });
+
+  trigger.addEventListener('focus', () => {
+    if (!mouseDown && !justSelected && !group.classList.contains('is-open')) {
+      openDropdown();
+    }
+    mouseDown = false;
+    justSelected = false;
+  });
+
+  trigger.addEventListener('keydown', (e) => {
+    switch (e.key) {
+      case 'Enter':
+      case ' ':
+        e.preventDefault();
+        if (group.classList.contains('is-open')) {
+          if (activeIndex >= 0) selectOption(options[activeIndex]);
+          else closeDropdown(true);
+        } else {
+          openDropdown();
+        }
+        break;
+      case 'ArrowDown':
+        e.preventDefault();
+        if (!group.classList.contains('is-open')) openDropdown();
+        highlightOption(Math.min(activeIndex + 1, options.length - 1));
+        break;
+      case 'ArrowUp':
+        e.preventDefault();
+        if (!group.classList.contains('is-open')) openDropdown();
+        highlightOption(Math.max(activeIndex - 1, 0));
+        break;
+      case 'Escape':
+        e.preventDefault();
+        closeDropdown(true);
+        trigger.focus();
+        break;
+      case 'Tab':
+        closeDropdown(true);
+        break;
+    }
+  });
+
+  options.forEach(option => {
+    option.addEventListener('click', (e) => {
+      e.stopPropagation();
+      selectOption(option);
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!group.contains(e.target)) {
+      closeDropdown(true);
+    }
+  });
+});
+
+// Multiselect behavior
+const multiselectGroups = el.querySelectorAll('[data-el="multiselect-group"]');
+
+multiselectGroups.forEach(group => {
+  const trigger = group.querySelector('[data-el="multiselect-trigger"]');
+  const valueEl = group.querySelector('[data-el="multiselect-value"]');
+  const menu = group.querySelector('[data-el="multiselect-menu"]');
+  const options = group.querySelectorAll('[data-el="multiselect-option"]');
+  const hiddenInput = group.querySelector('[data-el="multiselect-hidden-input"]');
+  const label = group.querySelector('[data-el="label"]');
+  const chevron = group.querySelector('[data-el="chevron"]');
+
+  if (!trigger || !menu) return;
+
+  const selectedValues = new Set();
+
+  trigger.setAttribute('tabindex', '0');
+  trigger.setAttribute('role', 'combobox');
+  trigger.setAttribute('aria-expanded', 'false');
+  trigger.setAttribute('aria-haspopup', 'listbox');
+  if (label) trigger.setAttribute('aria-label', label.textContent);
+  menu.setAttribute('role', 'listbox');
+  options.forEach((option, i) => {
+    option.setAttribute('role', 'option');
+    option.setAttribute('tabindex', '-1');
+    option.id = 'multiselect-option-' + (hiddenInput ? hiddenInput.name : 'ms') + '-' + i;
+  });
+
+  let activeIndex = -1;
+
+  function setLabelUp() {
+    if (!label) return;
+    label.style.fontSize = '14px';
+    label.style.fontWeight = '400';
+    label.style.top = '-4px';
+    label.style.color = 'rgba(33, 33, 33, 0.5)';
+  }
+
+  function setLabelDown() {
+    if (!label) return;
+    label.style.fontSize = '';
+    label.style.fontWeight = '';
+    label.style.top = '';
+    label.style.color = '';
+  }
+
+  function closeOtherPanels() {
+    dropdownGroups.forEach(dd => {
+      dd.classList.remove('is-open');
+      const ddTrigger = dd.querySelector('[data-el="dropdown-trigger"]');
+      const ddChevron = dd.querySelector('[data-el="chevron"]');
+      if (ddTrigger) ddTrigger.setAttribute('aria-expanded', 'false');
+      if (ddChevron) ddChevron.style.transform = '';
+    });
+    multiselectGroups.forEach(other => {
+      if (other !== group) {
+        other.classList.remove('is-open');
+        const otherTrigger = other.querySelector('[data-el="multiselect-trigger"]');
+        const otherChevron = other.querySelector('[data-el="chevron"]');
+        if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+        if (otherChevron) otherChevron.style.transform = '';
+      }
+    });
+  }
+
+  function updateDisplay() {
+    const values = Array.from(selectedValues);
+    if (valueEl) valueEl.textContent = values.join(', ');
+    if (hiddenInput) hiddenInput.value = values.join(', ');
+    if (values.length > 0) {
+      group.classList.add('has-value');
+      setLabelUp();
+    } else {
+      group.classList.remove('has-value');
+    }
+    group.style.borderBottomColor = '';
+  }
+
+  function openMultiselect() {
+    closeOtherPanels();
+    group.classList.add('is-open');
+    trigger.setAttribute('aria-expanded', 'true');
+    if (chevron) chevron.style.transform = 'rotate(180deg)';
+    setLabelUp();
+    activeIndex = -1;
+  }
+
+  function closeMultiselect(restoreLabel) {
+    group.classList.remove('is-open');
+    trigger.setAttribute('aria-expanded', 'false');
+    if (chevron) chevron.style.transform = '';
+    activeIndex = -1;
+    options.forEach(o => o.classList.remove('is-highlighted'));
+    if (restoreLabel && selectedValues.size === 0) {
+      setLabelDown();
+    }
+  }
+
+  function toggleOption(option) {
+    const value = option.getAttribute('data-value');
+    if (selectedValues.has(value)) {
+      selectedValues.delete(value);
+      option.classList.remove('is-checked');
+    } else {
+      selectedValues.add(value);
+      option.classList.add('is-checked');
+    }
+    updateDisplay();
+  }
+
+  function highlightOption(index) {
+    options.forEach(o => o.classList.remove('is-highlighted'));
+    if (index >= 0 && index < options.length) {
+      activeIndex = index;
+      options[index].classList.add('is-highlighted');
+      options[index].scrollIntoView({ block: 'nearest' });
+      trigger.setAttribute('aria-activedescendant', options[index].id);
+    }
+  }
+
+  let mouseDown = false;
+  trigger.addEventListener('mousedown', () => { mouseDown = true; });
+
+  trigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    mouseDown = false;
+    if (group.classList.contains('is-open')) {
+      closeMultiselect(true);
+    } else {
+      openMultiselect();
+    }
+  });
+
+  trigger.addEventListener('focus', () => {
+    if (!mouseDown && !group.classList.contains('is-open')) {
+      openMultiselect();
+    }
+    mouseDown = false;
+  });
+
+  trigger.addEventListener('keydown', (e) => {
+    switch (e.key) {
+      case 'Enter':
+      case ' ':
+        e.preventDefault();
+        if (group.classList.contains('is-open')) {
+          if (activeIndex >= 0) toggleOption(options[activeIndex]);
+          else closeMultiselect(true);
+        } else {
+          openMultiselect();
+        }
+        break;
+      case 'ArrowDown':
+        e.preventDefault();
+        if (!group.classList.contains('is-open')) openMultiselect();
+        highlightOption(Math.min(activeIndex + 1, options.length - 1));
+        break;
+      case 'ArrowUp':
+        e.preventDefault();
+        if (!group.classList.contains('is-open')) openMultiselect();
+        highlightOption(Math.max(activeIndex - 1, 0));
+        break;
+      case 'Escape':
+        e.preventDefault();
+        closeMultiselect(true);
+        trigger.focus();
+        break;
+      case 'Tab':
+        closeMultiselect(true);
+        break;
+    }
+  });
+
+  // Option click toggles checkbox, doesn't close dropdown
+  options.forEach(option => {
+    option.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleOption(option);
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!group.contains(e.target)) {
+      closeMultiselect(true);
+    }
+  });
+});
+
+// Validation + Form submit
+const ERROR_COLOR = 'rgb(220, 38, 38)';
+
+function markError(group, label) {
+  group.style.borderBottomColor = ERROR_COLOR;
+  if (label) label.style.color = ERROR_COLOR;
+}
+
+function validateForm() {
+  let valid = true;
+
+  inputGroups.forEach(group => {
+    const input = group.querySelector('[data-el="input"]');
+    const label = group.querySelector('[data-el="label"]');
+    if (input && !input.value.trim()) {
+      markError(group, label);
+      valid = false;
+    }
+  });
+
+  dropdownGroups.forEach(group => {
+    const hiddenInput = group.querySelector('[data-el="dropdown-hidden-input"]');
+    const label = group.querySelector('[data-el="label"]');
+    if (hiddenInput && !hiddenInput.value) {
+      markError(group, label);
+      valid = false;
+    }
+  });
+
+  multiselectGroups.forEach(group => {
+    const hiddenInput = group.querySelector('[data-el="multiselect-hidden-input"]');
+    const label = group.querySelector('[data-el="label"]');
+    if (hiddenInput && !hiddenInput.value) {
+      markError(group, label);
+      valid = false;
+    }
+  });
+
+  return valid;
+}
+
+const form = el.querySelector('[data-el="waitlist-form"]') || el;
+const submitBtn = el.querySelector('[data-el="submit-btn"]');
+const successMessage = el.querySelector('[data-el="success-message"]');
+
+function handleSubmit(e) {
+  e.preventDefault();
+  if (!validateForm()) return;
+
+  const formContent = form.tagName === 'FORM'
+    ? form.querySelector(':scope > div:first-child')
+    : el.querySelector(':scope > div:first-child');
+
+  // Fade out form content + button
+  const fadeTargets = [formContent, submitBtn].filter(Boolean);
+  fadeTargets.forEach(target => {
+    target.style.transition = 'opacity 0.3s ease';
+    target.style.opacity = '0';
+  });
+
+  setTimeout(() => {
+    fadeTargets.forEach(target => target.style.display = 'none');
+
+    if (successMessage) {
+      successMessage.style.display = 'flex';
+      successMessage.style.opacity = '0';
+      successMessage.style.transform = 'translateY(12px)';
+      successMessage.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+
+      requestAnimationFrame(() => {
+        successMessage.style.opacity = '1';
+        successMessage.style.transform = 'translateY(0)';
+      });
+    }
+
+    // Trigger splash video
+    document.dispatchEvent(new CustomEvent('waitlist-success'));
+  }, 300);
+}
+
+if (form.tagName === 'FORM') {
+  form.addEventListener('submit', handleSubmit);
+} else if (submitBtn) {
+  submitBtn.addEventListener('click', handleSubmit);
+}
+
+// Ensure submit button is focusable
+if (submitBtn) {
+  submitBtn.setAttribute('tabindex', '0');
+}
+
+// Allow Enter key to submit from any input/dropdown in the form
+el.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && e.target.closest('[data-el="dropdown-trigger"]') === null) {
+    e.preventDefault();
+    if (submitBtn) submitBtn.click();
+  }
+});
+
+// GSAP hover animation for submit button
+if (submitBtn) {
+  const btnOriginalText = submitBtn.textContent.trim();
+  submitBtn.textContent = '';
+
+  // Background element for scale effect
+  const btnBg = document.createElement('span');
+  btnBg.style.cssText = 'position:absolute;inset:0;border-radius:inherit;background:inherit;z-index:0;transition:scale .75s cubic-bezier(.32,.72,0,1);pointer-events:none;';
+  submitBtn.style.position = 'absolute';
+  submitBtn.style.overflow = 'hidden';
+  submitBtn.appendChild(btnBg);
+
+  // Text wrapper
+  const btnTextWrap = document.createElement('span');
+  btnTextWrap.style.cssText = 'position:relative;z-index:1;display:flex;gap:0;align-items:center;';
+  submitBtn.appendChild(btnTextWrap);
+
+  const btnChars = [];
+  for (let i = 0; i < btnOriginalText.length; i++) {
+    const span = document.createElement('span');
+    span.textContent = btnOriginalText[i] === ' ' ? '\u00A0' : btnOriginalText[i];
+    span.style.display = 'inline-block';
+    btnTextWrap.appendChild(span);
+    btnChars.push(span);
+  }
+
+  const btnOriginalColor = getComputedStyle(submitBtn).color;
+
+  // Active press
+  submitBtn.style.transition = 'transform .45s linear(0,0.5737 7.6%,0.8382 11.87%,0.9463 14.19%,1.0292 16.54%,1.0886 18.97%,1.1258 21.53%,1.137 22.97%,1.1424 24.48%,1.1423 26.1%,1.1366 27.86%,1.1165 31.01%,1.0507 38.62%,1.0219 42.57%,0.9995 46.99%,0.9872 51.63%,0.9842 58.77%,1.0011 81.26%,1)';
+  submitBtn.style.webkitTapHighlightColor = 'transparent';
+
+  submitBtn.addEventListener('pointerdown', () => {
+    submitBtn.style.transform = 'translateX(-50%) scaleX(0.955) scaleY(0.954)';
+  });
+  submitBtn.addEventListener('pointerup', () => {
+    submitBtn.style.transform = 'translateX(-50%)';
+  });
+
+  // GSAP hover
+  gsap.set(btnChars, { transformOrigin: 'bottom left' });
+
+  const btnHoverColors = ['#FFB8FC', '#C3DBFF', '#FFFA64', '#D1F48C'];
+  let btnLastColor = null;
+  let btnHoverTl = null;
+
+  function btnPickColor() {
+    const available = btnHoverColors.filter(c => c !== btnLastColor);
+    const picked = available[Math.floor(Math.random() * available.length)];
+    btnLastColor = picked;
+    return picked;
+  }
+
+  function btnBuildTimeline(color) {
+    if (btnHoverTl) btnHoverTl.kill();
+
+    btnHoverTl = gsap.timeline({
+      onComplete() {
+        btnHoverTl.progress(0).pause();
+        gsap.set(btnChars, { color: btnOriginalColor, scaleY: 1, rotate: 0 });
+      }
+    });
+
+    btnHoverTl
+      .to(btnChars, {
+        keyframes: {
+          '0%': { scaleY: 1, rotate: 0 },
+          '20%': { scaleY: 0.25, rotate: 20, ease: 'power2.in' },
+          '100%': { scaleY: 1, rotate: 0, ease: 'elastic.out(1,0.4)' },
+        },
+        duration: 0.7,
+        stagger: 0.017,
+      })
+      .to(btnChars, {
+        keyframes: {
+          '0%': { color: color },
+          '40%': { color: color },
+          '100%': { color: btnOriginalColor },
+        },
+        duration: 0.7,
+        stagger: 0.017,
+      }, '<');
+  }
+
+  submitBtn.style.outline = 'none';
+
+  function btnOnHover() {
+    btnBuildTimeline(btnPickColor());
+    btnHoverTl.play();
+    btnBg.style.scale = '1.035 1.065';
+    gsap.to(submitBtn, { scaleX: 1.05, scaleY: 1.08, duration: 0.5, ease: 'elastic.out(1,0.5)' });
+  }
+
+  function btnOnHoverEnd() {
+    btnBg.style.scale = '';
+    submitBtn.style.transform = 'translateX(-50%)';
+    gsap.to(submitBtn, { scaleX: 1, scaleY: 1, duration: 0.4, ease: 'power2.out' });
+  }
+
+  submitBtn.addEventListener('pointerenter', btnOnHover);
+  submitBtn.addEventListener('focus', () => {
+    btnOnHover();
+    submitBtn.style.boxShadow = '0 0 0 3px rgba(255, 255, 255, 0.6), 0 0 0 5px rgba(33, 33, 33, 0.3)';
+  });
+  submitBtn.addEventListener('pointerleave', btnOnHoverEnd);
+  submitBtn.addEventListener('blur', () => {
+    btnOnHoverEnd();
+    submitBtn.style.boxShadow = '';
+  });
+}
+
+}
+if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', __init__); } else { __init__(); }
+})();
+</script>

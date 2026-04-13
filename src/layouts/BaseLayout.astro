@@ -1,0 +1,36 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  meta?: string;
+  scripts?: string[];
+  locale?: string;
+  theme?: string;
+  fontPreloads?: string;
+  libraryTags?: { headCSS?: string; headJS?: string; bodyEndJS?: string };
+}
+
+const { title, meta = '', scripts = [], locale = 'en', theme = 'light', fontPreloads = '', libraryTags = {} } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang={locale} data-theme={theme}>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <Fragment set:html={``} />
+  <Fragment set:html={fontPreloads} />
+  <Fragment set:html={libraryTags.headCSS || ''} />
+  <Fragment set:html={libraryTags.headJS || ''} />
+  <Fragment set:html={meta} />
+  <Fragment set:html={``} />
+  <title>{title}</title>
+</head>
+<body>
+  <Fragment set:html={``} />
+  <slot />
+  {scripts.map((s) => <script src={s} />)}
+  <Fragment set:html={libraryTags.bodyEndJS || ''} />
+  <Fragment set:html={``} />
+</body>
+</html>

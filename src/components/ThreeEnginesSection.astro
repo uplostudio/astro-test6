@@ -1,0 +1,219 @@
+---
+import HeroCardDivider from './HeroCardDivider.astro';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+---
+<div class:list={["pt-[152px] pr-[var(--c-p)] pb-[175px] pl-[var(--c-p)] flex justify-center max-[540px]:pl-[0] max-[540px]:pr-[0] max-[540px]:pt-[80px] max-[540px]:pb-[100px] max-[1024px]:pt-[118px] max-[1024px]:pb-[135px]", className]}>
+  <div class="max-w-[var(--c-mw)] w-full max-[1024px]:overflow-visible max-[540px]:max-w-[var(--c-mw)] max-[540px]:w-full max-[540px]:overflow-visible">
+    <div class="relative flex flex-row justify-center items-center overflow-visible">
+      <div class="oem w-full h-[1368px] object-cover absolute max-w-[986px] max-[1024px]:top-[-20%] max-[1024px]:object-contain max-[1024px]:[transform:scale(1.5)] max-[540px]:object-contain" data-el="balloons">
+        <Fragment set:html={`<video autoplay muted loop playsinline style='width:100%;height:100%;object-fit:cover;'><source src='https://ploy.sfo3.cdn.digitaloceanspaces.com/ploy-final/composition-safari.mov' type='video/mp4; codecs=hvc1'><source src='https://ploy.sfo3.cdn.digitaloceanspaces.com/ploy-final/composition.webm' type='video/webm'></video>`} />
+      </div>
+      <div class="w-full h-[1138px] flex flex-col justify-between items-start max-w-[var(--c-mw)] relative max-[1024px]:max-w-full max-[540px]:pl-[20px] max-[540px]:pr-[20px] max-[540px]:h-[640px]">
+        <p class="w-full font-[family-name:var(--font-heading)] text-[length:144px] font-[number:var(--font-heading-weight)] leading-[86%] uppercase text-[color:var(--ploy-text-primary)] max-[540px]:text-[length:56px] max-[1024px]:text-[length:118px]" data-el="parallax-text">
+          One
+        </p>
+        <p class="text-right w-full font-[family-name:var(--font-heading)] text-[length:144px] font-[number:var(--font-heading-weight)] leading-[86%] uppercase text-[color:var(--ploy-text-primary)] max-[540px]:text-[length:56px] max-[1024px]:text-[length:118px]" data-el="parallax-text">
+          platform
+        </p>
+        <p class="w-full font-[family-name:var(--font-heading)] text-[length:144px] font-[number:var(--font-heading-weight)] leading-[86%] uppercase text-[color:var(--ploy-text-primary)] max-[540px]:text-[length:56px] max-[1024px]:text-[length:118px]" data-el="parallax-text">
+          three
+        </p>
+        <p class="text-right w-full font-[family-name:var(--font-heading)] text-[length:144px] font-[number:var(--font-heading-weight)] leading-[86%] uppercase text-[color:var(--ploy-text-primary)] max-[540px]:text-[length:56px] max-[1024px]:text-[length:118px]" data-el="parallax-text">
+          engines
+        </p>
+      </div>
+    </div>
+    <div class="w-full flex flex-col items-start gap-[10px] p-[24px] bg-[var(--ploy-background-secondary)] rounded-[4px] max-w-[var(--c-mw)] mt-[40px] max-[1024px]:max-w-full max-[1024px]:p-[16px] max-[540px]:p-[20px] max-[1024px]:mt-[33px] max-[540px]:mt-[27px]">
+      <div class="flex flex-row gap-[16px] w-full max-[1024px]:gap-[16px] max-[540px]:flex-col">
+        <div class="flex flex-col items-start gap-[100px] w-full flex-1 max-[1024px]:gap-[64px] max-[540px]:gap-[50px]">
+          <div class="flex items-center gap-[4px] w-[145px] justify-between max-[1024px]:gap-[4px] max-[1024px]:w-[145px]">
+            <div class="oem w-[87px] h-[32px] overflow-visible">
+              <Fragment set:html={`<svg width="87" height="32" viewBox="0 0 87 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 87px; height: 32px; overflow: visible">
+<path d="M17.1384 6.54297C32.4194 6.30888 32.4158 25.6919 17.1384 25.457C8.09946 25.2406 7.04957 20.3129 7.04265 20.2799H6.72967L7.34134 32H0V7.11068H7.34134C7.3348 7.16787 6.71517 11.7293 6.71928 11.7201H7.04265C7.04051 11.7083 8.08823 6.7528 17.1384 6.54297Z" fill="#212121" />
+<path d="M73.6004 17.0677L78.8379 7.11068H87L73.8497 32H65.724L69.6797 24.4987L60.0579 7.11068H68.3265L73.6004 17.0677Z" fill="#212121" />
+<path d="M50.3764 6.54297C57.2544 6.54298 61.815 10.3111 61.815 16C61.815 21.689 57.2544 25.457 50.3764 25.457C43.4984 25.457 38.9365 21.6887 38.9365 16C38.9365 10.3113 43.4984 6.54297 50.3764 6.54297Z" fill="#212121" />
+<path d="M37.356 24.8893H30.1575V0H37.356V24.8893Z" fill="#212121" />
+</svg>`} />
+            </div>
+            <p class="flex justify-center items-center gap-[6px] p-[12px] bg-[var(--ploy-button-primary-background)] rounded-[var(--radius-button)] h-[32px] text-[length:var(--font-size-sm)] font-[number:var(--font-body-bold-weight)] leading-[142.86%] tracking-[-0.01em] text-[color:var(--ploy-brand-pink)]">
+              Web
+            </p>
+          </div>
+          <div class="flex flex-col items-start gap-[16px] w-full">
+            <p class="w-full text-[length:var(--font-size-2xl)] font-[number:var(--font-body-bold-weight)] leading-[133.33%] tracking-[-0.04em] text-[color:var(--ploy-text-primary)] max-[1024px]:text-[length:var(--font-size_2xl)] max-[540px]:text-[length:var(--font-size_2xl)]">
+              Build. Optimize. Convert.
+            </p>
+            <div class="flex flex-col items-start gap-[16px] w-full">
+              <div class="flex items-center gap-[16px] w-full">
+                <div class="bg-[var(--ploy-brand-pink)] rounded-full w-[4px] h-[4px]" />
+                <p class="w-full text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                  AI website builder (Webflow-grade)
+                </p>
+              </div>
+              <div class="flex items-center gap-[16px] w-full">
+                <div class="bg-[var(--ploy-brand-pink)] rounded-full w-[4px] h-[4px]" />
+                <p class="w-full text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                  SEO and ABM landing pages
+                </p>
+              </div>
+              <div class="flex items-center gap-[16px] w-full">
+                <div class="bg-[var(--ploy-brand-pink)] rounded-full w-[4px] h-[4px]" />
+                <p class="w-full text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                  Ad landing page optimization
+                </p>
+              </div>
+              <div class="flex items-center gap-[16px] w-full">
+                <div class="bg-[var(--ploy-brand-pink)] rounded-full w-[4px] h-[4px]" />
+                <p class="w-full text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                  Built-in analytics and on-page insights
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <HeroCardDivider />
+        <div class="flex flex-col items-start gap-[100px] w-full flex-1 max-[1024px]:gap-[64px] max-[540px]:gap-[50px]">
+          <div class="flex items-center gap-[4px] w-[145px] justify-between max-[1024px]:w-[145px]">
+            <div class="oem w-[87px] h-[32px] overflow-visible">
+              <Fragment set:html={`<svg width="87" height="32" viewBox="0 0 87 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 87px; height: 32px; overflow: visible">
+<path d="M17.1384 6.54297C32.4194 6.30888 32.4158 25.6919 17.1384 25.457C8.09946 25.2406 7.04957 20.3129 7.04265 20.2799H6.72967L7.34134 32H0V7.11068H7.34134C7.3348 7.16787 6.71517 11.7293 6.71928 11.7201H7.04265C7.04051 11.7083 8.08823 6.7528 17.1384 6.54297Z" fill="#212121" />
+<path d="M73.6004 17.0677L78.8379 7.11068H87L73.8497 32H65.724L69.6797 24.4987L60.0579 7.11068H68.3265L73.6004 17.0677Z" fill="#212121" />
+<path d="M50.3764 6.54297C57.2544 6.54298 61.815 10.3111 61.815 16C61.815 21.689 57.2544 25.457 50.3764 25.457C43.4984 25.457 38.9365 21.6887 38.9365 16C38.9365 10.3113 43.4984 6.54297 50.3764 6.54297Z" fill="#212121" />
+<path d="M37.356 24.8893H30.1575V0H37.356V24.8893Z" fill="#212121" />
+</svg>`} />
+            </div>
+            <p class="flex justify-center items-center gap-[6px] p-[12px] bg-[var(--ploy-button-primary-background)] rounded-[var(--radius-button)] h-[32px] text-[length:var(--font-size-sm)] font-[number:var(--font-body-bold-weight)] leading-[142.86%] tracking-[-0.01em] text-[color:var(--ploy-brand-green-bright)]">
+              Grow
+            </p>
+          </div>
+          <div class="flex flex-col items-start gap-[16px] w-full">
+            <p class="w-full text-[length:var(--font-size-2xl)] font-[number:var(--font-body-bold-weight)] leading-[133.33%] tracking-[-0.04em] text-[color:var(--ploy-text-primary)] max-[1024px]:text-[length:var(--font-size_2xl)] max-[540px]:text-[length:var(--font-size_2xl)]">
+              Identify. Reach. Close.
+            </p>
+            <div class="flex flex-col items-start gap-[16px] w-full">
+              <div class="flex items-center gap-[16px] w-full">
+                <div class="bg-[var(--ploy-brand-green-bright)] rounded-full w-[4px] h-[4px]" />
+                <p class="w-full text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                  Visitor de-anonymization
+                </p>
+              </div>
+              <div class="flex items-center gap-[16px] w-full">
+                <div class="bg-[var(--ploy-brand-green-bright)] rounded-full w-[4px] h-[4px]" />
+                <p class="w-full text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                  Automated personalized outreach
+                </p>
+              </div>
+              <div class="flex items-center gap-[16px] w-full">
+                <div class="bg-[var(--ploy-brand-green-bright)] rounded-full w-[4px] h-[4px]" />
+                <p class="w-full text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                  Intent signals &amp; lead scoring
+                </p>
+              </div>
+              <div class="flex items-center gap-[16px] w-full">
+                <div class="bg-[var(--ploy-brand-green-bright)] rounded-full w-[4px] h-[4px]" />
+                <p class="w-full text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                  CRM integration
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <HeroCardDivider />
+        <div class="flex flex-col items-start gap-[100px] w-full flex-1 max-[1024px]:gap-[64px] max-[540px]:gap-[50px]">
+          <div class="flex items-center gap-[4px] justify-between w-[145px] max-[1024px]:w-[145px]">
+            <div class="oem w-[87px] h-[32px] overflow-visible">
+              <Fragment set:html={`<svg width="87" height="32" viewBox="0 0 87 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 87px; height: 32px; overflow: visible">
+<path d="M17.1384 6.54297C32.4194 6.30888 32.4158 25.6919 17.1384 25.457C8.09946 25.2406 7.04957 20.3129 7.04265 20.2799H6.72967L7.34134 32H0V7.11068H7.34134C7.3348 7.16787 6.71517 11.7293 6.71928 11.7201H7.04265C7.04051 11.7083 8.08823 6.7528 17.1384 6.54297Z" fill="#212121" />
+<path d="M73.6004 17.0677L78.8379 7.11068H87L73.8497 32H65.724L69.6797 24.4987L60.0579 7.11068H68.3265L73.6004 17.0677Z" fill="#212121" />
+<path d="M50.3764 6.54297C57.2544 6.54298 61.815 10.3111 61.815 16C61.815 21.689 57.2544 25.457 50.3764 25.457C43.4984 25.457 38.9365 21.6887 38.9365 16C38.9365 10.3113 43.4984 6.54297 50.3764 6.54297Z" fill="#212121" />
+<path d="M37.356 24.8893H30.1575V0H37.356V24.8893Z" fill="#212121" />
+</svg>`} />
+            </div>
+            <p class="flex justify-center items-center gap-[6px] p-[12px] bg-[var(--ploy-button-primary-background)] rounded-[var(--radius-button)] h-[32px] text-[length:var(--font-size-sm)] font-[number:var(--font-body-bold-weight)] leading-[142.86%] tracking-[-0.01em] text-[color:var(--ploy-brand-yellow)]">
+              Ads
+            </p>
+          </div>
+          <div class="flex flex-col items-start gap-[16px] w-full">
+            <p class="w-full text-[length:var(--font-size-2xl)] font-[number:var(--font-body-bold-weight)] leading-[133.33%] tracking-[-0.04em] text-[color:var(--ploy-text-primary)] max-[1024px]:text-[length:var(--font-size_2xl)] max-[540px]:text-[length:var(--font-size_2xl)]">
+              Create. Attribute. Scale.
+            </p>
+            <div class="flex flex-col items-start gap-[16px] w-full">
+              <div class="flex items-center gap-[16px] w-full">
+                <div class="bg-[var(--ploy-brand-yellow)] rounded-full w-[4px] h-[4px]" />
+                <p class="w-full text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                  Ad library intelligence
+                </p>
+              </div>
+              <div class="flex items-center gap-[16px] w-full">
+                <div class="bg-[var(--ploy-brand-yellow)] rounded-full w-[4px] h-[4px]" />
+                <p class="w-full text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                  Automated ad creative at scale
+                </p>
+              </div>
+              <div class="flex items-center gap-[16px] w-full">
+                <div class="bg-[var(--ploy-brand-yellow)] rounded-full w-[4px] h-[4px]" />
+                <p class="w-full text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                  Full-funnel attribution: impression → close
+                </p>
+              </div>
+              <div class="flex items-center gap-[16px] w-full">
+                <div class="bg-[var(--ploy-brand-yellow)] rounded-full w-[4px] h-[4px]" />
+                <p class="w-full text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                  Meta campaign management
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+(function(){
+var el = document.currentScript.previousElementSibling;
+function __init__() {
+(function _w(n){var c=n.firstChild,x;while(c){x=c.nextSibling;if(c.nodeType===3){if(!c.textContent.trim())n.removeChild(c)}else if(c.nodeType===1)_w(c);c=x}})(el);
+var root = el;
+var balloons = root.querySelector('[data-el="balloons"]');
+var textEls = root.querySelectorAll('[data-el="parallax-text"]');
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.to(balloons, {
+  y: -200,
+  ease: 'none',
+  scrollTrigger: {
+    trigger: root,
+    start: 'top bottom',
+    end: 'bottom top',
+    scrub: true
+  }
+});
+
+// "One", "platform", "three", "engines" — engines stays put
+var textSpeeds = [100, 150, 80, 0];
+textEls.forEach(function (item, i) {
+  if (textSpeeds[i] === 0) return;
+  gsap.to(item, {
+    y: textSpeeds[i],
+    ease: 'none',
+    scrollTrigger: {
+      trigger: root,
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
+});
+
+}
+if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', __init__); } else { __init__(); }
+})();
+</script>

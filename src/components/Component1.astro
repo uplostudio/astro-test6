@@ -1,0 +1,33 @@
+---
+interface Props {
+  Description?: string;
+  text2?: string;
+  class?: string;
+}
+
+const {
+  Description = "Full-spectrum audit across 6 dimensions. Technical, content, keywords, backlinks, competitive landscape, and AI search visibility.",
+  text2 = "SEO<br>Audit Blueprint",
+  class: className = "",
+} = Astro.props;
+---
+<div class:list={["w-full h-[408px] bg-[var(--ploy-background-secondary)] rounded-[8px] max-w-[384px] relative", className]}>
+  <div class="relative left-0 top-0 w-[384px] h-[264px] bg-[var(--ploy-brand-blue)] rounded-[8px_8px_0_0] opacity-[0.4]">
+    <div class="oem w-[65px] h-[24px] overflow-visible relative">
+      <Fragment set:html={`<svg width="65" height="24" viewBox="0 0 65 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 65px; height: 24px; overflow: visible">
+<path d="M12.8046 4.90723C24.2214 4.73166 24.2187 19.2689 12.8046 19.0928C6.05132 18.9304 5.26692 15.2347 5.26175 15.21H5.02791L5.48491 24H0V5.33301H5.48491C5.48002 5.3759 5.01708 8.79697 5.02015 8.79004H5.26175C5.26015 8.78125 6.04293 5.0646 12.8046 4.90723Z" fill="#212121" />
+<path d="M54.9888 12.8008L58.9019 5.33301H65L55.1751 24H49.1041L52.0596 18.374L44.8709 5.33301H51.0486L54.9888 12.8008Z" fill="#212121" />
+<path d="M37.6376 4.90723C42.7763 4.90724 46.1836 7.73329 46.1837 12C46.1837 16.2667 42.7763 19.0928 37.6376 19.0928C32.4988 19.0928 29.0905 16.2666 29.0905 12C29.0905 7.73347 32.4988 4.90723 37.6376 4.90723Z" fill="#212121" />
+<path d="M27.9097 18.667H22.5315V0H27.9097V18.667Z" fill="#212121" />
+</svg>`} />
+    </div>
+    <p class="relative left-[48px] top-[72px] w-full text-[length:var(--font-size-3xl)] font-[number:var(--font-body-bold-weight)] leading-[125%] tracking-[-0.04em] text-[color:var(--ploy-text-primary)] max-[1024px]:text-[length:var(--font-size_3xl)] max-[540px]:text-[length:var(--font-size_3xl)]">
+      {text2}
+    </p>
+  </div>
+  <p class="absolute left-[48px] top-[288px] max-w-[312px] w-full text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+    {Description}
+  </p>
+  <div class="w-[1px] h-full absolute top-[0px] left-[24px] bg-[color:var(--ploy-border-subtle)] z-[1px]" />
+  <div />
+</div>

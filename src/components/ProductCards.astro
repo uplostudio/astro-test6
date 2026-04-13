@@ -1,0 +1,693 @@
+---
+interface Props {
+  pagesBuiltStart?: number;
+  pagesBuiltEnd?: number;
+  visitorsStart?: number;
+  visitorsEnd?: number;
+  pipelineStart?: number;
+  pipelineEnd?: number;
+  class?: string;
+}
+
+const {
+  pagesBuiltStart = 6,
+  pagesBuiltEnd = 9,
+  visitorsStart = 847,
+  visitorsEnd = 999,
+  pipelineStart = 1,
+  pipelineEnd = 23,
+  class: className = "",
+} = Astro.props;
+---
+<div class:list={["w-full max-w-full grid grid-cols-[1fr_1fr_1fr] gap-[16px] relative top-[48px] z-[2] max-[1024px]:max-w-full max-[540px]:grid-cols-[1fr]", className]} data-pages-start={pagesBuiltStart || undefined} data-pages-end={pagesBuiltEnd || undefined} data-visitors-start={visitorsStart || undefined} data-visitors-end={visitorsEnd || undefined} data-pipeline-start={pipelineStart || undefined} data-pipeline-end={pipelineEnd || undefined}>
+  <div class="bg-[var(--ploy-neutral-primary)] rounded-[var(--radius-card)] shadow-[0_2px_8px_0_var(--ploy-border-subtle)] p-[24px] flex flex-col max-[1024px]:p-[22px] max-[540px]:p-[20px]" data-el="card">
+    <div class="flex items-center gap-[4px] w-[145px] justify-between [transform:scale(0.7)] origin-[left_center] max-[1024px]:gap-[4px] max-[1024px]:w-[145px]">
+      <div class="oem w-[87px] h-[32px] overflow-visible">
+        <Fragment set:html={`<svg width="87" height="32" viewBox="0 0 87 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 87px; height: 32px; overflow: visible">
+<path d="M17.1384 6.54297C32.4194 6.30888 32.4158 25.6919 17.1384 25.457C8.09946 25.2406 7.04957 20.3129 7.04265 20.2799H6.72967L7.34134 32H0V7.11068H7.34134C7.3348 7.16787 6.71517 11.7293 6.71928 11.7201H7.04265C7.04051 11.7083 8.08823 6.7528 17.1384 6.54297Z" fill="#212121" />
+<path d="M73.6004 17.0677L78.8379 7.11068H87L73.8497 32H65.724L69.6797 24.4987L60.0579 7.11068H68.3265L73.6004 17.0677Z" fill="#212121" />
+<path d="M50.3764 6.54297C57.2544 6.54298 61.815 10.3111 61.815 16C61.815 21.689 57.2544 25.457 50.3764 25.457C43.4984 25.457 38.9365 21.6887 38.9365 16C38.9365 10.3113 43.4984 6.54297 50.3764 6.54297Z" fill="#212121" />
+<path d="M37.356 24.8893H30.1575V0H37.356V24.8893Z" fill="#212121" />
+</svg>`} />
+      </div>
+      <p class="flex justify-center items-center gap-[6px] p-[12px] bg-[var(--ploy-button-primary-background)] rounded-[var(--radius-button)] h-[32px] text-[length:var(--font-size-sm)] font-[number:var(--font-body-bold-weight)] leading-[142.86%] tracking-[-0.01em] text-[color:var(--ploy-brand-pink)]">
+        Web
+      </p>
+    </div>
+    <div class="flex justify-between items-end mt-[12px]">
+      <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-7xl)] font-[number:var(--font-heading-weight)] leading-[86%] text-[color:var(--ploy-text-primary)] max-[1024px]:text-[length:var(--font-size_7xl)] max-[540px]:text-[length:var(--font-size_7xl)]" data-el="big-number">
+        6
+      </p>
+      <div class="relative w-[148px] h-[72px] shrink-0" data-el="chart">
+        <div class="oem absolute top-0 left-0 w-full h-full opacity-[0.3]">
+          <Fragment set:html={`<svg width="148" height="72" viewBox="0 0 148 72" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.3" d="M38.6305 63.7297L0 72H148V0L115.39 21.8919L66.7254 35.027L38.6305 63.7297Z" fill="#D1F48C" /></svg>`} />
+        </div>
+        <div class="oem absolute top-0 left-0 w-full h-full">
+          <Fragment set:html={`<svg width="149" height="73" viewBox="0 0 149 73" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.104492 72.415L38.735 64.1448L66.8299 35.4421L115.494 22.3069L148.104 0.415039" stroke="#D1F48C" /></svg>`} />
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-between items-baseline mt-[4px]">
+      <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-sm)] font-[number:var(--font-body-bold-weight)] leading-[114.29%] text-[color:var(--ploy-text-primary)]">
+        pages built
+      </p>
+    </div>
+    <div class="bg-[var(--ploy-neutral-primary-100)] rounded-[4px] p-[12px] mt-[16px] min-h-[64px]" data-el="feed-box">
+      <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-xs)] font-[number:var(--font-button-weight)] leading-[166.67%] text-[color:var(--ploy-text-primary)] opacity-[0.6]">
+        Competitor launched pricing page → auto-built 3 counter-pages + 2 ABM landing pages
+      </p>
+    </div>
+    <div class="grid grid-cols-[1fr_1fr_1fr] gap-[8px] mt-[20px] max-[1024px]:mt-[19px] max-[540px]:mt-[18px]">
+      <div>
+        <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-xs)] leading-[133.33%] text-[color:var(--ploy-text-primary)] opacity-[0.6]">
+          Organic traffic
+        </p>
+        <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-2xl)] font-[number:var(--font-heading-weight)] leading-[133.33%] text-[color:var(--ploy-text-primary)] mt-[4px] max-[1024px]:text-[length:var(--font-size_2xl)] max-[540px]:text-[length:var(--font-size_2xl)]" data-el="stat-value">
+          +23%
+        </p>
+      </div>
+      <div>
+        <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-xs)] leading-[133.33%] text-[color:var(--ploy-text-primary)] opacity-[0.6]">
+          SEO fixes
+        </p>
+        <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-2xl)] font-[number:var(--font-heading-weight)] leading-[133.33%] text-[color:var(--ploy-text-primary)] mt-[4px] max-[1024px]:text-[length:var(--font-size_2xl)] max-[540px]:text-[length:var(--font-size_2xl)]" data-el="stat-value">
+          18
+        </p>
+      </div>
+      <div>
+        <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-xs)] leading-[133.33%] text-[color:var(--ploy-text-primary)] opacity-[0.6]">
+          Vitals score
+        </p>
+        <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-2xl)] font-[number:var(--font-heading-weight)] leading-[133.33%] text-[color:var(--ploy-text-primary)] mt-[4px] max-[1024px]:text-[length:var(--font-size_2xl)] max-[540px]:text-[length:var(--font-size_2xl)]" data-el="stat-value">
+          94
+        </p>
+      </div>
+    </div>
+    <div class="flex items-center gap-[12px] mt-[auto] pt-[20px] max-[1024px]:pt-[19px] max-[540px]:pt-[18px]">
+      <div class="relative w-[20px] h-[20px] shrink-0" data-el="status-dot">
+        <div class="w-[20px] h-[20px] bg-[var(--ploy-brand-pink)] rounded-full opacity-[0.2]" />
+        <div class="absolute top-[7px] left-[7px] w-[6px] h-[6px] bg-[var(--ploy-brand-pink)] rounded-full" />
+      </div>
+      <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-sm)] font-[number:var(--font-body-bold-weight)] leading-[114.29%] text-[color:var(--ploy-text-primary)]">
+        Building case study from CRM data
+      </p>
+    </div>
+  </div>
+  <div class="bg-[var(--ploy-neutral-primary)] rounded-[var(--radius-card)] shadow-[0_2px_8px_0_var(--ploy-border-subtle)] p-[24px] flex flex-col max-[1024px]:p-[22px] max-[540px]:p-[20px]" data-el="card">
+    <div class="flex items-center gap-[4px] w-[145px] justify-between [transform:scale(0.7)] origin-[left_center] max-[1024px]:w-[145px]">
+      <div class="oem w-[87px] h-[32px] overflow-visible">
+        <Fragment set:html={`<svg width="87" height="32" viewBox="0 0 87 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 87px; height: 32px; overflow: visible">
+<path d="M17.1384 6.54297C32.4194 6.30888 32.4158 25.6919 17.1384 25.457C8.09946 25.2406 7.04957 20.3129 7.04265 20.2799H6.72967L7.34134 32H0V7.11068H7.34134C7.3348 7.16787 6.71517 11.7293 6.71928 11.7201H7.04265C7.04051 11.7083 8.08823 6.7528 17.1384 6.54297Z" fill="#212121" />
+<path d="M73.6004 17.0677L78.8379 7.11068H87L73.8497 32H65.724L69.6797 24.4987L60.0579 7.11068H68.3265L73.6004 17.0677Z" fill="#212121" />
+<path d="M50.3764 6.54297C57.2544 6.54298 61.815 10.3111 61.815 16C61.815 21.689 57.2544 25.457 50.3764 25.457C43.4984 25.457 38.9365 21.6887 38.9365 16C38.9365 10.3113 43.4984 6.54297 50.3764 6.54297Z" fill="#212121" />
+<path d="M37.356 24.8893H30.1575V0H37.356V24.8893Z" fill="#212121" />
+</svg>`} />
+      </div>
+      <p class="flex justify-center items-center gap-[6px] p-[12px] bg-[var(--ploy-button-primary-background)] rounded-[var(--radius-button)] h-[32px] text-[length:var(--font-size-sm)] font-[number:var(--font-body-bold-weight)] leading-[142.86%] tracking-[-0.01em] text-[color:var(--ploy-brand-green-bright)]">
+        Grow
+      </p>
+    </div>
+    <div class="flex justify-between items-end mt-[12px]">
+      <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-7xl)] font-[number:var(--font-heading-weight)] leading-[86%] text-[color:var(--ploy-text-primary)] max-[1024px]:text-[length:var(--font-size_7xl)] max-[540px]:text-[length:var(--font-size_7xl)]" data-el="big-number">
+        23
+      </p>
+      <div class="relative w-[148px] h-[72px] shrink-0" data-el="chart">
+        <div class="oem absolute top-0 left-0 w-full h-full opacity-[0.3]">
+          <Fragment set:html={`<svg width="148" height="72" viewBox="0 0 148 72" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.3" d="M38.6305 63.7297L0 72H148V0L115.39 21.8919L66.7254 35.027L38.6305 63.7297Z" fill="#FFB8FC" /></svg>`} />
+        </div>
+        <div class="oem absolute top-0 left-0 w-full h-full">
+          <Fragment set:html={`<svg width="149" height="73" viewBox="0 0 149 73" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.104492 72.415L38.735 64.1448L66.8299 35.4421L115.494 22.3069L148.104 0.415039" stroke="#FFB8FC" /></svg>`} />
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-between items-baseline mt-[4px]">
+      <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-sm)] font-[number:var(--font-body-bold-weight)] leading-[114.29%] text-[color:var(--ploy-text-primary)]">
+        visitors identified
+      </p>
+    </div>
+    <div class="bg-[var(--ploy-neutral-primary-100)] rounded-[4px] p-[12px] mt-[16px] min-h-[64px]" data-el="feed-box">
+      <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-xs)] font-[number:var(--font-button-weight)] leading-[166.67%] text-[color:var(--ploy-text-primary)] opacity-[0.6]">
+        Web → Pricing page spike from Web → identified 12 enterprise visitors, queued outreach
+      </p>
+    </div>
+    <div class="grid grid-cols-[1fr_1fr_1fr] gap-[8px] mt-[20px] max-[1024px]:mt-[19px] max-[540px]:mt-[18px]">
+      <div>
+        <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-xs)] leading-[133.33%] text-[color:var(--ploy-text-primary)] opacity-[0.6]">
+          ICP matches
+        </p>
+        <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-2xl)] font-[number:var(--font-heading-weight)] leading-[133.33%] text-[color:var(--ploy-text-primary)] mt-[4px] max-[1024px]:text-[length:var(--font-size_2xl)] max-[540px]:text-[length:var(--font-size_2xl)]" data-el="stat-value">
+          12
+        </p>
+      </div>
+      <div>
+        <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-xs)] leading-[133.33%] text-[color:var(--ploy-text-primary)] opacity-[0.6]">
+          Outreach sent
+        </p>
+        <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-2xl)] font-[number:var(--font-heading-weight)] leading-[133.33%] text-[color:var(--ploy-text-primary)] mt-[4px] max-[1024px]:text-[length:var(--font-size_2xl)] max-[540px]:text-[length:var(--font-size_2xl)]" data-el="stat-value">
+          34
+        </p>
+      </div>
+      <div>
+        <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-xs)] leading-[133.33%] text-[color:var(--ploy-text-primary)] opacity-[0.6]">
+          Replies
+        </p>
+        <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-2xl)] font-[number:var(--font-heading-weight)] leading-[133.33%] text-[color:var(--ploy-text-primary)] mt-[4px] max-[1024px]:text-[length:var(--font-size_2xl)] max-[540px]:text-[length:var(--font-size_2xl)]" data-el="stat-value">
+          8
+        </p>
+      </div>
+    </div>
+    <div class="flex items-center gap-[12px] mt-[auto] pt-[20px] max-[1024px]:pt-[19px] max-[540px]:pt-[18px]">
+      <div class="relative w-[20px] h-[20px] shrink-0" data-el="status-dot">
+        <div class="w-[20px] h-[20px] bg-[var(--ploy-brand-green)] rounded-full opacity-[0.2]" />
+        <div class="absolute top-[7px] left-[7px] w-[6px] h-[6px] bg-[var(--ploy-brand-green)] rounded-full" />
+      </div>
+      <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-sm)] font-[number:var(--font-body-bold-weight)] leading-[114.29%] text-[color:var(--ploy-text-primary)]">
+        Syncing intent signals to CRM
+      </p>
+    </div>
+  </div>
+  <div class="bg-[var(--ploy-neutral-primary)] rounded-[var(--radius-card)] shadow-[0_2px_8px_0_var(--ploy-border-subtle)] p-[24px] flex flex-col max-[1024px]:p-[22px] max-[540px]:p-[20px]" data-el="card">
+    <div class="flex items-center gap-[4px] justify-between w-[145px] [transform:scale(0.7)] origin-[left_center] max-[1024px]:w-[145px]">
+      <div class="oem w-[87px] h-[32px] overflow-visible">
+        <Fragment set:html={`<svg width="87" height="32" viewBox="0 0 87 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 87px; height: 32px; overflow: visible">
+<path d="M17.1384 6.54297C32.4194 6.30888 32.4158 25.6919 17.1384 25.457C8.09946 25.2406 7.04957 20.3129 7.04265 20.2799H6.72967L7.34134 32H0V7.11068H7.34134C7.3348 7.16787 6.71517 11.7293 6.71928 11.7201H7.04265C7.04051 11.7083 8.08823 6.7528 17.1384 6.54297Z" fill="#212121" />
+<path d="M73.6004 17.0677L78.8379 7.11068H87L73.8497 32H65.724L69.6797 24.4987L60.0579 7.11068H68.3265L73.6004 17.0677Z" fill="#212121" />
+<path d="M50.3764 6.54297C57.2544 6.54298 61.815 10.3111 61.815 16C61.815 21.689 57.2544 25.457 50.3764 25.457C43.4984 25.457 38.9365 21.6887 38.9365 16C38.9365 10.3113 43.4984 6.54297 50.3764 6.54297Z" fill="#212121" />
+<path d="M37.356 24.8893H30.1575V0H37.356V24.8893Z" fill="#212121" />
+</svg>`} />
+      </div>
+      <p class="flex justify-center items-center gap-[6px] p-[12px] bg-[var(--ploy-button-primary-background)] rounded-[var(--radius-button)] h-[32px] text-[length:var(--font-size-sm)] font-[number:var(--font-body-bold-weight)] leading-[142.86%] tracking-[-0.01em] text-[color:var(--ploy-brand-yellow)]">
+        Ads
+      </p>
+    </div>
+    <div class="flex justify-between items-end mt-[12px]">
+      <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-7xl)] font-[number:var(--font-heading-weight)] leading-[86%] text-[color:var(--ploy-text-primary)] max-[1024px]:text-[length:var(--font-size_7xl)] max-[540px]:text-[length:var(--font-size_7xl)]" data-el="big-number">
+        $1K
+      </p>
+      <div class="relative w-[148px] h-[72px] shrink-0" data-el="chart">
+        <div class="oem absolute top-0 left-0 w-full h-full opacity-[0.3]">
+          <Fragment set:html={`<svg width="148" height="72" viewBox="0 0 148 72" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.3" d="M38.6305 63.7297L0 72H148V0L115.39 21.8919L66.7254 35.027L38.6305 63.7297Z" fill="#C3DBFF" /></svg>`} />
+        </div>
+        <div class="oem absolute top-0 left-0 w-full h-full">
+          <Fragment set:html={`<svg width="149" height="73" viewBox="0 0 149 73" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.104492 72.415L38.735 64.1448L66.8299 35.4421L115.494 22.3069L148.104 0.415039" stroke="#C3DBFF" /></svg>`} />
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-between items-baseline mt-[4px]">
+      <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-sm)] font-[number:var(--font-body-bold-weight)] leading-[114.29%] text-[color:var(--ploy-text-primary)]">
+        pipeline attributed
+      </p>
+    </div>
+    <div class="bg-[var(--ploy-neutral-primary-100)] rounded-[4px] p-[12px] mt-[16px] min-h-[64px]" data-el="feed-box">
+      <div class="flex flex-wrap items-center gap-[4px]">
+        <span class="font-[family-name:var(--font-body)] text-[length:var(--font-size-xs)] font-[number:var(--font-button-weight)] leading-[166.67%] text-[color:var(--ploy-text-primary)] opacity-[0.6]">
+          Grow flagged high-intent segment → created campaign → traced to 3 closed deals
+        </span>
+      </div>
+    </div>
+    <div class="grid grid-cols-[1fr_1fr_1fr] gap-[8px] mt-[20px] max-[1024px]:mt-[19px] max-[540px]:mt-[18px]">
+      <div>
+        <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-xs)] leading-[133.33%] text-[color:var(--ploy-text-primary)] opacity-[0.6]">
+          Creatives made
+        </p>
+        <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-2xl)] font-[number:var(--font-heading-weight)] leading-[133.33%] text-[color:var(--ploy-text-primary)] mt-[4px] max-[1024px]:text-[length:var(--font-size_2xl)] max-[540px]:text-[length:var(--font-size_2xl)]" data-el="stat-value">
+          8
+        </p>
+      </div>
+      <div>
+        <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-xs)] leading-[133.33%] text-[color:var(--ploy-text-primary)] opacity-[0.6]">
+          Deals traced
+        </p>
+        <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-2xl)] font-[number:var(--font-heading-weight)] leading-[133.33%] text-[color:var(--ploy-text-primary)] mt-[4px] max-[1024px]:text-[length:var(--font-size_2xl)] max-[540px]:text-[length:var(--font-size_2xl)]" data-el="stat-value">
+          3
+        </p>
+      </div>
+      <div>
+        <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-xs)] leading-[133.33%] text-[color:var(--ploy-text-primary)] opacity-[0.6]">
+          Comp ads flagged
+        </p>
+        <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-2xl)] font-[number:var(--font-heading-weight)] leading-[133.33%] text-[color:var(--ploy-text-primary)] mt-[4px] max-[1024px]:text-[length:var(--font-size_2xl)] max-[540px]:text-[length:var(--font-size_2xl)]" data-el="stat-value">
+          2
+        </p>
+      </div>
+    </div>
+    <div class="flex items-center gap-[12px] mt-[auto] pt-[20px] max-[1024px]:pt-[19px] max-[540px]:pt-[18px]">
+      <div class="relative w-[20px] h-[20px] shrink-0" data-el="status-dot">
+        <div class="w-[20px] h-[20px] bg-[var(--ploy-brand-yellow)] rounded-full opacity-[0.2]" />
+        <div class="absolute top-[7px] left-[7px] w-[6px] h-[6px] bg-[var(--ploy-brand-yellow)] rounded-full" />
+      </div>
+      <p class="font-[family-name:var(--font-body)] text-[length:var(--font-size-sm)] font-[number:var(--font-body-bold-weight)] leading-[114.29%] text-[color:var(--ploy-text-primary)]">
+        Tracking impression → close
+      </p>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ pagesBuiltStart, pagesBuiltEnd, visitorsStart, visitorsEnd, pipelineStart, pipelineEnd }}>
+(function(){
+var el = document.currentScript.previousElementSibling;
+function __init__() {
+(function _w(n){var c=n.firstChild,x;while(c){x=c.nextSibling;if(c.nodeType===3){if(!c.textContent.trim())n.removeChild(c)}else if(c.nodeType===1)_w(c);c=x}})(el);
+// ProductCards — living AI agent dashboard
+// Smooth counters, dynamic charts, cycling feeds, day labels, replay at cap
+
+var STAGGER = 350;
+var started = false;
+var teardowns = [];
+
+// ---- Read props from data attributes ----
+var pagesStart = parseInt(el.getAttribute('data-pages-start'), 10) || 6;
+var pagesEnd = parseInt(el.getAttribute('data-pages-end'), 10) || 9;
+
+// ---- Inject styles once ----
+if (!document.getElementById('pc-anims')) {
+  var s = document.createElement('style');
+  s.id = 'pc-anims';
+  s.textContent = [
+    '@keyframes pcPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.72)}}',
+    '@keyframes pcRing{0%,100%{opacity:.2;transform:scale(1)}50%{opacity:.38;transform:scale(1.18)}}',
+    '@keyframes pcFeedIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}',
+    '[data-el="big-number"],[data-el="stat-value"]{font-variant-numeric:tabular-nums}',
+    '[data-el="feed-box"]{transition:min-height .3s ease}'
+  ].join('\n');
+  document.head.appendChild(s);
+}
+
+// ---- Smooth spring-like interpolation for numbers ----
+function AnimatedValue(element, initial) {
+  this.el = element;
+  this.current = initial;
+  this.target = initial;
+  this.parsed = this._parse(element.textContent);
+  this.running = false;
+}
+
+AnimatedValue.prototype._parse = function (text) {
+  var m = text.trim().match(/^([^0-9]*)([0-9]+)([^0-9]*)$/);
+  return m ? { pre: m[1], suf: m[3] } : { pre: '', suf: '' };
+};
+
+AnimatedValue.prototype.set = function (val) {
+  this.target = val;
+  if (!this.running) this._tick();
+};
+
+AnimatedValue.prototype._tick = function () {
+  this.running = true;
+  var self = this;
+  function frame() {
+    var diff = self.target - self.current;
+    if (Math.abs(diff) < 0.5) {
+      self.current = self.target;
+      self.el.textContent = self.parsed.pre + Math.round(self.current) + self.parsed.suf;
+      self.running = false;
+      return;
+    }
+    self.current += diff * 0.08;
+    self.el.textContent = self.parsed.pre + Math.round(self.current) + self.parsed.suf;
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+};
+
+// ---- Parse number from text ----
+function parseNum(text) {
+  var m = text.trim().match(/^([^0-9]*)([0-9]+)([^0-9]*)$/);
+  return m ? parseInt(m[2], 10) : 0;
+}
+
+// ---- Dynamic chart ----
+var chartColors = [
+  'var(--ploy-brand-pink)',
+  'var(--ploy-brand-green)',
+  'var(--ploy-brand-yellow)'
+];
+var CHART_W = 148;
+var CHART_H = 72;
+var MAX_POINTS = 12;
+
+function DynamicChart(chartEl, color, baseValue) {
+  this.el = chartEl;
+  this.color = color;
+  this.baseValue = baseValue;
+  this.points = [];
+
+  var seed = baseValue;
+  for (var i = 0; i < 7; i++) {
+    var progress = i / 6;
+    var val = baseValue * (0.6 + progress * 0.4) + (Math.random() - 0.4) * baseValue * 0.08;
+    this.points.push(Math.max(1, val));
+  }
+  this.points.push(baseValue);
+
+  this.yMin = Math.min.apply(null, this.points) * 0.9;
+  this.yMax = Math.max.apply(null, this.points) * 1.1;
+
+  this.el.innerHTML = '';
+  var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('width', CHART_W);
+  svg.setAttribute('height', CHART_H);
+  svg.setAttribute('viewBox', '0 0 ' + CHART_W + ' ' + CHART_H);
+  svg.setAttribute('fill', 'none');
+  svg.style.cssText = 'width:100%;height:100%;position:absolute;top:0;left:0;';
+
+  this.fillPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  this.fillPath.setAttribute('fill', color);
+  this.fillPath.style.opacity = '0.25';
+  this.fillPath.style.transition = 'd 900ms cubic-bezier(0.22, 1, 0.36, 1)';
+
+  this.strokePath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  this.strokePath.setAttribute('stroke', color);
+  this.strokePath.setAttribute('stroke-width', '1.5');
+  this.strokePath.setAttribute('fill', 'none');
+  this.strokePath.style.transition = 'd 900ms cubic-bezier(0.22, 1, 0.36, 1)';
+
+  svg.appendChild(this.fillPath);
+  svg.appendChild(this.strokePath);
+  this.el.appendChild(svg);
+
+  this._render();
+}
+
+DynamicChart.prototype._render = function () {
+  var pts = this.points;
+  var len = pts.length;
+  if (len < 2) return;
+
+  for (var i = 0; i < len; i++) {
+    if (pts[i] < this.yMin) this.yMin = pts[i] * 0.9;
+    if (pts[i] > this.yMax) this.yMax = pts[i] * 1.1;
+  }
+  var yRange = this.yMax - this.yMin || 1;
+
+  var step = CHART_W / (len - 1);
+  var coords = [];
+  for (var i = 0; i < len; i++) {
+    var x = i * step;
+    var normalized = (pts[i] - this.yMin) / yRange;
+    var y = CHART_H - normalized * (CHART_H - 4) - 2;
+    coords.push({ x: x, y: y });
+  }
+
+  var parts = ['M' + coords[0].x.toFixed(1) + ' ' + coords[0].y.toFixed(1)];
+  for (var i = 1; i < coords.length; i++) {
+    var prev = coords[i - 1];
+    var cur = coords[i];
+    var tension = step * 0.4;
+    parts.push(
+      'C' + (prev.x + tension).toFixed(1) + ' ' + prev.y.toFixed(1) +
+      ' ' + (cur.x - tension).toFixed(1) + ' ' + cur.y.toFixed(1) +
+      ' ' + cur.x.toFixed(1) + ' ' + cur.y.toFixed(1)
+    );
+  }
+
+  var lineD = parts.join('');
+  var fillD = lineD + 'L' + CHART_W + ' ' + CHART_H + 'L0 ' + CHART_H + 'Z';
+
+  this.fillPath.setAttribute('d', fillD);
+  this.strokePath.setAttribute('d', lineD);
+};
+
+
+DynamicChart.prototype.addPoint = function (value) {
+  this.points.push(value);
+  if (this.points.length > MAX_POINTS) this.points.shift();
+  this._render();
+};
+
+DynamicChart.prototype.reset = function (baseValue) {
+  this.baseValue = baseValue;
+  this.points = [];
+  for (var i = 0; i < 7; i++) {
+    var progress = i / 6;
+    var val = baseValue * (0.6 + progress * 0.4) + (Math.random() - 0.4) * baseValue * 0.08;
+    this.points.push(Math.max(1, val));
+  }
+  this.points.push(baseValue);
+  this.yMin = Math.min.apply(null, this.points) * 0.9;
+  this.yMax = Math.max.apply(null, this.points) * 1.1;
+  this._render();
+};
+
+// ---- Status dot ----
+function startPulse(dotEl) {
+  if (dotEl.children[0]) dotEl.children[0].style.animation = 'pcRing 2.8s ease-in-out infinite';
+  if (dotEl.children[1]) dotEl.children[1].style.animation = 'pcPulse 2.8s ease-in-out infinite';
+}
+
+function stopPulse(dotEl) {
+  if (dotEl.children[0]) dotEl.children[0].style.animation = 'none';
+  if (dotEl.children[1]) dotEl.children[1].style.animation = 'none';
+}
+
+// ---- Feed messages cycling ----
+var feeds = [
+  [
+    'Competitor launched pricing page → auto-built 3 counter-pages + 2 ABM landing pages',
+    'Detected keyword gap in "enterprise pricing" → drafting comparison page',
+    'Blog post ranking #4 → optimizing meta + adding internal links to push #1',
+    'New backlink from TechCrunch detected → updating link profile report',
+    'Core Web Vitals regression on /features → auto-fix deployed, LCP improved 340ms',
+    'Auto-generated 2 case study pages from closed-won CRM deals'
+  ],
+  [
+    'Web → Pricing page spike from Web → identified 12 enterprise visitors, queued outreach',
+    'Intent signal: 3 visitors from Acme Corp viewed pricing 4x → flagged for sales',
+    'Matched 8 new visitors to ICP → enriched profiles, pushed to Salesforce',
+    'Outreach sequence triggered for 5 high-intent accounts → 2 replies received',
+    'Visitor from target account returned 3x this week → escalated to AE',
+    'De-anonymized 23 visitors from paid campaign → 6 matched ICP criteria'
+  ],
+  [
+    'Grow flagged high-intent segment → created campaign → traced to 3 closed deals',
+    'New competitor ad detected on "AI marketing" → drafted counter-creative',
+    'Campaign ROAS improved 18% → reallocating budget from underperforming ads',
+    'Attribution: LinkedIn campaign → 4 demos booked → 2 moved to proposal stage',
+    'A/B test winner: variant B +34% CTR → auto-promoted to primary creative',
+    'Retargeting pool refreshed → 847 new qualified visitors added this week'
+  ]
+];
+
+// Original text content for each card's elements (for reset)
+var originalBigNumbers = [String(pagesStart), String(visitorsStart), '$' + pipelineStart + 'K'];
+var originalStats = [
+  ['+23%', '18', '94'],
+  ['12', '34', '8'],
+  ['8', '3', '2']
+];
+var originalFeeds = [
+  'Competitor launched pricing page → auto-built 3 counter-pages + 2 ABM landing pages',
+  'Web → Pricing page spike from Web → identified 12 enterprise visitors, queued outreach',
+  'Grow flagged high-intent segment → created campaign → traced to 3 closed deals'
+];
+var originalStatusTexts = [
+  'Building case study from CRM data',
+  'Syncing intent signals to CRM',
+  'Tracking impression → close'
+];
+
+function cycleFeed(feedBox, cardIndex) {
+  var messages = feeds[cardIndex] || feeds[0];
+  var idx = 0;
+
+  function showNext() {
+    idx = (idx + 1) % messages.length;
+    var textEl = feedBox.querySelector('p') || feedBox.querySelector('span');
+    if (!textEl) {
+      var inner = feedBox.querySelector('div');
+      if (inner) textEl = inner.querySelector('span:last-child') || inner.querySelector('span');
+    }
+    if (!textEl) return;
+
+    textEl.style.transition = 'opacity 300ms ease, transform 300ms ease';
+    textEl.style.opacity = '0';
+    textEl.style.transform = 'translateY(4px)';
+
+    setTimeout(function () {
+      textEl.textContent = messages[idx];
+      textEl.style.transition = 'opacity 400ms ease, transform 400ms ease';
+      textEl.style.opacity = '0.6';
+      textEl.style.transform = 'translateY(0)';
+    }, 350);
+  }
+
+  var interval = 4000 + cardIndex * 800;
+  return setInterval(showNext, interval);
+}
+
+// ---- Day label cycling ----
+var dayLabels = ['7d', '14d', '30d', '7d', '90d', '7d'];
+
+function cycleDays(dayEl, cardIndex) {
+  var idx = 0;
+  return setInterval(function () {
+    idx = (idx + 1) % dayLabels.length;
+    dayEl.style.transition = 'opacity 250ms ease';
+    dayEl.style.opacity = '0';
+    setTimeout(function () {
+      dayEl.textContent = dayLabels[idx];
+      dayEl.style.opacity = '0.3';
+    }, 280);
+  }, 6000 + cardIndex * 2000);
+}
+
+// ---- Per-card tick config (derived from props) ----
+var bigRange0 = pagesEnd - pagesStart;
+var bigRange1 = visitorsEnd - visitorsStart;
+var bigRange2 = pipelineEnd - pipelineStart;
+
+var configs = [
+  { bigInterval: 4500, bigMin: 1, bigMax: Math.max(1, Math.ceil(bigRange0 / 8)), bigCap: pagesEnd, statIntervals: [5500, 7000, 8000], statMin: 1, statMax: 2, statCap: 99 },
+  { bigInterval: 3500, bigMin: Math.max(1, Math.floor(bigRange1 / 30)), bigMax: Math.max(2, Math.ceil(bigRange1 / 15)), bigCap: visitorsEnd, statIntervals: [5000, 4000, 6000], statMin: 1, statMax: 2, statCap: 99 },
+  { bigInterval: 5500, bigMin: 1, bigMax: Math.max(1, Math.ceil(bigRange2 / 10)), bigCap: pipelineEnd, statIntervals: [7000, 8000, 9000], statMin: 1, statMax: 1, statCap: 99 }
+];
+
+// ---- Cleanup previous run ----
+function cleanup() {
+  for (var i = 0; i < teardowns.length; i++) {
+    clearInterval(teardowns[i]);
+  }
+  teardowns = [];
+}
+
+// ---- Main ----
+function run() {
+  cleanup();
+  started = true;
+
+  var cards = el.querySelectorAll('[data-el="card"]');
+  var replayTriggered = false;
+
+  for (var i = 0; i < cards.length; i++) {
+    (function (idx) {
+      var card = cards[idx];
+      var delay = idx * STAGGER;
+      var cfg = configs[idx] || configs[0];
+      var color = chartColors[idx] || chartColors[0];
+
+      // Reset text content for replay
+      var bigEl = card.querySelector('[data-el="big-number"]');
+      if (bigEl) bigEl.textContent = originalBigNumbers[idx];
+      var statEls = card.querySelectorAll('[data-el="stat-value"]');
+      for (var s = 0; s < statEls.length; s++) {
+        statEls[s].textContent = originalStats[idx][s];
+      }
+      var feedBox = card.querySelector('[data-el="feed-box"]');
+      if (feedBox) {
+        var textEl = feedBox.querySelector('p') || feedBox.querySelector('span');
+        if (!textEl) {
+          var inner = feedBox.querySelector('div');
+          if (inner) textEl = inner.querySelector('span:last-child') || inner.querySelector('span');
+        }
+        if (textEl) {
+          textEl.textContent = originalFeeds[idx];
+          textEl.style.opacity = '0.6';
+          textEl.style.transform = 'translateY(0)';
+        }
+      }
+      var dayEl = card.querySelector('[data-el="day-label"]');
+      if (dayEl) { dayEl.textContent = '7d'; dayEl.style.opacity = '0.3'; }
+      var dot = card.querySelector('[data-el="status-dot"]');
+      if (dot) stopPulse(dot);
+
+      // Big number parse
+      var bigBase = bigEl ? parseNum(bigEl.textContent) : 0;
+
+      // Dynamic chart
+      var chartEl = card.querySelector('[data-el="chart"]');
+      var chart = null;
+      if (chartEl) {
+        chart = new DynamicChart(chartEl, color, bigBase);
+      }
+
+      // Big number — smooth lerp + chart feed
+      if (bigEl) {
+        var bigAnim = new AnimatedValue(bigEl, 0);
+        setTimeout(function () { bigAnim.set(bigBase); }, delay + 300);
+
+        var currentBig = bigBase;
+        var bigTimerId = setTimeout(function () {
+          var iv = setInterval(function () {
+            var increment = cfg.bigMin + Math.floor(Math.random() * (cfg.bigMax - cfg.bigMin + 1));
+            currentBig = Math.min(currentBig + increment, cfg.bigCap);
+            bigAnim.set(currentBig);
+
+            if (chart) {
+              var noise = (Math.random() - 0.4) * currentBig * 0.03;
+              chart.addPoint(currentBig + noise);
+            }
+
+            // Any card reaching its cap restarts all counters
+            if (currentBig >= cfg.bigCap && !replayTriggered) {
+              replayTriggered = true;
+              setTimeout(function () {
+                replayTriggered = false;
+                run();
+              }, 1200);
+            }
+          }, cfg.bigInterval);
+          teardowns.push(iv);
+        }, delay + 2500);
+      }
+
+      // Stat values — smooth lerp
+      for (var j = 0; j < statEls.length; j++) {
+        (function (statEl, sIdx) {
+          var statBase = parseNum(statEl.textContent);
+          var statAnim = new AnimatedValue(statEl, 0);
+          setTimeout(function () { statAnim.set(statBase); }, delay + 500 + sIdx * 120);
+          var currentStat = statBase;
+          var statTimerId = setTimeout(function () {
+            var iv = setInterval(function () {
+              currentStat = Math.min(currentStat + cfg.statMin + Math.floor(Math.random() * (cfg.statMax - cfg.statMin + 1)), cfg.statCap);
+              statAnim.set(currentStat);
+            }, cfg.statIntervals[sIdx] || 6000);
+            teardowns.push(iv);
+          }, delay + 2500);
+        })(statEls[j], j);
+      }
+
+      // Status dot
+      if (dot) setTimeout(function () { startPulse(dot); }, delay + 1200);
+
+      // Feed cycling
+      if (feedBox) {
+        var feedTimerId = setTimeout(function () {
+          var iv = cycleFeed(feedBox, idx);
+          teardowns.push(iv);
+        }, delay + 3000);
+      }
+
+      // Day label cycling
+      if (dayEl) {
+        var dayTimerId = setTimeout(function () {
+          var iv = cycleDays(dayEl, idx);
+          teardowns.push(iv);
+        }, delay + 4000);
+      }
+
+    })(i);
+  }
+}
+
+// ---- Parallax: scroll-driven lift into position ----
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.fromTo(el, { y: 60 }, {
+  y: 0,
+  ease: 'none',
+  scrollTrigger: {
+    trigger: el,
+    start: 'top bottom',
+    end: 'bottom top',
+    scrub: true
+  }
+});
+
+// Run immediately
+run();
+
+}
+if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', __init__); } else { __init__(); }
+})();
+</script>

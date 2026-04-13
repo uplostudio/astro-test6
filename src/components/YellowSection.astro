@@ -1,0 +1,220 @@
+---
+import Heading from './Heading.astro';
+import RevealCards from './RevealCards.astro';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+---
+<div class:list={["pl-[var(--c-p)] pr-[var(--c-p)] pb-[24px] flex justify-center items-center h-auto relative max-[540px]:h-min max-[1024px]:pb-[22px] max-[540px]:pb-[20px]", className]}>
+  <div class="rounded-[20px] bg-[var(--ploy-brand-yellow)] p-[160px_96px] relative overflow-hidden h-full w-full max-[1024px]:p-[48px] max-[540px]:p-[32px]">
+    <div class="relative max-w-[var(--c-mw)] w-full ml-auto mr-auto">
+      <Heading tag="1" text={`An employee`} size="2" class="mb-[16px] z-[1] relative" />
+      <div class="relative flex flex-col justify-start items-center mb-[16px]">
+        <div class="w-full absolute top-[-101px] max-w-[672px] flex justify-center items-center" data-el="yellow-balloon">
+          <div class="oem w-full h-full">
+            <Fragment set:html={`<video autoplay loop muted playsinline style='width:100%;height:100%;object-fit:contain;'><source src='https://ploy.sfo3.cdn.digitaloceanspaces.com/ploy-final/yellow-balloon-safari.mov' type='video/mp4; codecs=hvc1'><source src='https://ploy.sfo3.cdn.digitaloceanspaces.com/ploy-final/yellow-balloon.webm' type='video/webm'></video>`} />
+          </div>
+        </div>
+        <RevealCards>
+          <div class="flex flex-col justify-between items-start p-[24px] bg-[var(--ploy-background-accent-secondary)] rounded-[8px] overflow-hidden h-[144px] w-full max-[1024px]:p-[22px] max-[540px]:p-[20px]" data-el="card">
+            <div class="flex justify-between items-center w-full">
+              <p class="text-[length:var(--font-size-base)] leading-[125%] text-[color:var(--ploy-text-primary)] opacity-[0.4] tracking-[var(--font-body-letter-spacing)]">
+                11:42PM
+              </p>
+              <span class="flex justify-center items-center gap-[10px] p-[8px_12px] bg-[var(--ploy-brand-yellow-warm)] rounded-[44px] text-[length:var(--font-size-sm)] font-[number:var(--font-body-bold-weight)] text-[color:var(--ploy-text-primary)]">
+                Competitor Intel
+              </span>
+            </div>
+            <div class="flex flex-col items-start gap-[4px] w-full">
+              <p class="w-full text-[length:var(--font-size-xl)] font-[number:var(--font-body-bold-weight)] leading-[140%] tracking-[-0.04em] text-[color:var(--ploy-text-primary)]">
+                @ads found a competitor positioning shift
+              </p>
+              <p class="max-w-[540px] w-full text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                Pricing page changed. New comparison opportunity.
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-col justify-between items-start p-[24px] bg-[var(--ploy-background-accent-secondary)] rounded-[8px] overflow-hidden h-[144px] w-full max-[1024px]:p-[22px] max-[540px]:p-[20px]" data-el="card">
+            <div class="flex justify-between items-center w-full">
+              <p class="text-[length:var(--font-size-base)] leading-[125%] text-[color:var(--ploy-text-primary)] opacity-[0.4] tracking-[var(--font-body-letter-spacing)]">
+                01:15AM
+              </p>
+              <span class="flex justify-center items-center gap-[10px] p-[8px_12px] bg-[var(--ploy-brand-green)] rounded-[44px] text-[length:var(--font-size-sm)] font-[number:var(--font-body-bold-weight)] text-[color:var(--ploy-text-primary)]">
+                Content
+              </span>
+            </div>
+            <div class="flex flex-col items-start gap-[4px]">
+              <p class="text-[length:var(--font-size-xl)] font-[number:var(--font-body-bold-weight)] leading-[140%] tracking-[-0.04em] text-[color:var(--ploy-text-primary)]">
+                @grow drafted a new landing page variant
+              </p>
+              <p class="text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                Variant B targeting &quot;alternative to [competitor]&quot; — ready for review.
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-col justify-between items-start p-[24px] bg-[var(--ploy-background-accent-secondary)] rounded-[8px] overflow-hidden h-[144px] w-full max-[1024px]:p-[22px] max-[540px]:p-[20px]" data-el="card">
+            <div class="flex justify-between items-center w-full">
+              <p class="text-[length:var(--font-size-base)] leading-[125%] text-[color:var(--ploy-text-primary)] opacity-[0.4] tracking-[var(--font-body-letter-spacing)]">
+                03:08AM
+              </p>
+              <span class="flex justify-center items-center gap-[10px] p-[8px_12px] bg-[var(--ploy-brand-pink)] rounded-[44px] text-[length:var(--font-size-sm)] font-[number:var(--font-body-bold-weight)] text-[color:var(--ploy-text-primary)]">
+                Technical SEO
+              </span>
+            </div>
+            <div class="flex flex-col items-start gap-[4px]">
+              <p class="text-[length:var(--font-size-xl)] font-[number:var(--font-body-bold-weight)] leading-[140%] tracking-[-0.04em] text-[color:var(--ploy-text-primary)]">
+                @web fixed 3 technical SEO issues
+              </p>
+              <p class="text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                Broken OG URL on blog, missing XML sitemap entry, 404 bug patched.
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-col justify-between items-start p-[24px] bg-[var(--ploy-background-secondary)] rounded-[8px] overflow-hidden h-[144px] w-full max-[1024px]:p-[22px] max-[540px]:p-[20px]" data-el="card">
+            <div class="flex justify-between items-center w-full">
+              <p class="text-[length:var(--font-size-base)] leading-[125%] text-[color:var(--ploy-text-primary)] opacity-[0.4] tracking-[var(--font-body-letter-spacing)]">
+                04:33AM
+              </p>
+              <span class="flex justify-center items-center gap-[10px] p-[8px_12px] bg-[var(--ploy-brand-pink)] rounded-[44px] text-[length:var(--font-size-sm)] font-[number:var(--font-body-bold-weight)] text-[color:var(--ploy-text-primary)]">
+                Backlinks
+              </span>
+            </div>
+            <div class="flex flex-col items-start gap-[4px]">
+              <p class="text-[length:var(--font-size-xl)] font-[number:var(--font-body-bold-weight)] leading-[140%] tracking-[-0.04em] text-[color:var(--ploy-text-primary)]">
+                @web discovered 12 new backlink prospects
+              </p>
+              <p class="text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                High-authority sites in your niche. Outreach drafts ready.
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-col justify-between items-start p-[24px] bg-[var(--ploy-background-accent-secondary)] rounded-[8px] overflow-hidden h-[144px] w-full max-[1024px]:p-[22px] max-[540px]:p-[20px]" data-el="card">
+            <div class="flex justify-between items-center w-full">
+              <p class="text-[length:var(--font-size-base)] leading-[125%] text-[color:var(--ploy-text-primary)] opacity-[0.4] tracking-[var(--font-body-letter-spacing)]">
+                05:01AM
+              </p>
+              <span class="flex justify-center items-center gap-[10px] p-[8px_12px] bg-[var(--ploy-brand-yellow-warm)] rounded-[44px] text-[length:var(--font-size-sm)] font-[number:var(--font-body-bold-weight)] text-[color:var(--ploy-text-primary)]">
+                Analytics
+              </span>
+            </div>
+            <div class="flex flex-col items-start gap-[4px]">
+              <p class="text-[length:var(--font-size-xl)] font-[number:var(--font-body-bold-weight)] leading-[140%] tracking-[-0.04em] text-[color:var(--ploy-text-primary)]">
+                @ads spotted a traffic anomaly on /pricing
+              </p>
+              <p class="text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                Bounce rate spiked 40% after yesterday's deploy. Investigating.
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-col justify-between items-start p-[24px] bg-[var(--ploy-background-accent-secondary)] rounded-[8px] overflow-hidden h-[144px] w-full max-[1024px]:p-[22px] max-[540px]:p-[20px]" data-el="card">
+            <div class="flex justify-between items-center w-full">
+              <p class="text-[length:var(--font-size-base)] leading-[125%] text-[color:var(--ploy-text-primary)] opacity-[0.4] tracking-[var(--font-body-letter-spacing)]">
+                05:47AM
+              </p>
+              <span class="flex justify-center items-center gap-[10px] p-[8px_12px] bg-[var(--ploy-brand-green)] rounded-[44px] text-[length:var(--font-size-sm)] font-[number:var(--font-body-bold-weight)] text-[color:var(--ploy-text-primary)]">
+                Keyword Research
+              </span>
+            </div>
+            <div class="flex flex-col items-start gap-[4px]">
+              <p class="text-[length:var(--font-size-xl)] font-[number:var(--font-body-bold-weight)] leading-[140%] tracking-[-0.04em] text-[color:var(--ploy-text-primary)]">
+                @grow mapped 28 low-competition keywords
+              </p>
+              <p class="text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                Content briefs generated for top 5. Estimated 2.4k monthly traffic.
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-col justify-between items-start p-[24px] bg-[var(--ploy-background-accent-secondary)] rounded-[8px] overflow-hidden h-[144px] w-full max-[1024px]:p-[22px] max-[540px]:p-[20px]" data-el="card">
+            <div class="flex justify-between items-center w-full">
+              <p class="text-[length:var(--font-size-base)] leading-[125%] text-[color:var(--ploy-text-primary)] opacity-[0.4] tracking-[var(--font-body-letter-spacing)]">
+                06:22AM
+              </p>
+              <span class="flex justify-center items-center gap-[10px] p-[8px_12px] bg-[var(--ploy-brand-pink)] rounded-[44px] text-[length:var(--font-size-sm)] font-[number:var(--font-body-bold-weight)] text-[color:var(--ploy-text-primary)]">
+                Performance
+              </span>
+            </div>
+            <div class="flex flex-col items-start gap-[4px]">
+              <p class="text-[length:var(--font-size-xl)] font-[number:var(--font-body-bold-weight)] leading-[140%] tracking-[-0.04em] text-[color:var(--ploy-text-primary)]">
+                @web cut page load time by 1.2s
+              </p>
+              <p class="text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                Lazy-loaded hero images, deferred 3 scripts. Core Web Vitals now green.
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-col justify-between items-start p-[24px] bg-[var(--ploy-background-accent-secondary)] rounded-[8px] overflow-hidden h-[144px] w-full max-[1024px]:p-[22px] max-[540px]:p-[20px]" data-el="card">
+            <div class="flex justify-between items-center w-full">
+              <p class="text-[length:var(--font-size-base)] leading-[125%] text-[color:var(--ploy-text-primary)] opacity-[0.4] tracking-[var(--font-body-letter-spacing)]">
+                07:55AM
+              </p>
+              <span class="flex justify-center items-center gap-[10px] p-[8px_12px] bg-[var(--ploy-brand-pink)] rounded-[44px] text-[length:var(--font-size-sm)] font-[number:var(--font-body-bold-weight)] text-[color:var(--ploy-text-primary)]">
+                AI Search
+              </span>
+            </div>
+            <div class="flex flex-col items-start gap-[4px]">
+              <p class="text-[length:var(--font-size-xl)] font-[number:var(--font-body-bold-weight)] leading-[140%] tracking-[-0.04em] text-[color:var(--ploy-text-primary)]">
+                @web improved AI overview presence
+              </p>
+              <p class="text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                Added structured FAQ schema to 8 pages. ChatGPT now cites your docs.
+              </p>
+            </div>
+          </div>
+        </RevealCards>
+      </div>
+      <Heading tag="1" text={`that never sleeps`} size="2" class="text-right z-[6] relative" />
+      <div />
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+(function(){
+var el = document.currentScript.previousElementSibling;
+function __init__() {
+(function _w(n){var c=n.firstChild,x;while(c){x=c.nextSibling;if(c.nodeType===3){if(!c.textContent.trim())n.removeChild(c)}else if(c.nodeType===1)_w(c);c=x}})(el);
+// Yellow balloon — slow spin + subtle random float
+var balloon = el.querySelector('[data-el="yellow-balloon"]');
+if (!balloon) return;
+
+// Continuous slow rotation
+var angle = 0;
+var rotSpeed = 0.15; // degrees per frame
+
+// Subtle random float offsets
+var floatX = 0;
+var floatY = 0;
+var targetX = 0;
+var targetY = 0;
+var floatRange = 6; // max px drift
+var ease = 0.02;
+
+function pickNewTarget() {
+  targetX = (Math.random() - 0.5) * 2 * floatRange;
+  targetY = (Math.random() - 0.5) * 2 * floatRange;
+}
+
+pickNewTarget();
+var retargetInterval = setInterval(pickNewTarget, 2000 + Math.random() * 1500);
+
+function animate() {
+  angle += rotSpeed;
+  if (angle >= 360) angle -= 360;
+
+  // Ease toward target
+  floatX += (targetX - floatX) * ease;
+  floatY += (targetY - floatY) * ease;
+
+  balloon.style.transform = 'translate(' + floatX.toFixed(2) + 'px, ' + floatY.toFixed(2) + 'px) rotate(' + angle.toFixed(2) + 'deg)';
+  requestAnimationFrame(animate);
+}
+
+requestAnimationFrame(animate);
+
+}
+if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', __init__); } else { __init__(); }
+})();
+</script>

@@ -1,0 +1,52 @@
+---
+import GetStartedButton from './GetStartedButton.astro';
+import LeftNav from './LeftNav.astro';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+---
+<nav class:list={["fixed flex justify-center items-center w-full top-[32px] z-40 pr-[0] pl-[0] pointer-events-none max-[540px]:top-[16px]", className]}>
+  <div class="flex flex-row justify-between items-start max-w-[1400px] w-full pl-[16px] pr-[16px] pointer-events-none max-[1024px]:pl-[16px] max-[1024px]:pr-[16px]">
+    <div class="relative h-[48px] pointer-events-auto">
+      <LeftNav />
+    </div>
+    <GetStartedButton variant="light" />
+  </div>
+</nav>
+
+<script is:inline>
+(function(){
+var el = document.currentScript.previousElementSibling;
+function __init__() {
+(function _w(n){var c=n.firstChild,x;while(c){x=c.nextSibling;if(c.nodeType===3){if(!c.textContent.trim())n.removeChild(c)}else if(c.nodeType===1)_w(c);c=x}})(el);
+// Padding applied to the Container above the 1200px breakpoint.
+// Tweak these values as needed.
+const PADDING_ABOVE_1200 = {
+  left: '32px',
+  right: '32px',
+};
+
+const container = el.querySelector('[data-el="container"]');
+const mql = window.matchMedia('(min-width: 1200px)');
+
+function applyPadding(isAbove) {
+  if (!container) return;
+  if (isAbove) {
+    container.style.paddingLeft = PADDING_ABOVE_1200.left;
+    container.style.paddingRight = PADDING_ABOVE_1200.right;
+  } else {
+    container.style.paddingLeft = '';
+    container.style.paddingRight = '';
+  }
+}
+
+applyPadding(mql.matches);
+mql.addEventListener('change', (e) => applyPadding(e.matches));
+
+}
+if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', __init__); } else { __init__(); }
+})();
+</script>

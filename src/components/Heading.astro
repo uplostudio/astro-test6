@@ -1,0 +1,231 @@
+---
+interface Props {
+  text?: string;
+  size?: '1' | '2' | '3' | '4';
+  tag?: '1' | '2' | '3' | '4';
+  scrollFill?: boolean;
+  textReveal?: boolean;
+  revealDuration?: number;
+  revealDelay?: number;
+  scrollStart?: string;
+  scrollEnd?: string;
+  class?: string;
+}
+
+const {
+  text = "Heading",
+  size = "1",
+  tag = "1",
+  scrollFill = false,
+  textReveal = false,
+  revealDuration = 0.8,
+  revealDelay = 0,
+  scrollStart = "top center",
+  scrollEnd = "bottom center",
+  class: className = "",
+} = Astro.props;
+
+const Tag_0 = `h${tag}`;
+---
+<Tag_0 class:list={['w-full font-[family-name:var(--font-heading)] font-[number:var(--font-heading-weight)] leading-[86%] uppercase text-[color:var(--ploy-text-primary)] max-w-[1020px]', String(size) === "1" && 'text-[length:144px]', String(size) === "2" && 'text-[length:96px]', String(size) === "3" && 'text-[length:64px]', String(size) === "4" && 'text-[length:48px]', String(size) === "1" && 'max-[540px]:text-[length:56px]', String(size) === "2" && 'max-[540px]:text-[length:48px]', String(size) === "3" && 'max-[540px]:text-[length:36px]', String(size) === "4" && 'max-[540px]:text-[length:28px]', className]} data-scrollfill={scrollFill || undefined} data-textreveal={textReveal || undefined} data-revealduration={revealDuration || undefined} data-revealdelay={revealDelay || undefined} data-scrollstart={scrollStart || undefined} data-scrollend={scrollEnd || undefined}>
+  <Fragment set:html={text} />
+</Tag_0>
+
+<script define:vars={{ text, size, tag, scrollFill, textReveal, revealDuration, revealDelay, scrollStart, scrollEnd }}>
+(function(){
+var el = document.currentScript.previousElementSibling;
+function __init__() {
+(function _w(n){var c=n.firstChild,x;while(c){x=c.nextSibling;if(c.nodeType===3){if(!c.textContent.trim())n.removeChild(c)}else if(c.nodeType===1)_w(c);c=x}})(el);
+// Text fill animations (opt-in via scrollFill or textReveal props)
+var hasScrollFill = el.hasAttribute('data-scrollfill');
+var hasTextReveal = el.hasAttribute('data-textreveal');
+
+if ((hasScrollFill || hasTextReveal) && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+  if (el.hasAttribute('data-text-anim-init')) return;
+  el.setAttribute('data-text-anim-init', '');
+
+  function initTextAnim() {
+  // Inject CSS once
+  if (!document.getElementById('scroll-fill-css')) {
+    var style = document.createElement('style');
+    style.id = 'scroll-fill-css';
+    style.textContent = '[data-scrollfill] .word { --progress: 0%; padding-top: 0.6em; margin-top: -0.6em; padding-bottom: 0.6em; margin-bottom: -0.6em; color: transparent; background-color: rgba(33, 33, 33, 0.12); background-image: linear-gradient(90deg, #212121, #212121 var(--progress), transparent var(--progress)); -webkit-background-clip: text; background-clip: text; } [data-textreveal] .line { --progress: 0%; color: transparent; background-color: rgba(33, 33, 33, 0.12); background-image: linear-gradient(90deg, #212121, #212121 var(--progress), transparent var(--progress)); -webkit-background-clip: text; background-clip: text; }';
+    document.head.appendChild(style);
+  }
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  if (hasScrollFill) {
+    // Split into words, scrub with scroll
+    var wordEls;
+
+    if (typeof SplitText !== 'undefined') {
+      gsap.registerPlugin(SplitText);
+      var split = SplitText.create(el, { type: 'words', wordsClass: 'word' });
+      wordEls = split.words;
+    } else {
+      wordEls = [];
+      function getTextNodes(node) {
+        var nodes = [];
+        for (var i = 0; i < node.childNodes.length; i++) {
+          var child = node.childNodes[i];
+          if (child.nodeType === 3 && child.textContent.trim()) {
+            nodes.push(child);
+          } else if (child.nodeType === 1) {
+            nodes = nodes.concat(getTextNodes(child));
+          }
+        }
+        return nodes;
+      }
+
+      var textNodes = getTextNodes(el);
+      for (var t = 0; t < textNodes.length; t++) {
+        var tn = textNodes[t];
+        var parts = tn.textContent.split(/(\s+)/);
+        var frag = document.createDocumentFragment();
+        for (var p = 0; p < parts.length; p++) {
+          if (!parts[p]) continue;
+          if (/^\s+$/.test(parts[p])) {
+            frag.appendChild(document.createTextNode(parts[p]));
+          } else {
+            var div = document.createElement('div');
+            div.className = 'word';
+            div.setAttribute('aria-hidden', 'true');
+            div.style.position = 'relative';
+            div.style.display = 'inline-block';
+            div.textContent = parts[p];
+            frag.appendChild(div);
+            wordEls.push(div);
+          }
+        }
+        tn.parentNode.replaceChild(frag, tn);
+      }
+    }
+
+    if (wordEls && wordEls.length) {
+
+      var tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: el,
+          start: 'clamp(' + scrollStart + ')',
+          end: 'clamp(' + scrollEnd + ')',
+          scrub: 1
+        }
+      });
+      tl.fromTo(wordEls, { '--progress': '0%' }, { '--progress': '100%', stagger: 0.5, ease: 'none' });
+    }
+
+  } else if (hasTextReveal) {
+    // Split into lines, fill each line continuously then next line
+    var lineEls;
+
+    if (typeof SplitText !== 'undefined') {
+      gsap.registerPlugin(SplitText);
+      var splitLines = SplitText.create(el, { type: 'lines', linesClass: 'line' });
+      lineEls = splitLines.lines;
+    } else {
+      // Manual fallback: split into words first, then group by line
+      lineEls = [];
+      function getTextNodes2(node) {
+        var nodes = [];
+        for (var i = 0; i < node.childNodes.length; i++) {
+          var child = node.childNodes[i];
+          if (child.nodeType === 3 && child.textContent.trim()) {
+            nodes.push(child);
+          } else if (child.nodeType === 1) {
+            nodes = nodes.concat(getTextNodes2(child));
+          }
+        }
+        return nodes;
+      }
+
+      var tNodes = getTextNodes2(el);
+      var spans = [];
+      for (var t2 = 0; t2 < tNodes.length; t2++) {
+        var tn2 = tNodes[t2];
+        var parts2 = tn2.textContent.split(/(\s+)/);
+        var frag2 = document.createDocumentFragment();
+        for (var p2 = 0; p2 < parts2.length; p2++) {
+          if (!parts2[p2]) continue;
+          if (/^\s+$/.test(parts2[p2])) {
+            frag2.appendChild(document.createTextNode(parts2[p2]));
+          } else {
+            var sp = document.createElement('span');
+            sp.style.display = 'inline';
+            sp.textContent = parts2[p2];
+            frag2.appendChild(sp);
+            spans.push(sp);
+          }
+        }
+        tn2.parentNode.replaceChild(frag2, tn2);
+      }
+
+      // Group spans by visual line (same offsetTop)
+      var lineMap = [];
+      var lastTop = null;
+      for (var s = 0; s < spans.length; s++) {
+        var top = spans[s].offsetTop;
+        if (top !== lastTop) {
+          lineMap.push([]);
+          lastTop = top;
+        }
+        lineMap[lineMap.length - 1].push(spans[s]);
+      }
+
+      // Wrap each line group in a div.line
+      for (var l = 0; l < lineMap.length; l++) {
+        var lineDiv = document.createElement('div');
+        lineDiv.className = 'line';
+        lineDiv.style.display = 'block';
+        var firstSpan = lineMap[l][0];
+        firstSpan.parentNode.insertBefore(lineDiv, firstSpan);
+        for (var w = 0; w < lineMap[l].length; w++) {
+          // Also grab whitespace text nodes between spans
+          if (w > 0) {
+            var prev = lineMap[l][w];
+            var prevSib = prev.previousSibling;
+            if (prevSib && prevSib.nodeType === 3) {
+              lineDiv.appendChild(prevSib);
+            }
+          }
+          lineDiv.appendChild(lineMap[l][w]);
+        }
+        lineEls.push(lineDiv);
+      }
+    }
+
+    if (lineEls && lineEls.length) {
+      var dur = parseFloat(el.getAttribute('data-revealduration')) || 0.8;
+      var delay = parseFloat(el.getAttribute('data-revealdelay')) || 0;
+
+      gsap.fromTo(lineEls,
+        { '--progress': '0%' },
+        {
+          '--progress': '100%',
+          duration: dur,
+          delay: delay,
+          stagger: 0.5,
+          ease: 'power1.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 85%',
+            once: true
+          }
+        }
+      );
+    }
+  }
+  } // end initTextAnim
+
+  // Wait for fonts to load before splitting text
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(initTextAnim);
+  } else {
+    initTextAnim();
+  }
+}
+
+}
+if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', __init__); } else { __init__(); }
+})();
+</script>

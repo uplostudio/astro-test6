@@ -1,0 +1,557 @@
+---
+interface Props {
+  image?: string;
+  class?: string;
+}
+
+const { image = "", class: className = "" } = Astro.props;
+---
+<span class:list={["relative inline-block align-[middle] w-[0px] h-[0.86em] overflow-hidden z-[-1]", className]} data-el="balloon-container">
+  <div class="absolute top-[40%] left-[65%] w-[150px] h-[150px] [transform:translate(-50%,_-50%)_scale(0)] opacity-0 pointer-events-auto" data-el="balloon-sizer">
+    <div class="absolute top-[50%] left-[50%] w-[170%] h-[170%] [transform:translate(-50%,_-50%)] rounded-full [background:radial-gradient(circle,_rgba(100,150,240,0.25)_0%,_rgba(100,150,240,0)_70%)] opacity-0 pointer-events-none" data-el="balloon-glow" />
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-0" data-el="balloon-ghost2">
+      <img class="w-full h-full block object-contain" src={image || undefined} alt="" draggable="false" />
+    </div>
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-0" data-el="balloon-ghost1">
+      <img class="w-full h-full block object-contain" src={image || undefined} alt="" draggable="false" />
+    </div>
+    <div class="w-full h-full relative cursor-grab [will-change:transform,_filter]" data-el="balloon-main">
+      <img class="w-full h-full block object-contain select-none" src={image || undefined} alt="Balloon" draggable="false" />
+    </div>
+  </div>
+</span>
+
+<script define:vars={{ image }}>
+(function(){
+var el = document.currentScript.previousElementSibling;
+function __init__() {
+(function _w(n){var c=n.firstChild,x;while(c){x=c.nextSibling;if(c.nodeType===3){if(!c.textContent.trim())n.removeChild(c)}else if(c.nodeType===1)_w(c);c=x}})(el);
+// HeroBalloon — textReveal on parent h1, then inflate balloon, then scroll-spin + particles
+var container = el;
+var sizer = el.querySelector('[data-el="balloon-sizer"]');
+var balloonMain = el.querySelector('[data-el="balloon-main"]');
+var glow = el.querySelector('[data-el="balloon-glow"]');
+var ghost1 = el.querySelector('[data-el="balloon-ghost1"]');
+var ghost2 = el.querySelector('[data-el="balloon-ghost2"]');
+
+if (el.hasAttribute('data-balloon-init')) return;
+el.setAttribute('data-balloon-init', '');
+
+// Find parent heading for textReveal
+var heading = el.closest('h1, h2, h3, h4, h5, h6');
+
+// === TEXT REVEAL on parent heading ===
+function runTextReveal(onComplete) {
+  if (!heading || !heading.hasAttribute('data-textreveal')) {
+    onComplete();
+    return;
+  }
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+    onComplete();
+    return;
+  }
+
+  if (!document.getElementById('scroll-fill-css')) {
+    var style = document.createElement('style');
+    style.id = 'scroll-fill-css';
+    style.textContent = '[data-scrollfill] .word { --progress: 0%; padding-top: 0.6em; margin-top: -0.6em; padding-bottom: 0.6em; margin-bottom: -0.6em; color: transparent; background-color: rgba(33, 33, 33, 0.12); background-image: linear-gradient(90deg, #212121, #212121 var(--progress), transparent var(--progress)); -webkit-background-clip: text; background-clip: text; } [data-textreveal] .line { --progress: 0%; color: transparent; background-color: rgba(33, 33, 33, 0.12); background-image: linear-gradient(90deg, #212121, #212121 var(--progress), transparent var(--progress)); -webkit-background-clip: text; background-clip: text; }';
+    document.head.appendChild(style);
+  }
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Hide balloon during text reveal
+  container.style.width = '0px';
+  container.style.overflow = 'hidden';
+
+  // Temporarily remove balloon to split text into lines cleanly
+  var balloonNext = container.nextSibling;
+  var balloonParent = container.parentNode;
+  container.remove();
+
+  var lineEls;
+
+  if (typeof SplitText !== 'undefined') {
+    gsap.registerPlugin(SplitText);
+    var splitLines = SplitText.create(heading, { type: 'lines', linesClass: 'line' });
+    lineEls = splitLines.lines;
+  } else {
+    lineEls = [];
+    function getTextNodes(node) {
+      var nodes = [];
+      for (var i = 0; i < node.childNodes.length; i++) {
+        var child = node.childNodes[i];
+        if (child.nodeType === 3 && child.textContent.trim()) {
+          nodes.push(child);
+        } else if (child.nodeType === 1) {
+          nodes = nodes.concat(getTextNodes(child));
+        }
+      }
+      return nodes;
+    }
+
+    var tNodes = getTextNodes(heading);
+    var spans = [];
+    for (var t2 = 0; t2 < tNodes.length; t2++) {
+      var tn2 = tNodes[t2];
+      var parts2 = tn2.textContent.split(/(\s+)/);
+      var frag2 = document.createDocumentFragment();
+      for (var p2 = 0; p2 < parts2.length; p2++) {
+        if (!parts2[p2]) continue;
+        if (/^\s+$/.test(parts2[p2])) {
+          frag2.appendChild(document.createTextNode(parts2[p2]));
+        } else {
+          var sp = document.createElement('span');
+          sp.style.display = 'inline';
+          sp.textContent = parts2[p2];
+          frag2.appendChild(sp);
+          spans.push(sp);
+        }
+      }
+      tn2.parentNode.replaceChild(frag2, tn2);
+    }
+
+    var lineMap = [];
+    var lastTop = null;
+    for (var s = 0; s < spans.length; s++) {
+      var top = spans[s].offsetTop;
+      if (top !== lastTop) {
+        lineMap.push([]);
+        lastTop = top;
+      }
+      lineMap[lineMap.length - 1].push(spans[s]);
+    }
+
+    for (var l = 0; l < lineMap.length; l++) {
+      var lineDiv = document.createElement('div');
+      lineDiv.className = 'line';
+      lineDiv.style.display = 'block';
+      var firstSpan = lineMap[l][0];
+      firstSpan.parentNode.insertBefore(lineDiv, firstSpan);
+      for (var w = 0; w < lineMap[l].length; w++) {
+        if (w > 0) {
+          var prev = lineMap[l][w];
+          var prevSib = prev.previousSibling;
+          if (prevSib && prevSib.nodeType === 3) {
+            lineDiv.appendChild(prevSib);
+          }
+        }
+        lineDiv.appendChild(lineMap[l][w]);
+      }
+      lineEls.push(lineDiv);
+    }
+  }
+
+  // Re-insert balloon — find "working" in the text and place balloon right BEFORE it
+  var inserted = false;
+
+  // First try: look for word spans/elements containing "working"
+  var allWords = heading.querySelectorAll('.line span, .line .word');
+  for (var si = 0; si < allWords.length; si++) {
+    if (allWords[si].textContent.trim().toLowerCase() === 'working') {
+      allWords[si].parentNode.insertBefore(container, allWords[si]);
+      inserted = true;
+      break;
+    }
+  }
+
+  // Second try: SplitText lines mode — words are text nodes, not spans
+  if (!inserted) {
+    var lines = heading.querySelectorAll('.line');
+    for (var li = 0; li < lines.length && !inserted; li++) {
+      var childNodes = lines[li].childNodes;
+      for (var ci = 0; ci < childNodes.length; ci++) {
+        var cn = childNodes[ci];
+        if (cn.nodeType === 3 && /working/i.test(cn.textContent)) {
+          // Split the text node at "working" boundary
+          var match = cn.textContent.match(/(.*?\s?)(working.*)/i);
+          if (match) {
+            if (match[1]) {
+              var before = document.createTextNode(match[1]);
+              cn.parentNode.insertBefore(before, cn);
+            }
+            cn.parentNode.insertBefore(container, cn);
+            cn.textContent = match[2];
+            inserted = true;
+            break;
+          }
+        }
+      }
+    }
+  }
+
+  // Last resort fallback
+  if (!inserted) {
+    if (balloonNext && balloonNext.parentNode === balloonParent) {
+      balloonParent.insertBefore(container, balloonNext);
+    } else {
+      balloonParent.appendChild(container);
+    }
+  }
+
+  if (lineEls && lineEls.length) {
+    var dur = parseFloat(heading.getAttribute('data-revealduration')) || 0.8;
+    var delay = parseFloat(heading.getAttribute('data-revealdelay')) || 0;
+
+    gsap.fromTo(lineEls,
+      { '--progress': '0%' },
+      {
+        '--progress': '100%',
+        duration: dur,
+        delay: delay,
+        stagger: 0.5,
+        ease: 'power1.out',
+        scrollTrigger: {
+          trigger: heading,
+          start: 'top 85%',
+          once: true
+        },
+        onComplete: function() {
+          onComplete();
+        }
+      }
+    );
+  } else {
+    onComplete();
+  }
+}
+
+// === INFLATE BALLOON ===
+function inflateBalloon() {
+  container.style.overflow = 'visible';
+
+  // Prevent line breaks in the line containing the balloon
+  var line = container.closest('.line') || container.parentNode;
+  line.style.whiteSpace = 'nowrap';
+
+  // Remove maxWidth on heading so the wider line isn't clipped
+  if (heading) {
+    heading.style.maxWidth = 'none';
+    heading.style.overflow = 'visible';
+  }
+
+  var targetWidth = 100;
+
+  if (typeof gsap === 'undefined') {
+    container.style.width = targetWidth + 'px';
+    sizer.style.opacity = '1';
+    sizer.style.transform = 'translate(-50%, -50%) scale(1)';
+    spinOnReveal();
+    return;
+  }
+
+  var tl = gsap.timeline({ onComplete: spinOnReveal });
+
+  // Animate span width to push words apart
+  tl.to(container, {
+    width: targetWidth,
+    duration: 0.8,
+    ease: 'power2.out'
+  }, 0);
+
+  // Scale in the balloon visuals with slight delay
+  tl.fromTo(sizer,
+    { scale: 0, opacity: 0 },
+    { scale: 1, opacity: 1, duration: 0.8, ease: 'back.out(1.7)' },
+    0.1
+  );
+}
+
+// === SPIN ON REVEAL — spin for 2 seconds, then hand off to scroll loop ===
+function spinOnReveal() {
+  container.style.overflow = 'visible';
+
+  if (typeof gsap === 'undefined') {
+    startSpinLoop(720);
+    return;
+  }
+
+  var spinObj = { angle: 0 };
+  gsap.to(spinObj, {
+    angle: 720,
+    duration: 2,
+    ease: 'power2.out',
+    onUpdate: function() {
+      balloonMain.style.transform = 'rotate(' + spinObj.angle.toFixed(2) + 'deg)';
+    },
+    onComplete: function() {
+      startSpinLoop(spinObj.angle);
+    }
+  });
+}
+
+// === SCROLL SPIN + PARTICLES ===
+function startSpinLoop(initialAngle) {
+  // Remove any old canvas
+  var oldCanvas = document.getElementById('hero-sparks-canvas');
+  if (oldCanvas) oldCanvas.remove();
+
+  var canvas = document.createElement('canvas');
+  canvas.id = 'hero-sparks-canvas';
+  canvas.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:999';
+  document.body.appendChild(canvas);
+  var ctx = canvas.getContext('2d');
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  var angle = initialAngle || 0, angVel = 0, smoothVel = 0;
+  var offsetX = 0, offsetY = 0, tOffX = 0, tOffY = 0;
+  var breathT = 0;
+  var lastScroll = window.scrollY, lastTime = performance.now();
+  var particles = [];
+  var mouseX = 0, mouseY = 0, nudgeX = 0, nudgeY = 0;
+  var idleTime = 0;
+  var warmth = 0;
+  var milestoneFired = false;
+
+  // Entrance spring animation
+  var entranceScale = 0;
+  var entranceSV = 0; // spring velocity
+  var entranceSpring = 180;
+  var entranceDamp = 12;
+  var entranceTarget = 1;
+  var entranceDone = false;
+
+  // Drag state
+  var isDragging = false;
+  var dragLastX = 0, dragLastY = 0, dragLastTime = 0;
+  var flickVel = 0;
+  var dragAccum = 0; // accumulated drag distance for rotation
+
+  // Mouse down on balloon
+  balloonMain.addEventListener('mousedown', function(e) {
+    isDragging = true;
+    dragLastX = e.clientX; dragLastY = e.clientY;
+    dragLastTime = performance.now();
+    flickVel = 0; dragAccum = 0;
+    balloonMain.style.cursor = 'grabbing';
+    e.preventDefault();
+  });
+  window.addEventListener('mousemove', function(e) {
+    mouseX = e.clientX; mouseY = e.clientY;
+    if (isDragging) {
+      var now = performance.now();
+      var dt = Math.max(now - dragLastTime, 1);
+      var dx = e.clientX - dragLastX;
+      var dy = e.clientY - dragLastY;
+      flickVel = dx / dt * 10;
+      dragAccum += dx;
+      dragLastX = e.clientX; dragLastY = e.clientY; dragLastTime = now;
+    }
+  });
+  window.addEventListener('mouseup', function() {
+    if (isDragging) {
+      isDragging = false;
+      angVel += flickVel;
+      balloonMain.style.cursor = 'grab';
+    }
+  });
+  balloonMain.addEventListener('touchstart', function(e) {
+    isDragging = true; var t = e.touches[0];
+    dragLastX = t.clientX; dragLastY = t.clientY;
+    dragLastTime = performance.now(); flickVel = 0; dragAccum = 0;
+    e.preventDefault();
+  }, { passive: false });
+  window.addEventListener('touchmove', function(e) {
+    if (isDragging && e.touches.length) {
+      var t = e.touches[0]; mouseX = t.clientX; mouseY = t.clientY;
+      var now = performance.now(); var dt = Math.max(now - dragLastTime, 1);
+      var dx = t.clientX - dragLastX;
+      flickVel = dx / dt * 10;
+      dragAccum += dx;
+      dragLastX = t.clientX; dragLastY = t.clientY; dragLastTime = now;
+    }
+  });
+  window.addEventListener('touchend', function() {
+    if (isDragging) { isDragging = false; angVel += flickVel; }
+  });
+
+  function spawnParticles(cx, cy, speed, count, hueShift) {
+    for (var i = 0; i < count; i++) {
+      var a = Math.random() * Math.PI * 2;
+      var v = 1 + Math.random() * speed * 0.12;
+      particles.push({
+        x: cx + (Math.random() - 0.5) * 28, y: cy + (Math.random() - 0.5) * 28,
+        vx: Math.cos(a) * v + (Math.random() - 0.5) * 1.5,
+        vy: Math.sin(a) * v - Math.random() * 1.2,
+        life: 1, decay: 0.012 + Math.random() * 0.018,
+        size: 1.2 + Math.random() * 2.8,
+        hue: (hueShift || 0) + 210 + Math.random() * 30,
+        sat: 60 + Math.random() * 25, lit: 55 + Math.random() * 25,
+        rot: Math.random() * 360, rotV: (Math.random() - 0.5) * 10
+      });
+    }
+  }
+  function spawnMilestoneBurst(cx, cy) {
+    var hues = [200, 215, 225, 235, 250];
+    for (var i = 0; i < 40; i++) {
+      var a = Math.random() * Math.PI * 2;
+      var v = 3 + Math.random() * 6;
+      particles.push({
+        x: cx, y: cy, vx: Math.cos(a) * v, vy: Math.sin(a) * v - 2,
+        life: 1, decay: 0.006 + Math.random() * 0.01,
+        size: 2 + Math.random() * 4,
+        hue: hues[Math.floor(Math.random() * hues.length)],
+        sat: 60 + Math.random() * 30, lit: 60 + Math.random() * 25,
+        rot: Math.random() * 360, rotV: (Math.random() - 0.5) * 15
+      });
+    }
+  }
+  function drawParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (var i = particles.length - 1; i >= 0; i--) {
+      var p = particles[i];
+      p.x += p.vx; p.y += p.vy; p.vy += 0.04;
+      p.vx *= 0.992; p.vy *= 0.992;
+      p.life -= p.decay; p.rot += p.rotV;
+      if (p.life <= 0) { particles.splice(i, 1); continue; }
+      var r = p.size * Math.max(p.life, 0.25);
+      var alpha = p.life * 0.7;
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot * Math.PI / 180);
+      // Outer glow
+      var grad = ctx.createRadialGradient(0, 0, 0, 0, 0, r * 2.5);
+      grad.addColorStop(0, 'hsla(' + p.hue + ',' + p.sat + '%,' + (p.lit + 15) + '%,' + (alpha * 0.4) + ')');
+      grad.addColorStop(1, 'hsla(' + p.hue + ',' + p.sat + '%,' + p.lit + '%,0)');
+      ctx.fillStyle = grad;
+      ctx.beginPath(); ctx.arc(0, 0, r * 2.5, 0, Math.PI * 2); ctx.fill();
+      // Core
+      ctx.fillStyle = 'hsla(' + p.hue + ',' + p.sat + '%,' + (p.lit + 10) + '%,' + alpha + ')';
+      ctx.beginPath(); ctx.arc(0, 0, r, 0, Math.PI * 2); ctx.fill();
+      ctx.restore();
+    }
+  }
+
+  function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+
+  function frame(now) {
+    var dt = Math.min((now - lastTime) / 16.667, 3);
+    lastTime = now;
+    breathT += 0.018 * dt;
+
+    // Entrance spring animation
+    if (!entranceDone) {
+      var springDt = dt * 0.016667; // convert to seconds-ish
+      var force = -entranceSpring * (entranceScale - entranceTarget);
+      var damping = -entranceDamp * entranceSV;
+      entranceSV += (force + damping) * springDt;
+      entranceScale += entranceSV * springDt;
+      if (Math.abs(entranceScale - entranceTarget) < 0.001 && Math.abs(entranceSV) < 0.01) {
+        entranceScale = entranceTarget;
+        entranceDone = true;
+      }
+    }
+
+    var scrollY = window.scrollY;
+    var delta = scrollY - lastScroll;
+    lastScroll = scrollY;
+
+    var dirChange = delta !== 0 && ((delta > 0 && angVel < -2) || (delta < 0 && angVel > 2));
+    if (dirChange) angVel *= 0.3;
+    angVel += delta * 0.5;
+
+    // During drag, directly add rotation from mouse movement
+    if (isDragging) {
+      angVel += (flickVel - angVel) * 0.15;
+      // Add drag accumulation as direct rotation
+      angle += dragAccum * 0.5;
+      dragAccum = 0;
+    }
+
+    angVel *= Math.pow(0.91, dt);
+    if (Math.abs(angVel) < 0.8 && Math.abs(angVel) > 0.01 && Math.abs(delta) < 1 && !isDragging) {
+      angVel += Math.sin(breathT * 8) * angVel * 0.2 * 0.03;
+    }
+    if (Math.abs(angVel) < 0.004) angVel = 0;
+    angle += angVel * dt;
+
+    smoothVel += (angVel - smoothVel) * 0.1;
+    var absVel = Math.abs(smoothVel);
+
+    if (absVel < 0.3) { idleTime += dt; } else { idleTime = 0; }
+    var breathing = idleTime > 30 ? Math.sin(breathT * 0.8) * 0.012 : 0;
+
+    var rect = sizer.getBoundingClientRect();
+    var bcx = rect.left + rect.width / 2, bcy = rect.top + rect.height / 2;
+    var mdx = mouseX - bcx, mdy = mouseY - bcy;
+    var mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+    if (mdist < 180 && mdist > 5 && !isDragging) {
+      var ns = (1 - mdist / 180);
+      nudgeX += (-mdx * ns * ns * 0.06 - nudgeX) * 0.04;
+      nudgeY += (-mdy * ns * ns * 0.06 - nudgeY) * 0.04;
+    } else { nudgeX *= 0.94; nudgeY *= 0.94; }
+
+    tOffX = smoothVel * 0.07; tOffY = -absVel * 0.03;
+    offsetX += (tOffX + nudgeX - offsetX) * 0.06;
+    offsetY += (tOffY + nudgeY - offsetY) * 0.06;
+
+    var tier = absVel < 3 ? 0 : absVel < 8 ? 1 : absVel < 18 ? 2 : 3;
+    var pulse = 1 + Math.min(absVel * 0.001, 0.06) + breathing;
+    var stretch = 1 + Math.min(absVel * 0.0005, 0.025);
+    var squash = 1 - Math.min(absVel * 0.00025, 0.012);
+    var rbSquish = dirChange ? 0.92 : 1;
+    var blur = tier >= 2 ? Math.min(absVel * 0.035, 2.2) : 0;
+    var lift = tier >= 3 ? -Math.min(absVel * 0.15, 8) : 0;
+
+    // More aggressive warmth/color change
+    var targetWarmth = clamp((absVel - 2) * 0.05, 0, 1);
+    warmth += (targetWarmth - warmth) * 0.06;
+
+    // Apply entrance spring scale
+    var eScale = entranceDone ? 1 : Math.max(0, entranceScale);
+
+    // Transform the sizer (absolutely positioned, won't affect text flow)
+    sizer.style.transform = 'translate(-50%, -50%) translate(' + offsetX.toFixed(2) + 'px,' + (offsetY + lift).toFixed(2) + 'px) scale(' + eScale.toFixed(4) + ')';
+    balloonMain.style.transform = 'rotate(' + angle.toFixed(2) + 'deg) scale(' + (pulse * stretch * rbSquish).toFixed(4) + ',' + (pulse * squash).toFixed(4) + ')';
+
+    // Much stronger color shift: hue shifts up to 60deg, saturation boost up to 1.5x
+    var hueShift = warmth * 60;
+    var sat = 1 + warmth * 0.5;
+    var brightness = 1 + warmth * 0.15;
+    balloonMain.style.filter =
+      'drop-shadow(0 3px 8px rgba(0,0,0,0.06))' +
+      (blur > 0.12 ? ' blur(' + blur.toFixed(2) + 'px)' : '') +
+      (hueShift > 0.5 ? ' hue-rotate(-' + hueShift.toFixed(1) + 'deg) saturate(' + sat.toFixed(2) + ') brightness(' + brightness.toFixed(2) + ')' : '');
+
+    glow.style.opacity = (tier >= 2 ? Math.min((absVel - 8) * 0.02, 0.6) : 0).toFixed(3);
+
+    if (tier >= 2) {
+      ghost1.style.transform = 'rotate(' + (angle - angVel * 6 * 0.08).toFixed(2) + 'deg) scale(' + (pulse * 0.97).toFixed(4) + ')';
+      ghost1.style.opacity = Math.min((absVel - 8) * 0.015, 0.25).toFixed(3);
+      ghost2.style.transform = 'rotate(' + (angle - angVel * 12 * 0.08).toFixed(2) + 'deg) scale(' + (pulse * 0.94).toFixed(4) + ')';
+      ghost2.style.opacity = Math.min((absVel - 8) * 0.008, 0.12).toFixed(3);
+    } else { ghost1.style.opacity = '0'; ghost2.style.opacity = '0'; }
+
+    if (tier >= 3 && !milestoneFired) {
+      milestoneFired = true; resizeCanvas();
+      var r2 = balloonMain.getBoundingClientRect();
+      spawnMilestoneBurst(r2.left + r2.width * 0.85, r2.top + r2.height * 0.45);
+    }
+    if (tier >= 1 && absVel > 3) {
+      var r3 = balloonMain.getBoundingClientRect();
+      var cx2 = r3.left + r3.width * 0.85, cy2 = r3.top + r3.height * 0.45;
+      var count = tier >= 3 ? Math.min(Math.floor(absVel * 0.1), 5) : tier >= 2 ? 2 : Math.random() > 0.6 ? 1 : 0;
+      if (count > 0) spawnParticles(cx2, cy2, absVel, count, warmth * 40);
+    }
+    drawParticles();
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+}
+
+// === KICK IT OFF ===
+// Wait for fonts to load before splitting text (prevents SplitText measurement errors)
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(function() { runTextReveal(inflateBalloon); });
+} else {
+  runTextReveal(inflateBalloon);
+}
+
+}
+if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', __init__); } else { __init__(); }
+})();
+</script>

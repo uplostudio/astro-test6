@@ -1,0 +1,195 @@
+---
+import FAQAccordion from './FAQAccordion.astro';
+import GetStartedButton from './GetStartedButton.astro';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+---
+<div class:list={["pl-[var(--c-p)] pr-[var(--c-p)] pb-[182px] flex justify-center max-[1024px]:pl-[var(--c-p)] max-[540px]:pb-[100px] max-[1024px]:pb-[141px]", className]}>
+  <div class="max-w-[var(--c-mw)] w-full">
+    <div class="grid grid-cols-[1fr_1fr] gap-[24px] max-[1024px]:gap-[24px] max-[1024px]:grid-cols-[1fr] max-[540px]:grid-cols-[1fr] max-[540px]:w-full max-[540px]:gap-[32px]">
+      <div>
+        <div class="w-full flex flex-col items-start gap-[24px] max-w-[567px] sticky top-[128px] max-[1024px]:relative max-[1024px]:top-[unset] max-[540px]:relative max-[540px]:top-[unset] max-[1024px]:gap-[21px] max-[540px]:gap-[19px]">
+          <p class="flex justify-center items-center gap-[6px] p-[12px] bg-[var(--ploy-button-primary-background)] rounded-[var(--radius-button)] h-[32px] text-[length:var(--font-size-sm)] font-[number:var(--font-body-bold-weight)] leading-[142.86%] tracking-[-0.01em] text-[color:var(--ploy-brand-blue)]">
+            Who’s Ploy for?
+          </p>
+          <p class="w-full text-[length:48px] font-[number:var(--font-body-bold-weight)] leading-[108%] tracking-[-0.04em] text-[color:var(--ploy-text-primary)] max-[540px]:text-[length:32px] max-[1024px]:text-[length:42px]">
+            For teams that ship, measure, and win.
+          </p>
+        </div>
+      </div>
+      <div class="pt-[56px] gap-[4px] flex flex-col max-[540px]:pt-[0px] max-[1024px]:pt-[46px]">
+        <FAQAccordion>
+          <div class="c_accordionssection_faqitemstartups flex flex-col items-start p-[32px_24px] rounded-[4px] cursor-pointer [transition:background_0.3s_ease] relative [border:1px_solid_var(--ploy-border-subtle)] min-h-[170px] max-[1024px]:p-[28px_22px] max-[540px]:p-[24px_20px]" data-el="faq-item">
+            <div class="flex justify-between items-start w-full flex-row max-[1024px]:flex-col max-[1024px]:gap-[24px] max-[540px]:flex-col max-[540px]:gap-[24px]">
+              <p class="max-w-[258px] w-full font-[family-name:var(--font-heading)] text-[length:var(--font-size-7xl)] font-[number:var(--font-heading-weight)] leading-[86%] uppercase text-[color:var(--ploy-text-primary)] max-[1024px]:text-[length:var(--font-size_7xl)] max-[540px]:text-[length:var(--font-size_7xl)]">
+                Startups
+              </p>
+              <p class="max-w-[258px] w-full text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                Growth without the first hire.
+              </p>
+            </div>
+            <div class="c_accordionssection_b9or9 overflow-visible max-h-[0] opacity-0 [transition:max-height_0.5s_ease,_opacity_0.3s_ease] w-full" data-el="faq-content">
+              <div class="flex flex-col items-start gap-[24px] pt-[76px] w-full max-[1024px]:pt-[32px] max-[540px]:pt-[32px] max-[1024px]:gap-[21px] max-[540px]:gap-[19px]">
+                <div class="c_accordionssection_stroke w-full h-[1px] bg-[color:var(--ploy-border-subtle)] block" />
+                <div class="flex flex-col items-start gap-[16px] w-full">
+                  <div class="flex items-center gap-[16px] w-full">
+                    <div class="bg-[var(--ploy-text-primary)] rounded-full w-[4px] h-[4px]" />
+                    <p class="text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                      Ship a site in hours, not weeks
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-[16px] w-full">
+                    <div class="bg-[var(--ploy-text-primary)] rounded-full w-[4px] h-[4px]" />
+                    <p class="text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                      SEO that compounds while you build product
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-[16px] w-full">
+                    <div class="bg-[var(--ploy-text-primary)] rounded-full w-[4px] h-[4px]" />
+                    <p class="text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                      Lead gen on autopilot from day one
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-[16px] w-full">
+                    <div class="bg-[var(--ploy-text-primary)] rounded-full w-[4px] h-[4px]" />
+                    <p class="text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                      Startup-friendly pricing
+                    </p>
+                  </div>
+                </div>
+                <GetStartedButton variant="dark" />
+              </div>
+            </div>
+            <div class="c_accordionssection_dottopleft w-[8px] h-[8px] bg-[var(--ploy-text-primary)] rounded-full absolute top-[12px] left-[12px]" />
+            <div class="c_accordionssection_dotbottomleft w-[8px] h-[8px] bg-[var(--ploy-text-primary)] rounded-full absolute left-[12px] bottom-[12px]" />
+            <div class="c_accordionssection_dottopright w-[8px] h-[8px] bg-[var(--ploy-text-primary)] rounded-full absolute top-[12px] right-[12px]" />
+            <div class="c_accordionssection_dotbottomright w-[8px] h-[8px] bg-[var(--ploy-text-primary)] rounded-full absolute right-[12px] bottom-[12px]" />
+          </div>
+          <div class="c_accordionssection_faqitemagencies flex flex-col items-start p-[32px_24px] rounded-[4px] cursor-pointer [transition:background_0.3s_ease] relative [border:1px_solid_var(--ploy-border-subtle)] min-h-[170px] max-[1024px]:p-[28px_22px] max-[540px]:p-[24px_20px]" data-el="faq-item">
+            <div class="flex justify-between items-start w-full max-[1024px]:flex-col max-[1024px]:gap-[24px]">
+              <p class="max-w-[258px] w-full font-[family-name:var(--font-heading)] text-[length:var(--font-size-7xl)] font-[number:var(--font-heading-weight)] leading-[86%] uppercase text-[color:var(--ploy-text-primary)] max-[1024px]:text-[length:var(--font-size_7xl)] max-[540px]:text-[length:var(--font-size_7xl)]">
+                agencies
+              </p>
+              <p class="max-w-[258px] w-full text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                Extend the relationship.
+              </p>
+            </div>
+            <div class="c_accordionssection_b9os1 overflow-visible max-h-[0] opacity-0 [transition:max-height_0.5s_ease,_opacity_0.3s_ease] w-full" data-el="faq-content">
+              <div class="flex flex-col items-start gap-[24px] pt-[76px] w-full max-[1024px]:pt-[32px] max-[540px]:pt-[32px] max-[1024px]:gap-[21px] max-[540px]:gap-[19px]">
+                <div class="c_accordionssection_stroke w-full h-[1px] bg-[color:var(--ploy-border-subtle)] block" />
+                <div class="flex flex-col items-start gap-[16px] w-full">
+                  <div class="flex items-center gap-[16px] w-full">
+                    <div class="bg-[var(--ploy-text-primary)] rounded-full w-[4px] h-[4px]" />
+                    <p class="text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                      Ship a site in hours, not weeks
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-[16px] w-full">
+                    <div class="bg-[var(--ploy-text-primary)] rounded-full w-[4px] h-[4px]" />
+                    <p class="text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                      SEO that compounds while you build product
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-[16px] w-full">
+                    <div class="bg-[var(--ploy-text-primary)] rounded-full w-[4px] h-[4px]" />
+                    <p class="text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                      Lead gen on autopilot from day one
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-[16px] w-full">
+                    <div class="bg-[var(--ploy-text-primary)] rounded-full w-[4px] h-[4px]" />
+                    <p class="text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                      Startup-friendly pricing
+                    </p>
+                  </div>
+                </div>
+                <GetStartedButton variant="dark" />
+              </div>
+            </div>
+            <div class="c_accordionssection_dottopleft w-[8px] h-[8px] bg-[var(--ploy-text-primary)] rounded-full absolute top-[12px] left-[12px]" />
+            <div class="c_accordionssection_dotbottomleft w-[8px] h-[8px] bg-[var(--ploy-text-primary)] rounded-full absolute left-[12px] bottom-[12px]" />
+            <div class="c_accordionssection_dottopright w-[8px] h-[8px] bg-[var(--ploy-text-primary)] rounded-full absolute top-[12px] right-[12px]" />
+            <div class="c_accordionssection_dotbottomright w-[8px] h-[8px] bg-[var(--ploy-text-primary)] rounded-full absolute right-[12px] bottom-[12px]" />
+          </div>
+          <div class="c_accordionssection_faqitementerprise flex flex-col items-start p-[32px_24px] rounded-[4px] cursor-pointer [transition:background_0.3s_ease] relative [border:1px_solid_var(--ploy-border-subtle)] min-h-[170px] max-[1024px]:p-[28px_22px] max-[540px]:p-[24px_20px]" data-el="faq-item">
+            <div class="flex justify-between items-start w-full max-[1024px]:flex-col max-[1024px]:gap-[24px]">
+              <p class="max-w-[258px] w-full font-[family-name:var(--font-heading)] text-[length:var(--font-size-7xl)] font-[number:var(--font-heading-weight)] leading-[86%] uppercase text-[color:var(--ploy-text-primary)] max-[1024px]:text-[length:var(--font-size_7xl)] max-[540px]:text-[length:var(--font-size_7xl)]">
+                enterprise
+              </p>
+              <p class="max-w-[258px] w-full text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                Scale without the sprawl.
+              </p>
+            </div>
+            <div class="c_accordionssection_b9osx overflow-visible max-h-[0] opacity-0 [transition:max-height_0.5s_ease,_opacity_0.3s_ease] w-full" data-el="faq-content">
+              <div class="flex flex-col items-start gap-[24px] pt-[76px] w-full max-[1024px]:pt-[32px] max-[540px]:pt-[32px] max-[1024px]:gap-[21px] max-[540px]:gap-[19px]">
+                <div class="c_accordionssection_stroke w-full h-[1px] bg-[color:var(--ploy-border-subtle)] block" />
+                <div class="flex flex-col items-start gap-[16px] w-full">
+                  <div class="flex items-center gap-[16px] w-full">
+                    <div class="bg-[var(--ploy-text-primary)] rounded-full w-[4px] h-[4px]" />
+                    <p class="text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                      Ship a site in hours, not weeks
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-[16px] w-full">
+                    <div class="bg-[var(--ploy-text-primary)] rounded-full w-[4px] h-[4px]" />
+                    <p class="text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                      SEO that compounds while you build product
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-[16px] w-full">
+                    <div class="bg-[var(--ploy-text-primary)] rounded-full w-[4px] h-[4px]" />
+                    <p class="text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                      Lead gen on autopilot from day one
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-[16px] w-full">
+                    <div class="bg-[var(--ploy-text-primary)] rounded-full w-[4px] h-[4px]" />
+                    <p class="text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.64]">
+                      Startup-friendly pricing
+                    </p>
+                  </div>
+                </div>
+                <GetStartedButton variant="dark" />
+              </div>
+            </div>
+            <div class="c_accordionssection_dotbottomright w-[8px] h-[8px] bg-[var(--ploy-text-primary)] rounded-full absolute right-[12px] bottom-[12px]" />
+            <div class="c_accordionssection_dottopright w-[8px] h-[8px] bg-[var(--ploy-text-primary)] rounded-full absolute top-[12px] right-[12px]" />
+            <div class="c_accordionssection_dotbottomleft w-[8px] h-[8px] bg-[var(--ploy-text-primary)] rounded-full absolute left-[12px] bottom-[12px]" />
+            <div class="c_accordionssection_dottopleft w-[8px] h-[8px] bg-[var(--ploy-text-primary)] rounded-full absolute top-[12px] left-[12px]" />
+          </div>
+        </FAQAccordion>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style is:global>
+.c_accordionssection_faqitemstartups.is-active { background: var(--ploy-brand-pink); border: 1px solid transparent; }
+.c_accordionssection_faqitemstartups:hover { background: var(--ploy-brand-pink); border: 1px solid transparent; }
+
+[data-el='faq-item'].is-active .c_accordionssection_b9or9 { max-height: 37.5rem; opacity: 1; }
+
+[data-el='faq-item'].is-active .c_accordionssection_stroke { background-color: var(--transparent); }
+
+[data-el="faq-item"].is-active .c_accordionssection_dottopleft { background: var(--ploy-background-primary); }
+
+[data-el="faq-item"].is-active .c_accordionssection_dotbottomleft { background: var(--ploy-background-primary); }
+
+[data-el="faq-item"].is-active .c_accordionssection_dottopright { background: var(--ploy-background-primary); }
+
+[data-el="faq-item"].is-active .c_accordionssection_dotbottomright { background: var(--ploy-background-primary); }
+
+.c_accordionssection_faqitemagencies.is-active { background: var(--ploy-brand-yellow); border: 1px solid transparent; }
+.c_accordionssection_faqitemagencies:hover { background: var(--ploy-brand-yellow); border: 1px solid transparent; }
+
+[data-el='faq-item'].is-active .c_accordionssection_b9os1 { max-height: 37.5rem; opacity: 1; }
+
+.c_accordionssection_faqitementerprise.is-active { background: var(--ploy-brand-blue); border: 1px solid transparent; }
+.c_accordionssection_faqitementerprise:hover { background: var(--ploy-brand-blue); border: 1px solid transparent; }
+
+[data-el='faq-item'].is-active .c_accordionssection_b9osx { max-height: 37.5rem; opacity: 1; }
+</style>

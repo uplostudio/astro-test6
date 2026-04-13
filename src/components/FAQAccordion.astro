@@ -1,0 +1,34 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+---
+<div class:list={["flex flex-col gap-[4px]", className]} data-el="faq-accordion">
+  <slot />
+</div>
+
+<script is:inline>
+(function(){
+var el = document.currentScript.previousElementSibling;
+function __init__() {
+(function _w(n){var c=n.firstChild,x;while(c){x=c.nextSibling;if(c.nodeType===3){if(!c.textContent.trim())n.removeChild(c)}else if(c.nodeType===1)_w(c);c=x}})(el);
+const items = el.querySelectorAll('[data-el="faq-item"]');
+
+items.forEach((item, index) => {
+  if (index === 0) item.classList.add('is-active');
+
+  item.addEventListener('click', () => {
+    const isAlreadyActive = item.classList.contains('is-active');
+    if (isAlreadyActive) return;
+
+    items.forEach(i => i.classList.remove('is-active'));
+    item.classList.add('is-active');
+  });
+});
+
+}
+if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', __init__); } else { __init__(); }
+})();
+</script>

@@ -1,0 +1,30 @@
+---
+import WaitlistForm from './WaitlistForm.astro';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+---
+<div class:list={["pl-[var(--c-p)] pr-[var(--c-p)] pb-[126px] flex justify-center max-[1024px]:pb-[96px] max-[540px]:pb-[72px]", className]}>
+  <div class="max-w-[var(--c-mw)] w-full">
+    <div class="flex flex-col gap-[50px] justify-center items-center max-[1024px]:gap-[38px] max-[540px]:gap-[30px]">
+      <div class="w-full flex flex-col items-center gap-[44px] max-[1024px]:gap-[34px] max-[540px]:gap-[27px]">
+        <h2 class="text-center w-full font-[family-name:var(--font-heading)] text-[length:144px] font-[number:var(--font-heading-weight)] leading-[86%] uppercase text-[color:var(--ploy-text-primary)] max-[540px]:text-[length:48px] max-[1024px]:text-[length:118px]">
+          Stop maintaining your website.
+        </h2>
+        <p class="text-center text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.7] max-[540px]:max-w-[384px]">
+          <Fragment set:html={`Join the waitlist for early access.<br>Founding members get priority onboarding and early-partner pricing. `} />
+        </p>
+      </div>
+      <div class="w-full flex flex-col items-start gap-[8px] p-[48px_24px_53px_24px] bg-[var(--ploy-background-secondary)] rounded-[4px] relative max-w-[588px] h-[430px] max-[540px]:h-auto max-[540px]:p-[32px_20px_46px_20px] max-[1024px]:p-[40px_22px_44px_22px]">
+        <WaitlistForm />
+        <div class="bg-[var(--ploy-background-primary)] rounded-full absolute left-[12px] top-[12px] w-[8px] h-[8px]" />
+        <div class="bg-[var(--ploy-background-primary)] rounded-full absolute right-[12px] w-[8px] top-[12px] h-[8px]" />
+        <div class="bg-[var(--ploy-background-primary)] rounded-full absolute right-[12px] w-[8px] bottom-[12px] h-[8px]" />
+        <div class="bg-[var(--ploy-background-primary)] rounded-full absolute left-[12px] w-[8px] bottom-[12px] h-[8px]" />
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+---
+<div class:list={["oem fixed top-0 left-0 w-full h-full object-cover pointer-events-none z-[2137]", className]} data-el="splash-overlay">
+  <Fragment set:html={`<video autoplay muted playsinline data-el="hero-video" style="width:100%;height:100%;object-fit:cover;display:block"><source src="https://ploy.sfo3.cdn.digitaloceanspaces.com/ploy-final/splash-safari.mov" type="video/mp4; codecs=hvc1"><source src="https://ploy.sfo3.cdn.digitaloceanspaces.com/ploy-final/splash.webm" type="video/webm"></video>`} />
+</div>
+
+<script is:inline>
+(function(){
+var el = document.currentScript.previousElementSibling;
+function __init__() {
+(function _w(n){var c=n.firstChild,x;while(c){x=c.nextSibling;if(c.nodeType===3){if(!c.textContent.trim())n.removeChild(c)}else if(c.nodeType===1)_w(c);c=x}})(el);
+// The video autoplays via HTML attribute on page load.
+// JS just handles hiding after it ends and replaying on form success.
+
+function getVideo() {
+  return el.querySelector('video');
+}
+
+function hideWhenDone(video) {
+  video.addEventListener('ended', function () {
+    el.style.transition = 'opacity 0.5s ease';
+    el.style.opacity = '0';
+    setTimeout(function () {
+      el.style.visibility = 'hidden';
+    }, 500);
+  }, { once: true });
+}
+
+// Set up the initial autoplay → hide
+var initCheck = setInterval(function () {
+  var video = getVideo();
+  if (video) {
+    clearInterval(initCheck);
+    hideWhenDone(video);
+  }
+}, 50);
+
+// Replay on form success
+document.addEventListener('waitlist-success', function () {
+  var video = getVideo();
+  if (!video) return;
+  el.style.transition = 'none';
+  el.style.opacity = '1';
+  el.style.visibility = 'visible';
+  video.currentTime = 0;
+  video.play();
+  hideWhenDone(video);
+});
+
+}
+if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', __init__); } else { __init__(); }
+})();
+</script>

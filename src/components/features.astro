@@ -1,0 +1,159 @@
+---
+import Heading from './Heading.astro';
+import HeroCard from './HeroCard.astro';
+import HeroCardDivider from './HeroCardDivider.astro';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+---
+<div class:list={["w-full flex flex-col items-center gap-[260px] overflow-visible relative pt-[156px] pr-[var(--c-p)] pb-[160px] pl-[var(--c-p)] max-[540px]:gap-[100px] max-[540px]:pt-[100px] max-[540px]:pb-[100px] max-[1024px]:gap-[175px] max-[1024px]:pt-[121px] max-[1024px]:pb-[124px]", className]} data-el="features-section">
+  <div class="oem absolute top-0 left-[50%] [transform:translateX(0%)] w-[280px] h-[280px] z-[1] pointer-events-none max-[1024px]:w-[200px] max-[1024px]:h-[200px] max-[1024px]:top-[-100px] max-[540px]:w-[160px] max-[540px]:h-[160px] max-[540px]:top-[-80px]" data-el="balloon">
+    <Fragment set:html={`<video autoplay muted loop playsinline data-el="balloon-video" style="width:100%;height:100%;object-fit:contain;display:block"><source src="https://ploy.sfo3.cdn.digitaloceanspaces.com/ploy-final/green-balloon-safari.mov" type="video/mp4; codecs=hvc1"><source src="https://ploy.sfo3.cdn.digitaloceanspaces.com/ploy-final/green-balloon.webm" type="video/webm"></video>`} />
+  </div>
+  <div class="relative flex flex-col items-start gap-[80px] w-full max-w-[var(--c-mw)] max-[540px]:gap-[48px] max-[1024px]:gap-[58px]">
+    <div class="flex flex-col gap-[56px] max-[1024px]:gap-[42px] max-[540px]:gap-[32px]">
+      <div class="flex flex-col items-center gap-[32px] w-full relative z-[2] max-[1024px]:gap-[26px] max-[540px]:gap-[22px]">
+        <Heading tag="1" text={`Your website launched. Then it stopped.`} scrollFill={true} scrollStart="top 80%" class="text-center" />
+        <p class="text-center w-full text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-text-primary)] opacity-[0.7] max-w-[384px]">
+          Ploy takes what you have and puts it on autopilot.
+        </p>
+      </div>
+      <div class="flex flex-col items-start gap-[10px] p-[24px] bg-[var(--ploy-background-secondary)] rounded-[4px] w-full relative z-[2] max-[1024px]:p-[22px] max-[540px]:p-[20px]">
+        <div class="flex items-center gap-[24px] justify-center h-full max-[540px]:flex-col max-[1024px]:gap-[21px] max-[540px]:gap-[19px]">
+          <HeroCard color="var(--ploy-brand-yellow)" />
+          <HeroCardDivider />
+          <HeroCard title="Act" text="Ploy watches performance across every channel - continuously. Organic, paid, outbound. Nothing slips through." icon="&lt;svg width=&quot;36&quot; height=&quot;36&quot; viewBox=&quot;0 0 36 36&quot; fill=&quot;none&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+&lt;rect width=&quot;36&quot; height=&quot;36&quot; rx=&quot;8&quot; fill=&quot;#212121&quot;/&gt;
+&lt;circle cx=&quot;8&quot; cy=&quot;13&quot; r=&quot;1.5&quot; fill=&quot;#D1F864&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;8&quot; cy=&quot;8&quot; r=&quot;1.5&quot; fill=&quot;#D1F864&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;8&quot; cy=&quot;18&quot; r=&quot;1.5&quot; fill=&quot;#D1F864&quot;/&gt;
+&lt;circle cx=&quot;8&quot; cy=&quot;23&quot; r=&quot;1.5&quot; fill=&quot;#D1F864&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;18&quot; cy=&quot;13&quot; r=&quot;1.5&quot; fill=&quot;#D1F864&quot;/&gt;
+&lt;circle cx=&quot;18&quot; cy=&quot;8&quot; r=&quot;1.5&quot; fill=&quot;#D1F864&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;18&quot; cy=&quot;18&quot; r=&quot;1.5&quot; fill=&quot;#D1F864&quot;/&gt;
+&lt;circle cx=&quot;18&quot; cy=&quot;23&quot; r=&quot;1.5&quot; fill=&quot;#D1F864&quot;/&gt;
+&lt;circle cx=&quot;18&quot; cy=&quot;28&quot; r=&quot;1.5&quot; transform=&quot;rotate(90 18 28)&quot; fill=&quot;#D1F864&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;23&quot; cy=&quot;28&quot; r=&quot;1.5&quot; transform=&quot;rotate(90 23 28)&quot; fill=&quot;#D1F864&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;28&quot; cy=&quot;28&quot; r=&quot;1.5&quot; transform=&quot;rotate(90 28 28)&quot; fill=&quot;#D1F864&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;23&quot; cy=&quot;13&quot; r=&quot;1.5&quot; fill=&quot;#D1F864&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;28&quot; cy=&quot;13&quot; r=&quot;1.5&quot; fill=&quot;#D1F864&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;23&quot; cy=&quot;8&quot; r=&quot;1.5&quot; fill=&quot;#D1F864&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;28&quot; cy=&quot;8&quot; r=&quot;1.5&quot; fill=&quot;#D1F864&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;13&quot; cy=&quot;13&quot; r=&quot;1.5&quot; fill=&quot;#D1F864&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;13&quot; cy=&quot;8&quot; r=&quot;1.5&quot; fill=&quot;#D1F864&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;13&quot; cy=&quot;28&quot; r=&quot;1.5&quot; transform=&quot;rotate(90 13 28)&quot; fill=&quot;#D1F864&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;23&quot; cy=&quot;18&quot; r=&quot;1.5&quot; fill=&quot;#D1F864&quot;/&gt;
+&lt;circle cx=&quot;28&quot; cy=&quot;18&quot; r=&quot;1.5&quot; fill=&quot;#D1F864&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;13&quot; cy=&quot;18&quot; r=&quot;1.5&quot; fill=&quot;#D1F864&quot;/&gt;
+&lt;circle cx=&quot;8&quot; cy=&quot;28&quot; r=&quot;1.5&quot; transform=&quot;rotate(90 8 28)&quot; fill=&quot;#D1F864&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;23&quot; cy=&quot;23&quot; r=&quot;1.5&quot; fill=&quot;#D1F864&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;28&quot; cy=&quot;23&quot; r=&quot;1.5&quot; fill=&quot;#D1F864&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;13&quot; cy=&quot;23&quot; r=&quot;1.5&quot; fill=&quot;#D1F864&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;/svg&gt;" animation="helix" color="var(--ploy-brand-green)" />
+          <HeroCardDivider />
+          <HeroCard title="Surface" text="Ploy watches performance across every channel - continuously. Organic, paid, outbound. Nothing slips through." icon="&lt;svg width=&quot;36&quot; height=&quot;36&quot; viewBox=&quot;0 0 36 36&quot; fill=&quot;none&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+&lt;rect width=&quot;36&quot; height=&quot;36&quot; rx=&quot;8&quot; fill=&quot;#212121&quot;/&gt;
+&lt;circle cx=&quot;8&quot; cy=&quot;13&quot; r=&quot;1.5&quot; fill=&quot;var(--ploy-brand-pink)&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;8&quot; cy=&quot;8&quot; r=&quot;1.5&quot; fill=&quot;var(--ploy-brand-pink)&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;8&quot; cy=&quot;18&quot; r=&quot;1.5&quot; fill=&quot;var(--ploy-brand-pink)&quot;/&gt;
+&lt;circle cx=&quot;8&quot; cy=&quot;23&quot; r=&quot;1.5&quot; fill=&quot;var(--ploy-brand-pink)&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;18&quot; cy=&quot;13&quot; r=&quot;1.5&quot; fill=&quot;var(--ploy-brand-pink)&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;18&quot; cy=&quot;8&quot; r=&quot;1.5&quot; fill=&quot;var(--ploy-brand-pink)&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;18&quot; cy=&quot;18&quot; r=&quot;1.5&quot; fill=&quot;var(--ploy-brand-pink)&quot;/&gt;
+&lt;circle cx=&quot;18&quot; cy=&quot;23&quot; r=&quot;1.5&quot; fill=&quot;var(--ploy-brand-pink)&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;18&quot; cy=&quot;28&quot; r=&quot;1.5&quot; transform=&quot;rotate(90 18 28)&quot; fill=&quot;var(--ploy-brand-pink)&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;23&quot; cy=&quot;28&quot; r=&quot;1.5&quot; transform=&quot;rotate(90 23 28)&quot; fill=&quot;var(--ploy-brand-pink)&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;28&quot; cy=&quot;28&quot; r=&quot;1.5&quot; transform=&quot;rotate(90 28 28)&quot; fill=&quot;var(--ploy-brand-pink)&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;23&quot; cy=&quot;13&quot; r=&quot;1.5&quot; fill=&quot;var(--ploy-brand-pink)&quot;/&gt;
+&lt;circle cx=&quot;28&quot; cy=&quot;13&quot; r=&quot;1.5&quot; fill=&quot;var(--ploy-brand-pink)&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;23&quot; cy=&quot;8&quot; r=&quot;1.5&quot; fill=&quot;var(--ploy-brand-pink)&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;28&quot; cy=&quot;8&quot; r=&quot;1.5&quot; fill=&quot;var(--ploy-brand-pink)&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;13&quot; cy=&quot;13&quot; r=&quot;1.5&quot; fill=&quot;var(--ploy-brand-pink)&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;13&quot; cy=&quot;8&quot; r=&quot;1.5&quot; fill=&quot;var(--ploy-brand-pink)&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;13&quot; cy=&quot;28&quot; r=&quot;1.5&quot; transform=&quot;rotate(90 13 28)&quot; fill=&quot;var(--ploy-brand-pink)&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;23&quot; cy=&quot;18&quot; r=&quot;1.5&quot; fill=&quot;var(--ploy-brand-pink)&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;28&quot; cy=&quot;18&quot; r=&quot;1.5&quot; fill=&quot;var(--ploy-brand-pink)&quot;/&gt;
+&lt;circle cx=&quot;13&quot; cy=&quot;18&quot; r=&quot;1.5&quot; fill=&quot;var(--ploy-brand-pink)&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;8&quot; cy=&quot;28&quot; r=&quot;1.5&quot; transform=&quot;rotate(90 8 28)&quot; fill=&quot;var(--ploy-brand-pink)&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;23&quot; cy=&quot;23&quot; r=&quot;1.5&quot; fill=&quot;var(--ploy-brand-pink)&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;28&quot; cy=&quot;23&quot; r=&quot;1.5&quot; fill=&quot;var(--ploy-brand-pink)&quot; fill-opacity=&quot;0.1&quot;/&gt;
+&lt;circle cx=&quot;13&quot; cy=&quot;23&quot; r=&quot;1.5&quot; fill=&quot;var(--ploy-brand-pink)&quot;/&gt;
+&lt;/svg&gt;
+" animation="rain" color="var(--ploy-brand-pink)" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+(function(){
+var el = document.currentScript.previousElementSibling;
+function __init__() {
+(function _w(n){var c=n.firstChild,x;while(c){x=c.nextSibling;if(c.nodeType===3){if(!c.textContent.trim())n.removeChild(c)}else if(c.nodeType===1)_w(c);c=x}})(el);
+gsap.registerPlugin(ScrollTrigger);
+
+const balloon = el.querySelector('[data-el="balloon"]');
+
+if (balloon) {
+  // Only clip at the bottom so balloon can overflow top but hides behind next section
+  el.style.overflow = "visible";
+  el.style.clipPath = "inset(-100% -100% 0 -100%)";
+
+  // Set initial state to match scroll animation start
+  gsap.set(balloon, { scale: 2.2, x: "0%", y: 0, rotation: 0, filter: "blur(0px)" });
+
+  // Ambient floating — applied to the inner video so it doesn't conflict
+  const balloonVideo = balloon.querySelector('[data-el="balloon-video"]');
+  if (balloonVideo) {
+    gsap.to(balloonVideo, {
+      y: -10,
+      rotation: 4,
+      duration: 2.8,
+      ease: "sine.inOut",
+      yoyo: true,
+      repeat: -1,
+    });
+    gsap.to(balloonVideo, {
+      x: 6,
+      duration: 3.6,
+      ease: "sine.inOut",
+      yoyo: true,
+      repeat: -1,
+    });
+  }
+
+  // Scroll-linked float down — scrub with lag for floaty balloon feel
+  gsap.fromTo(balloon,
+    {
+      y: 0,
+      x: "0%",
+      scale: 2.2,
+      rotation: 0,
+      filter: "blur(0px)",
+    },
+    {
+      y: () => el.offsetHeight + 50,
+      x: "-50%",
+      scale: 1,
+      rotation: -8,
+      filter: "blur(8px)",
+      ease: "power1.inOut",
+      immediateRender: false,
+      scrollTrigger: {
+        trigger: el,
+        start: "top 50%",
+        end: "bottom 30%",
+        scrub: 2.5,
+      },
+    }
+  );
+}
+
+}
+if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', __init__); } else { __init__(); }
+})();
+</script>

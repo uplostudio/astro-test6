@@ -1,0 +1,204 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+---
+<div class:list={["c_leftnav_leftnav absolute top-0 left-0 flex flex-col p-[12px_24px_12px_20px] bg-[var(--ploy-background-secondary)] rounded-[44px] w-[140px] [transition:border-radius_0.35s_cubic-bezier(0.4,_0,_0.2,_1),_width_0.35s_cubic-bezier(0.4,_0,_0.2,_1)] z-10 pointer-events-auto max-[540px]:w-[140px] max-[1024px]:p-[12px_22px_12px_19px] max-[540px]:p-[12px_20px_12px_18px]", className]}>
+  <div class="flex flex-row items-center gap-[24px] max-[1024px]:gap-[21px] max-[540px]:gap-[19px]">
+    <div class="relative flex items-center justify-center w-[16px] h-[16px] cursor-pointer select-none shrink-0" data-el="trigger">
+      <div class="c_leftnav_hamburgericon absolute top-0 left-0 flex items-center justify-center w-[16px] h-[16px] opacity-100 [transform:rotate(0deg)] [transition:opacity_0.3s_cubic-bezier(0.4,_0,_0.2,_1),_transform_0.35s_cubic-bezier(0.4,_0,_0.2,_1)]">
+        <div class="oem">
+          <Fragment set:html={`<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.4">
+<path d="M2 8H14" stroke="#212121" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M2 4H14" stroke="#212121" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M2 12H14" stroke="#212121" stroke-width="1.4" stroke-linejoin="round"/>
+</g>
+</svg>
+`} />
+        </div>
+      </div>
+      <div class="c_leftnav_closeicon absolute top-0 left-0 flex items-center justify-center w-[16px] h-[16px] opacity-0 [transform:rotate(-90deg)] [transition:opacity_0.3s_cubic-bezier(0.4,_0,_0.2,_1),_transform_0.35s_cubic-bezier(0.4,_0,_0.2,_1)]">
+        <div class="oem">
+          <Fragment set:html={`<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.4">
+<path d="M4 4L12 12" stroke="#212121" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M12 4L4 12" stroke="#212121" stroke-width="1.4" stroke-linejoin="round"/>
+</g>
+</svg>`} />
+        </div>
+      </div>
+    </div>
+    <div class="oem w-[65px] h-[24px] overflow-visible relative shrink-0" data-el="ploy-logo">
+      <Fragment set:html={`<svg width="65" height="24" viewBox="0 0 65 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 65px; height: 24px; overflow: visible">
+<path data-letter="p" d="M12.8046 4.90723C24.2214 4.73166 24.2187 19.2689 12.8046 19.0928C6.05132 18.9304 5.26692 15.2347 5.26175 15.21H5.02791L5.48491 24H0V5.33301H5.48491C5.48002 5.3759 5.01708 8.79697 5.02015 8.79004H5.26175C5.26015 8.78125 6.04293 5.0646 12.8046 4.90723Z" fill="#212121" />
+<path data-letter="y" d="M54.9888 12.8008L58.9019 5.33301H65L55.1751 24H49.1041L52.0596 18.374L44.8709 5.33301H51.0486L54.9888 12.8008Z" fill="#212121" />
+<path data-letter="o" d="M37.6376 4.90723C42.7763 4.90724 46.1836 7.73329 46.1836 12C46.1836 16.2667 42.7763 19.0928 37.6376 19.0928C32.4988 19.0928 29.0905 16.2666 29.0905 12C29.0905 7.73347 32.4988 4.90723 37.6376 4.90723Z" fill="#212121" />
+<path data-letter="l" d="M27.9097 18.667H22.5315V0H27.9097V18.667Z" fill="#212121" />
+</svg>`} />
+    </div>
+  </div>
+  <div class="c_leftnav_dropdownitems flex flex-col justify-center items-start gap-[16px] max-h-[0] opacity-0 pt-[0] pb-[0] pl-[0] pr-[0] overflow-hidden pointer-events-none [transition:max-height_0.35s_cubic-bezier(0.4,_0,_0.2,_1),_opacity_0.3s_cubic-bezier(0.4,_0,_0.2,_1),_padding_0.35s_cubic-bezier(0.4,_0,_0.2,_1)]">
+    <p class="text-[length:var(--font-size-2xl)] font-[number:var(--font-body-bold-weight)] leading-[32px] tracking-[-0.04em] text-[color:var(--ploy-text-primary)] cursor-pointer max-[1024px]:text-[length:var(--font-size_2xl)] max-[540px]:text-[length:var(--font-size_2xl)]" data-el="nav-link" data-hover-color="var(--ploy-brand-pink)">
+      Startups
+    </p>
+    <p class="text-[length:var(--font-size-2xl)] font-[number:var(--font-body-bold-weight)] leading-[32px] tracking-[-0.04em] text-[color:var(--ploy-text-primary)] cursor-pointer max-[1024px]:text-[length:var(--font-size_2xl)] max-[540px]:text-[length:var(--font-size_2xl)]" data-el="nav-link" data-hover-color="var(--ploy-brand-yellow)">
+      Agencies
+    </p>
+    <p class="text-[length:var(--font-size-2xl)] font-[number:var(--font-body-bold-weight)] leading-[32px] tracking-[-0.04em] text-[color:var(--ploy-text-primary)] cursor-pointer max-[1024px]:text-[length:var(--font-size_2xl)] max-[540px]:text-[length:var(--font-size_2xl)]" data-el="nav-link" data-hover-color="var(--ploy-brand-blue)">
+      Enterprise
+    </p>
+  </div>
+</div>
+
+<style is:global>
+.c_leftnav_leftnav.is-open { border-radius: 1.5rem; width: 22.375rem; }
+@media (max-width: 540px) { .c_leftnav_leftnav.is-open { width: calc(100vw - 2rem); } }
+
+.is-open .c_leftnav_hamburgericon { opacity: 0; transform: rotate(90deg); }
+
+.is-open .c_leftnav_closeicon { opacity: 1; transform: rotate(0deg); }
+
+.is-open .c_leftnav_dropdownitems { max-height: 16.25rem; opacity: 1; padding-top: 3rem; padding-bottom: 0.25rem; pointer-events: auto; }
+@media (max-width: 1024px) { .is-open .c_leftnav_dropdownitems { padding-top: 2.5rem; } }
+@media (max-width: 540px) { .is-open .c_leftnav_dropdownitems { padding-top: 2rem; } }
+</style>
+
+<script is:inline>
+(function(){
+var el = document.currentScript.previousElementSibling;
+function __init__() {
+(function _w(n){var c=n.firstChild,x;while(c){x=c.nextSibling;if(c.nodeType===3){if(!c.textContent.trim())n.removeChild(c)}else if(c.nodeType===1)_w(c);c=x}})(el);
+const trigger = el.querySelector('[data-el="trigger"]');
+var isOpen = false;
+
+// Logo letter colors: P=blue, L=pink, O=green, Y=yellow
+var letterColors = {
+  p: '#C3DBFF',
+  l: '#FFB8FC',
+  o: '#D1F48C',
+  y: '#FFFA64'
+};
+var originalFill = '#212121';
+
+var letterP = el.querySelector('[data-letter="p"]');
+var letterL = el.querySelector('[data-letter="l"]');
+var letterO = el.querySelector('[data-letter="o"]');
+var letterY = el.querySelector('[data-letter="y"]');
+var letterEls = [letterP, letterL, letterO, letterY];
+var logoContainer = el.querySelector('[data-el="ploy-logo"]');
+var logoTimeline = null;
+
+function animateLogoIn() {
+  if (!letterP || typeof gsap === 'undefined') return;
+  if (logoTimeline) logoTimeline.kill();
+  logoTimeline = gsap.timeline();
+  letterEls.forEach(function(path) {
+    if (!path) return;
+    var color = letterColors[path.getAttribute('data-letter')];
+    logoTimeline.to(path, {
+      attr: { fill: color },
+      duration: 0.4,
+      ease: 'power2.out'
+    }, 0.05 * letterEls.indexOf(path));
+  });
+}
+
+function animateLogoOut() {
+  if (!letterP || typeof gsap === 'undefined') return;
+  if (logoTimeline) logoTimeline.kill();
+  logoTimeline = gsap.timeline();
+  letterEls.forEach(function(path) {
+    if (!path) return;
+    logoTimeline.to(path, {
+      attr: { fill: originalFill },
+      duration: 0.4,
+      ease: 'power2.out'
+    }, 0.05 * letterEls.indexOf(path));
+  });
+}
+
+// Hover on logo
+if (logoContainer) {
+  logoContainer.addEventListener('pointerenter', function() {
+    if (!isOpen) animateLogoIn();
+  });
+  logoContainer.addEventListener('pointerleave', function() {
+    if (!isOpen) animateLogoOut();
+  });
+}
+
+// Toggle dropdown + logo colors
+trigger?.addEventListener('click', () => {
+  isOpen = !isOpen;
+  el.classList.toggle('is-open');
+  if (isOpen) {
+    animateLogoIn();
+  } else {
+    animateLogoOut();
+  }
+});
+
+// Nav link hover animation — char-by-char color swap
+if (typeof gsap !== 'undefined') {
+  var navLinks = el.querySelectorAll('[data-el="nav-link"]');
+  navLinks.forEach(function(link) {
+    var fixedColor = link.getAttribute('data-hover-color');
+    var text = link.textContent.trim();
+    link.textContent = '';
+
+    var chars = [];
+    for (var i = 0; i < text.length; i++) {
+      var span = document.createElement('span');
+      span.textContent = text[i] === ' ' ? '\u00A0' : text[i];
+      span.style.display = 'inline-block';
+      link.appendChild(span);
+      chars.push(span);
+    }
+
+    var originalColor = getComputedStyle(link).color;
+    var hoverTimeline = null;
+
+    function buildTimeline(color) {
+      if (hoverTimeline) hoverTimeline.kill();
+      hoverTimeline = gsap.timeline({
+        onComplete: function() {
+          hoverTimeline.progress(0).pause();
+          gsap.set(chars, { color: originalColor, scaleY: 1, rotate: 0 });
+        }
+      });
+      gsap.set(chars, { transformOrigin: 'bottom left' });
+      hoverTimeline
+        .to(chars, {
+          keyframes: {
+            '0%': { scaleY: 1, rotate: 0 },
+            '20%': { scaleY: 0.25, rotate: 20, ease: 'power2.in' },
+            '100%': { scaleY: 1, rotate: 0, ease: 'elastic.out(1,0.4)' }
+          },
+          duration: 0.7,
+          stagger: 0.017
+        })
+        .to(chars, {
+          keyframes: {
+            '0%': { color: color },
+            '40%': { color: color },
+            '100%': { color: originalColor }
+          },
+          duration: 0.7,
+          stagger: 0.017
+        }, '<');
+    }
+
+    link.addEventListener('pointerenter', function() {
+      buildTimeline(fixedColor);
+      hoverTimeline.play();
+    });
+  });
+}
+
+}
+if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', __init__); } else { __init__(); }
+})();
+</script>

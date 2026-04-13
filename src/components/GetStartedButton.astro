@@ -1,0 +1,138 @@
+---
+interface Props {
+  text?: string;
+  variant?: 'dark' | 'light';
+  class?: string;
+}
+
+const { text = "Get Started", variant = "dark", class: className = "" } = Astro.props;
+---
+<button class:list={['flex justify-center items-center gap-[6px] p-[16px_24px] rounded-[var(--radius-button)] text-[length:var(--font-size-sm)] font-[number:var(--font-body-bold-weight)] leading-[var(--font-button-line-height)] tracking-[-0.01em] [border:none] cursor-pointer [transition:transform_0.3s_cubic-bezier(0.25,_0.46,_0.45,_0.94),_opacity_0.2s_ease] [will-change:transform] pointer-events-auto max-[1024px]:p-[16px_22px] max-[540px]:p-[16px_20px]', String(variant) === "dark" ? 'bg-[var(--ploy-button-primary-background)]' : 'bg-[var(--ploy-background-secondary)]', String(variant) === "dark" ? 'text-[color:var(--ploy-background-secondary)]' : 'text-[color:var(--ploy-text-primary)]', className]} data-el="gsap-btn">
+  {text}
+</button>
+
+<script define:vars={{ text, variant }}>
+(function(){
+var el = document.currentScript.previousElementSibling;
+function __init__() {
+(function _w(n){var c=n.firstChild,x;while(c){x=c.nextSibling;if(c.nodeType===3){if(!c.textContent.trim())n.removeChild(c)}else if(c.nodeType===1)_w(c);c=x}})(el);
+const btn = el.querySelector('[data-el="gsap-btn"]') || el;
+
+// --- Split text into individual char spans ---
+const originalText = btn.textContent.trim();
+btn.textContent = '';
+
+// Create background element for scale effect
+const bg = document.createElement('span');
+bg.style.cssText = 'position:absolute;inset:0;border-radius:inherit;background:inherit;z-index:0;transition:scale .75s cubic-bezier(.32,.72,0,1);pointer-events:none;';
+btn.style.position = 'relative';
+btn.style.overflow = 'hidden';
+btn.appendChild(bg);
+
+// Create text wrapper
+const textWrap = document.createElement('span');
+textWrap.style.cssText = 'position:relative;z-index:1;display:flex;gap:0;align-items:center;';
+btn.appendChild(textWrap);
+
+const chars = [];
+for (let i = 0; i < originalText.length; i++) {
+  const span = document.createElement('span');
+  span.textContent = originalText[i] === ' ' ? '\u00A0' : originalText[i];
+  span.style.display = 'inline-block';
+  textWrap.appendChild(span);
+  chars.push(span);
+}
+
+// Get the original text color from computed style
+const originalColor = getComputedStyle(btn).color;
+
+// --- Active press effect ---
+btn.style.transition = 'transform .45s linear(0,0.5737 7.6%,0.8382 11.87%,0.9463 14.19%,1.0292 16.54%,1.0886 18.97%,1.1258 21.53%,1.137 22.97%,1.1424 24.48%,1.1423 26.1%,1.1366 27.86%,1.1165 31.01%,1.0507 38.62%,1.0219 42.57%,0.9995 46.99%,0.9872 51.63%,0.9842 58.77%,1.0011 81.26%,1)';
+btn.style.webkitTapHighlightColor = 'transparent';
+
+btn.addEventListener('pointerdown', () => {
+  btn.style.transform = 'scaleX(0.955) scaleY(0.954)';
+});
+btn.addEventListener('pointerup', () => {
+  btn.style.transform = '';
+});
+btn.addEventListener('pointerleave', () => {
+  btn.style.transform = '';
+});
+
+// --- GSAP hover animation ---
+gsap.set(chars, { transformOrigin: 'bottom left' });
+
+const hoverColors = ['#FFB8FC', '#C3DBFF', '#FFFA64', '#D1F48C'];
+let lastColor = null;
+
+function pickColor() {
+  const available = hoverColors.filter(c => c !== lastColor);
+  const picked = available[Math.floor(Math.random() * available.length)];
+  lastColor = picked;
+  return picked;
+}
+
+let hoverTimeline = null;
+
+function buildTimeline(color) {
+  if (hoverTimeline) hoverTimeline.kill();
+
+  hoverTimeline = gsap.timeline({
+    onComplete() {
+      hoverTimeline.progress(0).pause();
+      gsap.set(chars, { color: originalColor, scaleY: 1, rotate: 0 });
+    }
+  });
+
+  hoverTimeline
+    .to(chars, {
+      keyframes: {
+        '0%': { scaleY: 1, rotate: 0 },
+        '20%': { scaleY: 0.25, rotate: 20, ease: 'power2.in' },
+        '100%': { scaleY: 1, rotate: 0, ease: 'elastic.out(1,0.4)' },
+      },
+      duration: 0.7,
+      stagger: 0.017,
+    })
+    .to(chars, {
+      keyframes: {
+        '0%': { color: color },
+        '40%': { color: color },
+        '100%': { color: originalColor },
+      },
+      duration: 0.7,
+      stagger: 0.017,
+    }, '<');
+}
+
+function onHover() {
+  buildTimeline(pickColor());
+  hoverTimeline.play();
+  bg.style.scale = '1.035 1.065';
+  gsap.to(btn, { scaleX: 1.05, scaleY: 1.08, duration: 0.5, ease: 'elastic.out(1,0.5)' });
+}
+
+function onHoverEnd() {
+  bg.style.scale = '';
+  gsap.to(btn, { scaleX: 1, scaleY: 1, duration: 0.4, ease: 'power2.out' });
+}
+
+btn.style.outline = 'none';
+
+btn.addEventListener('pointerenter', onHover);
+btn.addEventListener('focus', () => {
+  onHover();
+  btn.style.boxShadow = '0 0 0 3px rgba(255, 255, 255, 0.6), 0 0 0 5px rgba(33, 33, 33, 0.3)';
+});
+btn.addEventListener('pointerleave', onHoverEnd);
+btn.addEventListener('blur', () => {
+  onHoverEnd();
+  btn.style.boxShadow = '';
+});
+
+
+}
+if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', __init__); } else { __init__(); }
+})();
+</script>

@@ -1,0 +1,34 @@
+---
+interface Props {
+  company?: string;
+  class?: string;
+}
+
+const { company = "Ploy LLC", class: className = "" } = Astro.props;
+---
+<p class:list={["w-full text-[length:var(--font-size-base)] leading-[var(--font-body-line-height)] tracking-[var(--font-body-letter-spacing)] text-[color:var(--ploy-background-secondary)] opacity-[0.64]", className]}>
+  <span>
+    ©
+  </span>
+  <span data-el="year">
+    2026
+  </span>
+  <span>
+     Copyright, {company}
+  </span>
+</p>
+
+<script define:vars={{ company }}>
+(function(){
+var el = document.currentScript.previousElementSibling;
+function __init__() {
+(function _w(n){var c=n.firstChild,x;while(c){x=c.nextSibling;if(c.nodeType===3){if(!c.textContent.trim())n.removeChild(c)}else if(c.nodeType===1)_w(c);c=x}})(el);
+const yearEl = el.querySelector('[data-el="year"]');
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
+
+}
+if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', __init__); } else { __init__(); }
+})();
+</script>

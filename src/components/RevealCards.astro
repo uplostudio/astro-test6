@@ -1,0 +1,130 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+---
+<div class:list={["w-full flex flex-col items-center gap-[4px] max-w-[588px] z-[1]", className]} data-el="reveal-root">
+  <slot />
+</div>
+
+<script is:inline>
+(function(){
+var el = document.currentScript.previousElementSibling;
+function __init__() {
+(function _w(n){var c=n.firstChild,x;while(c){x=c.nextSibling;if(c.nodeType===3){if(!c.textContent.trim())n.removeChild(c)}else if(c.nodeType===1)_w(c);c=x}})(el);
+// Notification feed — cards appear one by one, max 3 visible, loop forever
+var CARD_HEIGHT = 144;
+var GAP = 4;
+var SLOT = CARD_HEIGHT + GAP;
+var MAX_VISIBLE = 3;
+var ENTER_DURATION = 600;
+var PAUSE_BETWEEN = 1800;
+var EASING = 'cubic-bezier(0.22, 1, 0.36, 1)';
+
+var cards = Array.prototype.slice.call(el.querySelectorAll('[data-el="card"]'));
+if (!cards.length) return;
+
+// el IS the root (data-el="reveal-root")
+var root = el;
+var totalCards = cards.length;
+
+// Fixed height for 3 cards, overflow hidden
+root.style.position = 'relative';
+root.style.overflow = 'hidden';
+root.style.height = (MAX_VISIBLE * SLOT - GAP) + 'px';
+
+// Hide all cards and position absolutely
+cards.forEach(function(card) {
+  card.style.position = 'absolute';
+  card.style.left = '0';
+  card.style.right = '0';
+  card.style.width = '100%';
+  card.style.height = CARD_HEIGHT + 'px';
+  card.style.opacity = '0';
+  card.style.transform = 'translateY(' + (MAX_VISIBLE * SLOT) + 'px)';
+  card.style.transition = 'transform ' + ENTER_DURATION + 'ms ' + EASING + ', opacity ' + ENTER_DURATION + 'ms ' + EASING;
+  card.style.willChange = 'transform, opacity';
+});
+
+var visibleQueue = [];
+var nextIndex = 0;
+var running = false;
+
+function positionVisible() {
+  for (var i = 0; i < visibleQueue.length; i++) {
+    var card = cards[visibleQueue[i]];
+    card.style.transform = 'translateY(' + (i * SLOT) + 'px)';
+    card.style.opacity = '1';
+  }
+}
+
+function addNextCard() {
+  var cardIdx = nextIndex % totalCards;
+
+  // If we already have MAX_VISIBLE, remove the top one
+  if (visibleQueue.length >= MAX_VISIBLE) {
+    var removedIdx = visibleQueue.shift();
+    var removedCard = cards[removedIdx];
+    removedCard.style.transform = 'translateY(-' + SLOT + 'px)';
+    removedCard.style.opacity = '0';
+
+    (function(c) {
+      setTimeout(function() {
+        c.style.transition = 'none';
+        c.style.transform = 'translateY(' + (MAX_VISIBLE * SLOT) + 'px)';
+        c.offsetHeight;
+        c.style.transition = 'transform ' + ENTER_DURATION + 'ms ' + EASING + ', opacity ' + ENTER_DURATION + 'ms ' + EASING;
+      }, ENTER_DURATION);
+    })(removedCard);
+  }
+
+  visibleQueue.push(cardIdx);
+
+  // Position new card below, then animate in
+  var newCard = cards[cardIdx];
+  newCard.style.transition = 'none';
+  newCard.style.transform = 'translateY(' + ((visibleQueue.length - 1) * SLOT + SLOT) + 'px)';
+  newCard.style.opacity = '0';
+  newCard.offsetHeight;
+  newCard.style.transition = 'transform ' + ENTER_DURATION + 'ms ' + EASING + ', opacity ' + ENTER_DURATION + 'ms ' + EASING;
+
+  requestAnimationFrame(function() {
+    positionVisible();
+  });
+
+  nextIndex++;
+}
+
+function loop() {
+  addNextCard();
+  setTimeout(function() {
+    if (running) loop();
+  }, PAUSE_BETWEEN);
+}
+
+function start() {
+  if (running) return;
+  running = true;
+  loop();
+}
+
+if (typeof IntersectionObserver !== 'undefined') {
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        start();
+        obs.disconnect();
+      }
+    });
+  }, { threshold: 0.15 });
+  obs.observe(el);
+} else {
+  start();
+}
+
+}
+if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', __init__); } else { __init__(); }
+})();
+</script>

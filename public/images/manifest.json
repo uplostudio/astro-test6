@@ -1,0 +1,640 @@
+{
+  "version": 1,
+  "images": {
+    "figma-import-1775825167624-1.webp": {
+      "filename": "figma-import-1775825167624-1.webp",
+      "originalFilename": "figma-import-1775825167624-1.png",
+      "width": 1187,
+      "height": 859,
+      "blurHash": "data:image/webp;base64,UklGRh4BAABXRUJQVlA4WAoAAAAQAAAAHwAAFgAAQUxQSLwAAAAFmQpE9D8ckiLblq2okYN/L8yQ0t77ocpB7liTiAmYgNfvPPOJlA9mmUnshTefnvzPZ8nDrLWmNZqHXSb3tVjYQe6ttdZcR8cZluvaBZOWa9NaBsOCFnk8mjXXaDnbcV1j5AzyyzH3BDlbw1w3QULLfY2ZtkTI2WCNMVEILYvBzCBE5LrMYCYktC6sMTMoR87GGsMQarUOZMasrSUiugzGjOUS2gVjjFErhC7DjC0RamkXDBsjCS1aY5g1A1ZQOCA8AAAAEAMAnQEqIAAXAD85lsJZryqnI6gIAeAnCWUAt7gWqdlgAP7prf+hXrL9WfxB0bc5okgqtAjFm8UAAAAA",
+      "formats": {
+        "avif": true,
+        "webp": true
+      },
+      "variants": [
+        {
+          "width": 500,
+          "webpFilename": "figma-import-1775825167624-1-500.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 800,
+          "webpFilename": "figma-import-1775825167624-1-800.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 1080,
+          "webpFilename": "figma-import-1775825167624-1-1080.webp",
+          "avifFilename": ""
+        }
+      ],
+      "createdAt": "2026-04-10T12:46:07.899Z",
+      "updatedAt": "2026-04-10T12:46:07.899Z"
+    },
+    "pasted-image-1775825333320.webp": {
+      "filename": "pasted-image-1775825333320.webp",
+      "originalFilename": "pasted-image-1775825333320.png",
+      "width": 844,
+      "height": 736,
+      "blurHash": "data:image/webp;base64,UklGRkABAABXRUJQVlA4WAoAAAAQAAAAHwAAGwAAQUxQSOIAAAAFmQpE9D8skiJJkiRJdskt6ZvYmdk9FPTl9TMMERMwAV/+8gn77Y89PJ7Oh0c8n7WvoLlmrs3LBa3JfHDZs0PLdBuZjOlYk+nAZM5Gy8entXK2S/ZGczaZLtZtWWtM3m23BstqZDperzWNFmQxXdYaC1nQCENzHU3Q8uay48y93WLNfVoIuozmnLPl2sRiGewQHTQy92WEoLXcJzONnFnai2axtWiRa9OwZhlasrQsy5iXkbPlutYaG60muWaaNaw5I4TJNGyN9QZyXRvGoj1Wx33OwRbRIsvIWDNaWVreHmsWVlA4IDgAAAAQAwCdASogABwAPzmWwlovKqckKAgB4CcJZQDImBan4gAA/umt/9CvWX6s/obVcd9YGE8qrJAAAA==",
+      "formats": {
+        "avif": true,
+        "webp": true
+      },
+      "variants": [
+        {
+          "width": 500,
+          "webpFilename": "pasted-image-1775825333320-500.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 800,
+          "webpFilename": "pasted-image-1775825333320-800.webp",
+          "avifFilename": ""
+        }
+      ],
+      "createdAt": "2026-04-10T12:48:53.517Z",
+      "updatedAt": "2026-04-10T12:48:53.517Z"
+    },
+    "figma-import-1775826701649-2.webp": {
+      "filename": "figma-import-1775826701649-2.webp",
+      "originalFilename": "figma-import-1775826701649-2.png",
+      "width": 2,
+      "height": 504,
+      "blurHash": "data:image/webp;base64,UklGRjAAAABXRUJQVlA4ICQAAACwAgCdASoBACAAPzmGuVOvKSWisAgB4CcJaQAAeyAA/u2sRAA=",
+      "formats": {
+        "avif": true,
+        "webp": true
+      },
+      "variants": [],
+      "createdAt": "2026-04-10T13:11:41.657Z",
+      "updatedAt": "2026-04-10T13:11:41.657Z"
+    },
+    "figma-import-1775826709591-3.webp": {
+      "filename": "figma-import-1775826709591-3.webp",
+      "originalFilename": "figma-import-1775826709591-3.png",
+      "width": 2,
+      "height": 504,
+      "blurHash": "data:image/webp;base64,UklGRjAAAABXRUJQVlA4ICQAAACwAgCdASoBACAAPzmGuVOvKSWisAgB4CcJaQAAeyAA/u2sRAA=",
+      "formats": {
+        "avif": true,
+        "webp": true
+      },
+      "variants": [],
+      "createdAt": "2026-04-10T13:11:49.599Z",
+      "updatedAt": "2026-04-10T13:11:49.599Z"
+    },
+    "figma-import-1775827314954-1.webp": {
+      "filename": "figma-import-1775827314954-1.webp",
+      "originalFilename": "figma-import-1775827314954-1.png",
+      "width": 226,
+      "height": 136,
+      "blurHash": "data:image/webp;base64,UklGRg4BAABXRUJQVlA4WAoAAAAQAAAAHwAAEgAAQUxQSLIAAAABmTJE9D8UDgKwbRsr3fCMP7Z/LIWCVEdMgAK3bZQdFraDZ9xeXdgzPsyc5wJ2ecuLn/wwnpm7ORQohMhnO+QL5B+qG7LdnHbfxAXaTV0iiMDiN3OPgCI9S7uLNu2IRTKtDkRsZD1h0EQgdBcIc7Rw7759290m6qqB/RPCm5a0ewnE5YX+iFjBQP4jfikRD40WgKboJMGISk9/VcFeW0nwJHYNK5r4FkR5A6CDNhRBVbgXVlA4IDYAAAAQAwCdASogABMAPzmUwlmvKicjqAgB4CcJZQDNwBatVgAA/uPB8Bq0mkXn4Elasxd3BSSgAAA=",
+      "formats": {
+        "avif": true,
+        "webp": true
+      },
+      "variants": [],
+      "createdAt": "2026-04-10T13:21:55.005Z",
+      "updatedAt": "2026-04-10T13:21:55.005Z"
+    },
+    "pasted-image-1775832023353.webp": {
+      "filename": "pasted-image-1775832023353.webp",
+      "originalFilename": "pasted-image-1775832023353.png",
+      "width": 2400,
+      "height": 1040,
+      "blurHash": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4WAoAAAAQAAAAHwAADQAAQUxQSBIAAAABD9D/iAgIBJL8KfdZIKL/iSxWUDggKgAAAPACAJ0BKiAADgA/OYa6U68pJawwCAHgJwlpAAB60IgAAP7uXRyn5ICAAA==",
+      "formats": {
+        "avif": true,
+        "webp": true
+      },
+      "variants": [
+        {
+          "width": 500,
+          "webpFilename": "pasted-image-1775832023353-500.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 800,
+          "webpFilename": "pasted-image-1775832023353-800.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 1080,
+          "webpFilename": "pasted-image-1775832023353-1080.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 1600,
+          "webpFilename": "pasted-image-1775832023353-1600.webp",
+          "avifFilename": ""
+        }
+      ],
+      "createdAt": "2026-04-10T14:40:23.870Z",
+      "updatedAt": "2026-04-10T14:40:23.870Z"
+    },
+    "pasted-image-1775832023358.webp": {
+      "filename": "pasted-image-1775832023358.webp",
+      "originalFilename": "pasted-image-1775832023358.png",
+      "width": 2400,
+      "height": 1040,
+      "blurHash": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4WAoAAAAQAAAAHwAADQAAQUxQSBIAAAABD9D/iAgIBJL8KfdZIKL/iSxWUDggKgAAAPACAJ0BKiAADgA/OYa6U68pJawwCAHgJwlpAAB60IgAAP7uXRyn5ICAAA==",
+      "formats": {
+        "avif": true,
+        "webp": true
+      },
+      "variants": [
+        {
+          "width": 500,
+          "webpFilename": "pasted-image-1775832023358-500.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 800,
+          "webpFilename": "pasted-image-1775832023358-800.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 1080,
+          "webpFilename": "pasted-image-1775832023358-1080.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 1600,
+          "webpFilename": "pasted-image-1775832023358-1600.webp",
+          "avifFilename": ""
+        }
+      ],
+      "createdAt": "2026-04-10T14:40:23.871Z",
+      "updatedAt": "2026-04-10T14:40:23.871Z"
+    },
+    "pasted-image-1775832091224.webp": {
+      "filename": "pasted-image-1775832091224.webp",
+      "originalFilename": "pasted-image-1775832091224.png",
+      "width": 2784,
+      "height": 712,
+      "blurHash": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4WAoAAAAQAAAAHwAABwAAQUxQSEcAAAABmYzofzgcR5IkNfBd2Sb/zbm4sSAr+ERMwAS8w4wPq1mPoGFxsIVukpV4trJMRItsZD0UMTQ5HCSiF4hnJZsp0rAvqyGJAABWUDggNAAAANACAJ0BKiAACAA/OYa5U68pJaKwCAHgJwlAE6AFpIAA/t3OF8KvV5lXdmsL2jihS6w51AA=",
+      "formats": {
+        "avif": true,
+        "webp": true
+      },
+      "variants": [
+        {
+          "width": 500,
+          "webpFilename": "pasted-image-1775832091224-500.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 800,
+          "webpFilename": "pasted-image-1775832091224-800.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 1080,
+          "webpFilename": "pasted-image-1775832091224-1080.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 1600,
+          "webpFilename": "pasted-image-1775832091224-1600.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 2400,
+          "webpFilename": "pasted-image-1775832091224-2400.webp",
+          "avifFilename": ""
+        }
+      ],
+      "createdAt": "2026-04-10T14:41:32.423Z",
+      "updatedAt": "2026-04-10T14:41:32.423Z"
+    },
+    "pasted-image-1775832792994.webp": {
+      "filename": "pasted-image-1775832792994.webp",
+      "originalFilename": "pasted-image-1775832792994.png",
+      "width": 1344,
+      "height": 1344,
+      "blurHash": "data:image/webp;base64,UklGRnwBAABXRUJQVlA4WAoAAAAQAAAAHwAAHwAAQUxQSB8BAAABmTJE9D80tCJJsiRJ9yJy/Cm+L6tbDoIWAJf9HzEABWD6P2ICJuD3v/nV83yez/M8v/j62fC3/vLjT/cf7vv7vu/vT3POeeEyxLPGYDSNIOdjBtNcN0HyzDmsXbQQWp/MYI2stSDyjDXTNJdNcn5gMO/mTHvsBda0XAZ9XO94N5bWl1nWjmUdBO1rrTlH08jLfDl3vNloOb9a83pZlsussY7JmrAs18uOTHPZtKN5c/l/m47FwjIt1srLTMuaDJr9WJaXTfN6UjRdvT/nj9ZyxhDDWuNeaHJmzmXN3Flk5PUak30vOTNN83rWnSaaXE/DGt+WFnl3TGO3BK11sdYw487S0rIsa5hl35NWk9fTGOsOsiAM5ly7BTkbmsthAABWUDggNgAAABADAJ0BKiAAIAA/OZbCWa8qpyOoCAHgJwllAMZ8FqfiAAD+6p9/xF094BABDH/kO+2xPDIAAA==",
+      "formats": {
+        "avif": true,
+        "webp": true
+      },
+      "variants": [
+        {
+          "width": 500,
+          "webpFilename": "pasted-image-1775832792994-500.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 800,
+          "webpFilename": "pasted-image-1775832792994-800.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 1080,
+          "webpFilename": "pasted-image-1775832792994-1080.webp",
+          "avifFilename": ""
+        }
+      ],
+      "createdAt": "2026-04-10T14:53:13.496Z",
+      "updatedAt": "2026-04-10T14:53:13.496Z"
+    },
+    "video-img.webp": {
+      "filename": "video-img.webp",
+      "originalFilename": "video-img.png",
+      "width": 1936,
+      "height": 2532,
+      "blurHash": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAAAwAwCdASoYACAAPzmQv1evKbWjqAqqsCcJZwDN/Bd0npsAAP7sqEVCsTz2GwbYRuuidIXdQ5zgAA==",
+      "formats": {
+        "avif": true,
+        "webp": true
+      },
+      "variants": [
+        {
+          "width": 500,
+          "webpFilename": "video-img-500.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 800,
+          "webpFilename": "video-img-800.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 1080,
+          "webpFilename": "video-img-1080.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 1600,
+          "webpFilename": "video-img-1600.webp",
+          "avifFilename": ""
+        }
+      ],
+      "createdAt": "2026-04-10T15:27:20.356Z",
+      "updatedAt": "2026-04-10T15:27:20.356Z"
+    },
+    "figma-import-1775839575054-1.webp": {
+      "filename": "figma-import-1775839575054-1.webp",
+      "originalFilename": "figma-import-1775839575054-1.png",
+      "width": 2352,
+      "height": 1178,
+      "blurHash": "data:image/webp;base64,UklGRvwAAABXRUJQVlA4WAoAAAAQAAAAHwAADwAAQUxQSKgAAAABmTJE9D8sUCPblq18hjjIP8iZe2+RwlIL9ZY66qmICZiAty9e3XPfMzPPric+wJc+/X8A3t3cN+MDArKV2AYEDYKYgIQEZAQxpomJIWFkZNmrBBOTc0YGOQIISG6SgAAaEEDANgYEEAwmmJCbhAwyBkC2so9twA4T7GCQsV4uezPMOGYTQi5/zCQvzpJJJgEYsORCQgjJmoCGCWQggQlk2JVxNFbjaAJWUDggLgAAAPACAJ0BKiAAEAA/OYa6U68opaKwCAHgJwljALsALSQAAP7kiJ2PcHiMNB/7oAA=",
+      "formats": {
+        "avif": true,
+        "webp": true
+      },
+      "variants": [
+        {
+          "width": 500,
+          "webpFilename": "figma-import-1775839575054-1-500.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 800,
+          "webpFilename": "figma-import-1775839575054-1-800.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 1080,
+          "webpFilename": "figma-import-1775839575054-1-1080.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 1600,
+          "webpFilename": "figma-import-1775839575054-1-1600.webp",
+          "avifFilename": ""
+        }
+      ],
+      "createdAt": "2026-04-10T16:46:16.433Z",
+      "updatedAt": "2026-04-10T16:46:16.433Z"
+    },
+    "figma-import-1775840950959-2.webp": {
+      "filename": "figma-import-1775840950959-2.webp",
+      "originalFilename": "figma-import-1775840950959-2.png",
+      "width": 2352,
+      "height": 346,
+      "blurHash": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4WAoAAAAQAAAAHwAABAAAQUxQSFIAAAABmTJE9D8sTiPZlpX/gRDIP9F9zaHVQb2jnnoqYgIm4PzoZM211pwHczcSD73rzZ8rF9YyNpJA/EwV1TJCkJBvRYvSIUQQvwstNSJEaH40tKgCVlA4IDAAAADwAgCdASogAAUAPzmGuVOvKSWisAgB4CcJYwC06C0kAAD+3tWUUWB4jDReVTwAAAA=",
+      "formats": {
+        "avif": true,
+        "webp": true
+      },
+      "variants": [
+        {
+          "width": 500,
+          "webpFilename": "figma-import-1775840950959-2-500.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 800,
+          "webpFilename": "figma-import-1775840950959-2-800.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 1080,
+          "webpFilename": "figma-import-1775840950959-2-1080.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 1600,
+          "webpFilename": "figma-import-1775840950959-2-1600.webp",
+          "avifFilename": ""
+        }
+      ],
+      "createdAt": "2026-04-10T17:09:11.280Z",
+      "updatedAt": "2026-04-10T17:09:11.280Z"
+    },
+    "b9882b347b2c8e7ea5a3659aaf4778950320815b.png": {
+      "filename": "b9882b347b2c8e7ea5a3659aaf4778950320815b.png",
+      "originalFilename": "b9882b347b2c8e7ea5a3659aaf4778950320815b.png",
+      "width": 1462,
+      "height": 1464,
+      "blurHash": "data:image/webp;base64,UklGRnwBAABXRUJQVlA4WAoAAAAQAAAAHwAAHwAAQUxQSCABAAABmTJE9D80dFtbu/YomhsURv8F3Qm+9/8RHayRU7bmT390YssF2HnEBEzAL7/5yeNnj5fHy1cfX7y9fZK/7U9/+cP7++9ef/P81fP5fMEy9zcEPYxl7R5h0R6uP7TsDoK4TGPaIQsterCGZW62luAxWGvubY3wgmn+eY6n42K6LMd8sCzT3G7k+gFrWNbpZuvtYi0mhtZBLsuau1sW9pnzOkyYJtf/7cBimdwbMlqjyXRYDMu/vRiZTLunH2hyd7s1F5pGJnP3d1nTYjKtyxrem6CRydoFy/fJdUHm9jSvueY8HebmqybWITucd6G13L+scVnQ6MY0DfafCGJNk7VpeNJIo2XNedhTyzXnZc11PAmtZbmuaaz1DFprMjmuwQBWUDggNgAAADADAJ0BKiAAIAA/OZTBWa8qJyOoCAHgJwllAMNwFmXJVYAA/uKjrbJ3pdyfo1m/bUjyQRtQAA==",
+      "formats": {
+        "avif": true,
+        "webp": true
+      },
+      "variants": [
+        {
+          "width": 500,
+          "webpFilename": "b9882b347b2c8e7ea5a3659aaf4778950320815b-500.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 800,
+          "webpFilename": "b9882b347b2c8e7ea5a3659aaf4778950320815b-800.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 1080,
+          "webpFilename": "b9882b347b2c8e7ea5a3659aaf4778950320815b-1080.webp",
+          "avifFilename": ""
+        }
+      ],
+      "createdAt": "2026-04-10T17:23:16.058Z",
+      "updatedAt": "2026-04-10T17:23:16.058Z"
+    },
+    "figma-import-1775842864342-3.webp": {
+      "filename": "figma-import-1775842864342-3.webp",
+      "originalFilename": "figma-import-1775842864342-3.png",
+      "width": 2048,
+      "height": 1045,
+      "blurHash": "data:image/webp;base64,UklGRhABAABXRUJQVlA4WAoAAAAQAAAAHwAADwAAQUxQSKYAAAABmTJE9D8cEiJJciRJEz3+BPT9/yoKnhbzaxETMAFvX3lxv9+fPakePfj1o2++3D8dH95VR8fx4tcD5BFhubH/0OT6RmvtyX5BQ1cs1lpP8GuhITtpLj75hSzXNqa15nxrXVrLXAytBZPFWEPktBGmYc1poYXm8mCabw9OW2udG80wZ6Ll4rQ1zEktNy4zmC9Z0LlpDIYdZLHOsAzDOKCpaTSmrRkAVlA4IEQAAABQAwCdASogABAAPzmKu1S+qaY/sAgD8CcJagCdMoR8eK0iAAD9s8UJ/+hvmPIbOGUx2N/mMZm7bQmvmdE0O7X7AQAAAA==",
+      "formats": {
+        "avif": true,
+        "webp": true
+      },
+      "variants": [
+        {
+          "width": 500,
+          "webpFilename": "figma-import-1775842864342-3-500.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 800,
+          "webpFilename": "figma-import-1775842864342-3-800.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 1080,
+          "webpFilename": "figma-import-1775842864342-3-1080.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 1600,
+          "webpFilename": "figma-import-1775842864342-3-1600.webp",
+          "avifFilename": ""
+        }
+      ],
+      "createdAt": "2026-04-10T17:41:05.047Z",
+      "updatedAt": "2026-04-10T17:41:05.047Z"
+    },
+    "figma-import-1775848160127-1.webp": {
+      "filename": "figma-import-1775848160127-1.webp",
+      "originalFilename": "figma-import-1775848160127-1.png",
+      "width": 1477,
+      "height": 2048,
+      "blurHash": "data:image/webp;base64,UklGRjYBAABXRUJQVlA4WAoAAAAQAAAAFgAAHwAAQUxQSNcAAAABmTJE9D80kiJJkiRpLzTLH969Vd1LQQuAyfxHHEAB6PlHTMAEfP/NV/d9f/FZ8dt+efvpuq4fXq8PQc6XMXeCDtMY+0A0LQbjFpE1GOYOstBg7CZosQzjXYJMw+B2zNNj7+Q8O2GVhYyswaK1Jqa15mHLw7Ww/Hdj7akWi601WY7L8a05rnVoOmBZa2hBb3O6JscmF4ymISsuw5wGwTWGZTlNXszDkaCXwQ600IFZO7SQdm2sNQ+TXox5GE2uMQytSfRiDQZxcBnmyaxcY9qjJroc5jzrAABWUDggOAAAABADAJ0BKhcAIAA/OZC8WC8ppaOoCqngJwlAFvcC3QsuAAD+4YfoNZrmIqbnsScxWCRdQNwNAAAA",
+      "formats": {
+        "avif": true,
+        "webp": true
+      },
+      "variants": [
+        {
+          "width": 500,
+          "webpFilename": "figma-import-1775848160127-1-500.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 800,
+          "webpFilename": "figma-import-1775848160127-1-800.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 1080,
+          "webpFilename": "figma-import-1775848160127-1-1080.webp",
+          "avifFilename": ""
+        }
+      ],
+      "createdAt": "2026-04-10T19:09:20.998Z",
+      "updatedAt": "2026-04-10T19:09:20.998Z"
+    },
+    "figma-import-1775901635139-2.webp": {
+      "filename": "figma-import-1775901635139-2.webp",
+      "originalFilename": "figma-import-1775901635139-2.png",
+      "width": 2355,
+      "height": 347,
+      "blurHash": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4WAoAAAAQAAAAHwAABAAAQUxQSEgAAAABmTJE9D8cjiNJcpQD3vhvrRY+ZEUHERETMAHXZ7v4b/9tJxUett1VN1Enh8giv+dzWEFo/WIGEwmt9WVozNqZr/VAC8tgzQJWUDggLgAAAPACAJ0BKiAABQA/OYS5U68opaKwCAHgJwljALsALSQAAP7Y7gtQUSOT9JaNPAA=",
+      "formats": {
+        "avif": true,
+        "webp": true
+      },
+      "variants": [
+        {
+          "width": 500,
+          "webpFilename": "figma-import-1775901635139-2-500.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 800,
+          "webpFilename": "figma-import-1775901635139-2-800.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 1080,
+          "webpFilename": "figma-import-1775901635139-2-1080.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 1600,
+          "webpFilename": "figma-import-1775901635139-2-1600.webp",
+          "avifFilename": ""
+        }
+      ],
+      "createdAt": "2026-04-11T10:00:35.450Z",
+      "updatedAt": "2026-04-11T10:00:35.450Z"
+    },
+    "sectionwithslider image.png": {
+      "filename": "sectionwithslider image.png",
+      "originalFilename": "sectionwithslider image.png",
+      "width": 1381,
+      "height": 203,
+      "blurHash": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAAHwAABAAAQUxQSEYAAAABmTJE9D8cjhtJUqSD9/lvLZMNkSqdFDEBE3B5srP//tt2tLzf3azqKuqoA4JMmOZ9WIKQX2cwtYSsL6Mxy8ldCGJZGNYMVlA4IC4AAADwAgCdASogAAUAPzmGuVOvKSWisAgB4CcJYwC06C0kAAD+2O3bLA8AjDQs9ZAA",
+      "formats": {
+        "avif": true,
+        "webp": true
+      },
+      "variants": [
+        {
+          "width": 500,
+          "webpFilename": "sectionwithslider image-500.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 800,
+          "webpFilename": "sectionwithslider image-800.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 1080,
+          "webpFilename": "sectionwithslider image-1080.webp",
+          "avifFilename": ""
+        }
+      ],
+      "createdAt": "2026-04-11T10:07:18.973Z",
+      "updatedAt": "2026-04-11T10:07:18.973Z"
+    },
+    "blue-balloon-hero.webp": {
+      "filename": "blue-balloon-hero.webp",
+      "originalFilename": "blue-balloon-hero.avif",
+      "width": 312,
+      "height": 312,
+      "blurHash": "data:image/webp;base64,UklGRlIBAABXRUJQVlA4WAoAAAAQAAAAHwAAHwAAQUxQSPcAAAAFmQpE9D80EiLJFq2mQAj+jYEMSHLvf1hoA2sgNWIiJmACPn5682OtFYkktNa+8MYa87AlLTVmrGGCiDDDrDGZaJGCGcYyOSNZjbHDZISIjDEMJmdCYqzN85C0Bu80exVChFlb8zhCzlkGyyKLIIM517TQQjTmvpY1ckZrsmOtyeumfVtzXQsWE7RGk2ntOIM18vvmcaxfLNZked5almWZdumF1jTNdciZsFznnIbQWrSjZaYtiyDoWINhENJytoaxZkSiday5zrBIiyBzjjFoidCITf+1mSXS0pr7GCbSEnKuzWXQkguZBrOxJQd5OoNpCcnLwZoxAFZQOCA0AAAA8AIAnQEqIAAgAD85lsJZryqnI6gIAeAnCWUAAD2e4AAA/qTX/O1bH2ff6S6XIMkC7gAAAA==",
+      "formats": {
+        "avif": true,
+        "webp": true
+      },
+      "variants": [],
+      "createdAt": "2026-04-12T13:48:31.078Z",
+      "updatedAt": "2026-04-12T13:48:31.078Z"
+    },
+    "figma-import-1776094764662-1.webp": {
+      "filename": "figma-import-1776094764662-1.webp",
+      "originalFilename": "figma-import-1776094764662-1.png",
+      "width": 2048,
+      "height": 888,
+      "blurHash": "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAADwAgCdASogAA4APzmGulOvKSWsMAgB4CcJaQAAetCIAAD+7l0cp+SAgAA=",
+      "formats": {
+        "avif": true,
+        "webp": true
+      },
+      "variants": [
+        {
+          "width": 500,
+          "webpFilename": "figma-import-1776094764662-1-500.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 800,
+          "webpFilename": "figma-import-1776094764662-1-800.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 1080,
+          "webpFilename": "figma-import-1776094764662-1-1080.webp",
+          "avifFilename": ""
+        },
+        {
+          "width": 1600,
+          "webpFilename": "figma-import-1776094764662-1-1600.webp",
+          "avifFilename": ""
+        }
+      ],
+      "createdAt": "2026-04-13T15:39:25.190Z",
+      "updatedAt": "2026-04-13T15:39:25.190Z"
+    },
+    "chart-web-line.png": {
+      "filename": "chart-web-line.png",
+      "originalFilename": "chart-web-line.png",
+      "width": 148,
+      "height": 72,
+      "blurHash": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4WAoAAAAQAAAAHwAADwAAQUxQSHkAAAABmS5E9D8cEBu5DSPd//dfteX7FrQYGIiYgAn4uz+22sZfReRPztra7hLB5GgPE5ExtrsiIQRpNIiQKTIkiRAh0uki5xSpUg5yRqRJETLmSFJJyDUkSqdBTwciXZR/p0PV5v6mSA1baHju6cutxIN39NWWL5+529YGAFZQOCAwAAAA0AIAnQEqIAAQAD85hLlTryilorAIAeAnCUAXYAWkgAD+62cYI+dVaW5s1ynXaAAA",
+      "formats": {
+        "avif": true,
+        "webp": true
+      },
+      "variants": [],
+      "createdAt": "2026-04-13T15:45:24.360Z",
+      "updatedAt": "2026-04-13T15:45:24.360Z"
+    },
+    "chart-web-fill.png": {
+      "filename": "chart-web-fill.png",
+      "originalFilename": "chart-web-fill.png",
+      "width": 148,
+      "height": 73,
+      "blurHash": "data:image/webp;base64,UklGRh4BAABXRUJQVlA4WAoAAAAQAAAAHwAADwAAQUxQSHMAAAABmR5E9D8ckCNJjhuF4L/Pe2AAuZAV+ERMwASsvvxQylL16tVdolJk7PJCNDUayyCIH22ozKGUeauokA26U1E5ZH4nchlNFklKF6Spk3Qjh4gktf3IC20L2ST7D3vmZJKvw5Ix9z/a9lx28Zxb6oS2H64BAFZQOCCEAAAAMAQAnQEqIAAQAD85hrlTryklorAIAeAnCWxg60YWIBBUD+XZF3Lp7qgAAP7rvfNOTreYN9HQbUmw3KAH/w/8OkhyXBx/f94SwaInTymlOHD/DI2w8bTvaQG5XzFz43RVAPab7Cy99yYfL4KSC21iDdW/FcvaZSGJW59VeCwGUAMFCAAA",
+      "formats": {
+        "avif": true,
+        "webp": true
+      },
+      "variants": [],
+      "createdAt": "2026-04-13T15:45:24.694Z",
+      "updatedAt": "2026-04-13T15:45:24.694Z"
+    },
+    "chart-grow-line.png": {
+      "filename": "chart-grow-line.png",
+      "originalFilename": "chart-grow-line.png",
+      "width": 148,
+      "height": 72,
+      "blurHash": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4WAoAAAAQAAAAHwAADwAAQUxQSHkAAAABmS5E9D8cEBu5DSPd//dfteX7FrQYGIiYgAn4uz+22sZfReRPztra7hLB5GgPE5ExtrsiIQRpNIiQKTIkiRAh0uki5xSpUg5yRqRJETLmSFJJyDUkSqdBTwciXZR/p0PV5v6mSA1baHju6cutxIN39NWWL5+529YGAFZQOCAuAAAAsAIAnQEqIAAQAD85hrlTryklorAIAeAnCUAAD2QAAP7qn37ZO9L/wZbbDpOAAA==",
+      "formats": {
+        "avif": true,
+        "webp": true
+      },
+      "variants": [],
+      "createdAt": "2026-04-13T15:45:24.925Z",
+      "updatedAt": "2026-04-13T15:45:24.925Z"
+    },
+    "chart-grow-fill.png": {
+      "filename": "chart-grow-fill.png",
+      "originalFilename": "chart-grow-fill.png",
+      "width": 148,
+      "height": 73,
+      "blurHash": "data:image/webp;base64,UklGRg4BAABXRUJQVlA4WAoAAAAQAAAAHwAADwAAQUxQSHMAAAABmR5E9D8ckCNJjhuF4L/Pe2AAuZAV+ERMwASsvvxQylL16tVdolJk7PJCNDUayyCIH22ozKGUeauokA26U1E5ZH4nchlNFklKF6Spk3Qjh4gktf3IC20L2ST7D3vmZJKvw5Ix9z/a9lx28Zxb6oS2H64BAFZQOCB0AAAAMAMAnQEqIAAQAD85hrlTryklorAIAeAnCWQAsOwssREwAAD+6jFy5uyax3WpycqgZ9A2hMT6HY9we2a+bMCeArD4QiGwIZxQAFrduNcGBEcI8H8GFYBcAJ4VzSoMa9cdRatogICtvb52JbVlGiP8Cf3AAAA=",
+      "formats": {
+        "avif": true,
+        "webp": true
+      },
+      "variants": [],
+      "createdAt": "2026-04-13T15:45:25.319Z",
+      "updatedAt": "2026-04-13T15:45:25.319Z"
+    },
+    "chart-pipeline-line.png": {
+      "filename": "chart-pipeline-line.png",
+      "originalFilename": "chart-pipeline-line.png",
+      "width": 148,
+      "height": 72,
+      "blurHash": "data:image/webp;base64,UklGRtIAAABXRUJQVlA4WAoAAAAQAAAAHwAADwAAQUxQSHkAAAABmS5E9D8cEBu5DSPd//dfteX7FrQYGIiYgAn4uz+22sZfReRPztra7hLB5GgPE5ExtrsiIQRpNIiQKTIkiRAh0uki5xSpUg5yRqRJETLmSFJJyDUkSqdBTwciXZR/p0PV5v6mSA1baHju6cutxIN39NWWL5+529YGAFZQOCAyAAAA8AIAnQEqIAAQAD85hrlTryklorAIAeAnCWMAtOgtJAAA/uqigh5AlstEoB6hiD3AAAA=",
+      "formats": {
+        "avif": true,
+        "webp": true
+      },
+      "variants": [],
+      "createdAt": "2026-04-13T15:45:25.614Z",
+      "updatedAt": "2026-04-13T15:45:25.614Z"
+    },
+    "chart-pipeline-fill.png": {
+      "filename": "chart-pipeline-fill.png",
+      "originalFilename": "chart-pipeline-fill.png",
+      "width": 148,
+      "height": 73,
+      "blurHash": "data:image/webp;base64,UklGRiABAABXRUJQVlA4WAoAAAAQAAAAHwAADwAAQUxQSHMAAAABmR5E9D8ckCNJjhuF4L/Pe2AAuZAV+ERMwASsvvxQylL16tVdolJk7PJCNDUayyCIH22ozKGUeauokA26U1E5ZH4nchlNFklKF6Spk3Qjh4gktf3IC20L2ST7D3vmZJKvw5Ix9z/a9lx28Zxb6oS2H64BAFZQOCCGAAAA0AMAnQEqIAAQAD85jLtUrymmIzAIAeAnCWYAnTKAJbEfrhPQK08AAP7re2XFlNh4uPcVKTtoku2dOSKacDIt5EMg3tsJFCK/7pULvgW0bhHlVR7tRs6sIZwsmHmslj5tmHp7D+DkqE6+kWAGeUro+uBvOpgqUCoGrT6owqQBXIiAD+daoAA=",
+      "formats": {
+        "avif": true,
+        "webp": true
+      },
+      "variants": [],
+      "createdAt": "2026-04-13T15:45:25.891Z",
+      "updatedAt": "2026-04-13T15:45:25.891Z"
+    }
+  }
+}
