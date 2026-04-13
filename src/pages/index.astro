@@ -59,17 +59,13 @@ import splashvid from '../components/splashvid.astro';
   background-clip: text;
   -webkit-background-clip: text;
 }
-</style>
-  <style>[data-el="hero-video"] {
-  display: none !important;
-}</style>`, headJS: ``, bodyEndJS: `<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+</style>`, headJS: ``, bodyEndJS: `<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/SplitText.min.js" defer></script>` }}
 >
   <div id="root">
   <div class="bg-[color:var(--ploy-background-primary)] text-[color:var(--ploy-text-primary)] [overflow:clip]">
-    {/* hidden */}
     <splashvid />
     <Navigation />
     <HeroSection />
