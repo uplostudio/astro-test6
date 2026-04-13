@@ -3,14 +3,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import AccordionsSection from '../components/AccordionsSection.astro';
 import Component2 from '../components/Component2.astro';
 import Component4 from '../components/Component4.astro';
+import Features from '../components/Features.astro';
 import FormSection from '../components/FormSection.astro';
 import HeroSection from '../components/HeroSection.astro';
 import Navigation from '../components/Navigation.astro';
 import SectionWithSlider from '../components/SectionWithSlider.astro';
+import Splashvid from '../components/Splashvid.astro';
 import ThreeEnginesSection from '../components/ThreeEnginesSection.astro';
 import YellowSection from '../components/YellowSection.astro';
-import features from '../components/features.astro';
-import splashvid from '../components/splashvid.astro';
 ---
 <BaseLayout
   title="Ploy"
@@ -66,10 +66,10 @@ import splashvid from '../components/splashvid.astro';
 >
   <div id="root">
   <div class="bg-[color:var(--ploy-background-primary)] text-[color:var(--ploy-text-primary)] [overflow:clip]">
-    <splashvid />
+    <Splashvid />
     <Navigation />
     <HeroSection />
-    <features />
+    <Features />
     <Component4 />
     <YellowSection />
     <SectionWithSlider />
