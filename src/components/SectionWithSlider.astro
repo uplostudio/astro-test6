@@ -94,12 +94,13 @@ if (swiperContainer && typeof Swiper !== 'undefined') {
   const wrapper = document.createElement('div');
   wrapper.classList.add('swiper-wrapper');
 
-  while (swiperContainer.firstChild) {
-    const slideEl = document.createElement('div');
+  var items = Array.from(swiperContainer.children).filter(function(c) { return c.tagName !== 'SCRIPT'; });
+  for (var i = 0; i < items.length; i++) {
+    var slideEl = document.createElement('div');
     slideEl.classList.add('swiper-slide');
     slideEl.style.width = 'auto';
     slideEl.style.height = 'auto';
-    slideEl.appendChild(swiperContainer.firstChild);
+    slideEl.appendChild(items[i]);
     wrapper.appendChild(slideEl);
   }
 
