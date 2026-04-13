@@ -1,14 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AccordionsSection from '../components/AccordionsSection.astro';
-import Component2 from '../components/Component2.astro';
 import Component3 from '../components/Component3.astro';
-import Component4 from '../components/Component4.astro';
-import Features from '../components/Features.astro';
+import FeaturesSection from '../components/FeaturesSection.astro';
+import Footer from '../components/Footer.astro';
 import FormSection from '../components/FormSection.astro';
 import Navigation from '../components/Navigation.astro';
+import PinkSection from '../components/PinkSection.astro';
 import SectionWithSlider from '../components/SectionWithSlider.astro';
-import Splashvid from '../components/Splashvid.astro';
+import SplashVid from '../components/SplashVid.astro';
 import ThreeEnginesSection from '../components/ThreeEnginesSection.astro';
 import YellowSection from '../components/YellowSection.astro';
 ---
@@ -67,16 +67,16 @@ import YellowSection from '../components/YellowSection.astro';
   <div id="root">
   <div class="bg-[color:var(--ploy-background-primary)] text-[color:var(--ploy-text-primary)] [overflow:clip]">
     <Navigation />
-    <Splashvid />
+    <SplashVid />
     <Component3 />
-    <Features />
-    <Component4 />
+    <FeaturesSection />
+    <PinkSection />
     <YellowSection />
     <SectionWithSlider />
     <ThreeEnginesSection />
     <AccordionsSection />
     <FormSection />
-    <Component2 />
+    <Footer />
   </div>
   </div>
 </BaseLayout>
